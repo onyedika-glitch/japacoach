@@ -1,0 +1,1648 @@
+[
+  {
+    "title": "Academic Reading Practice Test 1",
+    "test_type": "academic",
+    "duration_minutes": 60,
+    "sections": [
+      {
+        "title": "Forests at the Edge of the Sea",
+        "instructions": "You should spend about 20 minutes on Questions 1-13, which are based on Reading Passage 1 below. For Questions 1-6, do the following statements agree with the information given in the passage? Write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this. For Questions 7-10, complete the sentences using NO MORE THAN TWO WORDS from the passage. For Questions 11-13, choose the correct letter, A, B, C or D.",
+        "body": "Along the muddy coastlines of the tropics, where rivers meet the sea, grows a type of forest unlike any other. Mangroves are trees and shrubs that have adapted to survive in conditions that would kill most plants: salty water, soft oxygen-poor mud, and a daily cycle of flooding and draining as the tide rises and falls. They are found in more than a hundred countries, from the river deltas of West Africa to the islands of Southeast Asia, and for most of human history they were regarded as little more than wasteland - smelly, mosquito-filled swamps best cleared for something more useful.\n\nThat view has changed dramatically over the past few decades. Scientists now recognise mangroves as among the most valuable ecosystems on the planet, and governments that once encouraged their removal are now spending considerable sums trying to replant them.\n\nThe first challenge any mangrove faces is salt. Seawater contains far more salt than most plant cells can tolerate, and different mangrove species have developed different strategies for dealing with it. Some species block most of the salt at their roots, using a kind of natural filtration so effective that the sap inside the tree is almost fresh. Others allow salt to enter but then push it out through special glands on their leaves. A third group stores salt in older leaves, which are then dropped, taking the salt with them.\n\nThe second challenge is the mud itself. Coastal sediment is so densely packed and waterlogged that there is very little oxygen in it, yet roots need oxygen to function. Many mangroves solve this problem with aerial roots. The red mangrove, for example, is supported by arching 'stilt' roots that grow down from the trunk and branches, giving the tree the appearance of walking on the water. The black mangrove instead sends up hundreds of pencil-like shoots, called pneumatophores, which rise vertically out of the mud and act rather like snorkels, drawing air down to the buried roots below.\n\nThese tangled root systems are the key to much of the mangrove's value. Above all, they slow the movement of water. When waves enter a mangrove forest, they lose energy as they pass through the dense network of roots and trunks, so that by the time they reach the land behind, they are much smaller. Studies of coastal villages after major storms have repeatedly found that communities sheltered by a wide belt of mangroves suffered less damage than those where the forest had been cleared. For low-lying coastal nations, this natural protection can be worth more than an expensive concrete sea wall, and unlike a wall, it repairs itself.\n\nThe roots also trap sediment carried by rivers and tides. Over time, this allows mangrove forests to build up the land beneath them, and in some places they have kept pace with gradual rises in sea level. The same sediment-trapping process locks away large quantities of organic material in the waterlogged soil, where it decays extremely slowly. As a result, mangroves store far more carbon per hectare than most land-based forests, and the majority of it is held not in the trees but in the soil beneath them. When mangroves are cleared, much of this stored carbon can be released into the atmosphere.\n\nLife in and around the roots is also remarkably rich. The calm, shaded water provides a nursery for young fish, crabs and prawns, which can feed and grow there while hidden from larger predators. Many of these species later move out to coral reefs or the open sea, so the health of offshore fisheries is closely connected to the condition of the coastline.\n\nDespite this, mangroves have been lost at an alarming rate. Large areas have been converted into ponds for farming shrimp, cleared for agriculture, or built over as coastal cities expanded. Restoration has proved more difficult than early projects expected. Planting seedlings is easy enough, but many early schemes failed because the young trees were placed in locations where mangroves had never naturally grown, such as mudflats that were flooded for too long each day. More recent projects focus first on restoring the natural flow of water to a site, and then allow seeds from nearby forests to arrive with the tide. This approach is slower, but the forests that result tend to be healthier and more diverse.\n\nPerhaps the most important lesson from these projects is that success depends on the involvement of the people who live alongside the forests. Where local communities share in the benefits - through sustainable fishing, for example, or carefully managed eco-tourism - mangroves are far more likely to be protected for the long term.",
+        "questions": [
+          {
+            "type": "tfng",
+            "prompt": "Mangroves grow in fewer than fifty countries.",
+            "options": null,
+            "answers": [
+              "FALSE"
+            ],
+            "explanation": "Paragraph 1: 'They are found in more than a hundred countries'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "For much of history, mangrove areas were generally thought to be of little value.",
+            "options": null,
+            "answers": [
+              "TRUE"
+            ],
+            "explanation": "Paragraph 1: 'for most of human history they were regarded as little more than wasteland'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "Some mangrove species get rid of salt through their leaves.",
+            "options": null,
+            "answers": [
+              "TRUE"
+            ],
+            "explanation": "Paragraph 3: 'Others allow salt to enter but then push it out through special glands on their leaves'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "The red mangrove is the most widespread mangrove species in the world.",
+            "options": null,
+            "answers": [
+              "NOT GIVEN"
+            ],
+            "explanation": "Paragraph 4 describes the red mangrove's stilt roots but says nothing about how widespread it is compared with other species."
+          },
+          {
+            "type": "tfng",
+            "prompt": "Most of the carbon stored by mangroves is held in the trees themselves.",
+            "options": null,
+            "answers": [
+              "FALSE"
+            ],
+            "explanation": "Paragraph 6: 'the majority of it is held not in the trees but in the soil beneath them'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "Shrimp farming has destroyed more mangrove forest than any other activity.",
+            "options": null,
+            "answers": [
+              "NOT GIVEN"
+            ],
+            "explanation": "Paragraph 8 lists shrimp ponds, agriculture and city expansion as causes of loss but does not say which caused the most."
+          },
+          {
+            "type": "gap",
+            "prompt": "Some mangroves store salt in ______, which are later dropped from the tree. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "older leaves"
+            ],
+            "explanation": "Paragraph 3: 'A third group stores salt in older leaves, which are then dropped'."
+          },
+          {
+            "type": "gap",
+            "prompt": "The vertical shoots produced by the black mangrove are called ______. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "pneumatophores"
+            ],
+            "explanation": "Paragraph 4: 'pencil-like shoots, called pneumatophores'."
+          },
+          {
+            "type": "gap",
+            "prompt": "These vertical shoots work in a similar way to ______, supplying air to the roots. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "snorkels"
+            ],
+            "explanation": "Paragraph 4: 'act rather like snorkels, drawing air down to the buried roots below'."
+          },
+          {
+            "type": "gap",
+            "prompt": "The calm water among the roots acts as a ______ for young fish, crabs and prawns. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "nursery"
+            ],
+            "explanation": "Paragraph 7: 'The calm, shaded water provides a nursery for young fish, crabs and prawns'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "According to the passage, one advantage of mangroves over a concrete sea wall is that mangroves",
+            "options": [
+              {
+                "key": "A",
+                "text": "are quicker to establish."
+              },
+              {
+                "key": "B",
+                "text": "protect a larger area of coast."
+              },
+              {
+                "key": "C",
+                "text": "are able to repair themselves."
+              },
+              {
+                "key": "D",
+                "text": "stop waves completely."
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Paragraph 5: 'unlike a wall, it repairs itself'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "Why did many early mangrove restoration projects fail?",
+            "options": [
+              {
+                "key": "A",
+                "text": "The seedlings were too expensive to buy."
+              },
+              {
+                "key": "B",
+                "text": "Local people removed the young trees."
+              },
+              {
+                "key": "C",
+                "text": "The trees were planted in unsuitable places."
+              },
+              {
+                "key": "D",
+                "text": "Pollution from shrimp farms killed the trees."
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Paragraph 8: 'many early schemes failed because the young trees were placed in locations where mangroves had never naturally grown'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What is the main point of the final paragraph?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Eco-tourism is the best way to pay for restoration."
+              },
+              {
+                "key": "B",
+                "text": "Fishing should be banned near mangrove forests."
+              },
+              {
+                "key": "C",
+                "text": "Governments must increase spending on mangroves."
+              },
+              {
+                "key": "D",
+                "text": "Long-term protection depends on local communities."
+              }
+            ],
+            "answers": [
+              "D"
+            ],
+            "explanation": "Final paragraph: 'success depends on the involvement of the people who live alongside the forests'."
+          }
+        ]
+      },
+      {
+        "title": "A Simple Steel Box",
+        "instructions": "You should spend about 20 minutes on Questions 14-26, which are based on Reading Passage 2 below. Reading Passage 2 has seven paragraphs, A-G. For Questions 14-18, choose the correct paragraph. For Questions 19-22, complete the sentences using words from the passage. For Questions 23-26, do the following statements agree with the information given in the passage? Write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.",
+        "body": "A. Look at almost any object in your home - a phone, a shirt, a kitchen chair - and there is a good chance that at some point it travelled across an ocean inside a steel box. The shipping container is so ordinary that most people never think about it, yet economic historians increasingly argue that it did as much to shape the modern global economy as many far more celebrated inventions. Its story is less about clever engineering than about a change in the way people thought about moving goods.\n\nB. Before the 1950s, cargo was handled in much the same way it had been for centuries. Goods arrived at the docks in sacks, barrels, crates and bales of every size and shape. Teams of dock workers, often numbering in the dozens for a single ship, carried each item on board and arranged it by hand in the ship's hold, fitting pieces together like a giant puzzle so that nothing would shift at sea. The process was slow, physically dangerous and expensive. A ship might spend a week or more in port being loaded and unloaded, and theft from cargo was so common that it was treated as a normal business expense.\n\nC. The man most often credited with changing this was not a sailor but a trucking businessman. Malcolm McLean, who had built up a large road haulage company in the United States, grew frustrated watching his lorries wait for hours at ports while their loads were moved piece by piece onto ships. His solution was to lift the entire trailer body, with its contents still inside, directly onto the vessel. In 1956 a converted oil tanker called the Ideal-X sailed from Newark, New Jersey, to Houston, Texas, carrying 58 of these metal boxes on its deck. McLean later calculated that loading cargo this way cost a small fraction of the traditional method - around 16 cents per ton compared with more than five dollars.\n\nD. The idea was simple, but making it work on a large scale was not. Early containers came in many different sizes, because each shipping company designed its own. A box belonging to one firm might not fit on the ships, cranes or trucks of another, which limited the advantages of the system. During the 1960s, after long and sometimes bitter negotiations, international standards were agreed for container dimensions and for the corner fittings used to lift the boxes and lock them together. The most familiar sizes today are twenty and forty feet long, and port capacity is still measured in 'twenty-foot equivalent units', or TEUs.\n\nE. Once standards were in place, the system spread rapidly. Purpose-built container ships replaced converted vessels, and these grew steadily larger; the biggest modern ships can carry well over twenty thousand TEUs. Specialised cranes could move a container from ship to shore in a couple of minutes, and the time ships spent in port fell from days to hours. Because the boxes were sealed at the factory and not opened until they reached their destination, theft fell sharply and insurance costs dropped.\n\nF. Not everyone benefited. Ports that had handled cargo for generations suddenly found themselves in the wrong place. Container terminals need huge areas of flat land for stacking boxes and good connections to roads and railways, which many crowded old harbours in city centres could not provide. Trade moved to new sites, often some distance away, and traditional waterfront districts declined. The demand for dock labour collapsed, and thousands of workers whose families had worked in the ports for generations lost their jobs, leading to strikes and protests in several countries.\n\nG. The longer-term consequences were even greater. As the cost of transport fell, it became economical for companies to manufacture goods wherever production was cheapest and ship them around the world. A single product might now include parts made in several different countries. Some researchers argue that the container contributed more to the growth of international trade in the late twentieth century than all the trade agreements signed in the same period, although others consider this claim exaggerated. What is clear is that the humble steel box made distance far less important than it had ever been before.",
+        "questions": [
+          {
+            "type": "matching",
+            "prompt": "Which paragraph, A-G, contains the following information? A description of how ships were loaded before containers were introduced.",
+            "options": [
+              {
+                "key": "A",
+                "text": "Paragraph A"
+              },
+              {
+                "key": "B",
+                "text": "Paragraph B"
+              },
+              {
+                "key": "C",
+                "text": "Paragraph C"
+              },
+              {
+                "key": "D",
+                "text": "Paragraph D"
+              },
+              {
+                "key": "E",
+                "text": "Paragraph E"
+              },
+              {
+                "key": "F",
+                "text": "Paragraph F"
+              },
+              {
+                "key": "G",
+                "text": "Paragraph G"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Paragraph B describes dock workers carrying each item on board and arranging it by hand."
+          },
+          {
+            "type": "matching",
+            "prompt": "Which paragraph, A-G, contains the following information? A comparison of the cost of two methods of loading cargo.",
+            "options": [
+              {
+                "key": "A",
+                "text": "Paragraph A"
+              },
+              {
+                "key": "B",
+                "text": "Paragraph B"
+              },
+              {
+                "key": "C",
+                "text": "Paragraph C"
+              },
+              {
+                "key": "D",
+                "text": "Paragraph D"
+              },
+              {
+                "key": "E",
+                "text": "Paragraph E"
+              },
+              {
+                "key": "F",
+                "text": "Paragraph F"
+              },
+              {
+                "key": "G",
+                "text": "Paragraph G"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Paragraph C: 'around 16 cents per ton compared with more than five dollars'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Which paragraph, A-G, contains the following information? A problem caused by containers being built in different sizes.",
+            "options": [
+              {
+                "key": "A",
+                "text": "Paragraph A"
+              },
+              {
+                "key": "B",
+                "text": "Paragraph B"
+              },
+              {
+                "key": "C",
+                "text": "Paragraph C"
+              },
+              {
+                "key": "D",
+                "text": "Paragraph D"
+              },
+              {
+                "key": "E",
+                "text": "Paragraph E"
+              },
+              {
+                "key": "F",
+                "text": "Paragraph F"
+              },
+              {
+                "key": "G",
+                "text": "Paragraph G"
+              }
+            ],
+            "answers": [
+              "D"
+            ],
+            "explanation": "Paragraph D: 'A box belonging to one firm might not fit on the ships, cranes or trucks of another'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Which paragraph, A-G, contains the following information? A reason why some older ports lost their trade.",
+            "options": [
+              {
+                "key": "A",
+                "text": "Paragraph A"
+              },
+              {
+                "key": "B",
+                "text": "Paragraph B"
+              },
+              {
+                "key": "C",
+                "text": "Paragraph C"
+              },
+              {
+                "key": "D",
+                "text": "Paragraph D"
+              },
+              {
+                "key": "E",
+                "text": "Paragraph E"
+              },
+              {
+                "key": "F",
+                "text": "Paragraph F"
+              },
+              {
+                "key": "G",
+                "text": "Paragraph G"
+              }
+            ],
+            "answers": [
+              "F"
+            ],
+            "explanation": "Paragraph F: container terminals need large flat areas 'which many crowded old harbours in city centres could not provide'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Which paragraph, A-G, contains the following information? A reference to a disagreement among researchers.",
+            "options": [
+              {
+                "key": "A",
+                "text": "Paragraph A"
+              },
+              {
+                "key": "B",
+                "text": "Paragraph B"
+              },
+              {
+                "key": "C",
+                "text": "Paragraph C"
+              },
+              {
+                "key": "D",
+                "text": "Paragraph D"
+              },
+              {
+                "key": "E",
+                "text": "Paragraph E"
+              },
+              {
+                "key": "F",
+                "text": "Paragraph F"
+              },
+              {
+                "key": "G",
+                "text": "Paragraph G"
+              }
+            ],
+            "answers": [
+              "G"
+            ],
+            "explanation": "Paragraph G: 'Some researchers argue ... although others consider this claim exaggerated'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Before entering the shipping industry, McLean ran a ______ company. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "road haulage"
+            ],
+            "explanation": "Paragraph C: 'Malcolm McLean, who had built up a large road haulage company'."
+          },
+          {
+            "type": "gap",
+            "prompt": "The Ideal-X had originally been built as an ______. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "oil tanker"
+            ],
+            "explanation": "Paragraph C: 'a converted oil tanker called the Ideal-X'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Standard ______ allow containers to be lifted and locked together. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "corner fittings"
+            ],
+            "explanation": "Paragraph D: 'the corner fittings used to lift the boxes and lock them together'."
+          },
+          {
+            "type": "gap",
+            "prompt": "The capacity of a port is measured in ______. Write NO MORE THAN THREE WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "twenty-foot equivalent units",
+              "TEUs"
+            ],
+            "explanation": "Paragraph D: 'port capacity is still measured in twenty-foot equivalent units, or TEUs'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "McLean had worked as a sailor before he became interested in containers.",
+            "options": null,
+            "answers": [
+              "FALSE"
+            ],
+            "explanation": "Paragraph C: McLean 'was not a sailor but a trucking businessman'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "On the Ideal-X's 1956 voyage, the containers were carried below deck.",
+            "options": null,
+            "answers": [
+              "FALSE"
+            ],
+            "explanation": "Paragraph C: the ship carried '58 of these metal boxes on its deck'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "The first specialised container cranes were designed in Europe.",
+            "options": null,
+            "answers": [
+              "NOT GIVEN"
+            ],
+            "explanation": "Paragraph E mentions specialised cranes but gives no information about where they were first designed."
+          },
+          {
+            "type": "tfng",
+            "prompt": "Sealing containers at the factory led to a reduction in theft.",
+            "options": null,
+            "answers": [
+              "TRUE"
+            ],
+            "explanation": "Paragraph E: 'Because the boxes were sealed at the factory ... theft fell sharply'."
+          }
+        ]
+      },
+      {
+        "title": "In Defence of Boredom",
+        "instructions": "You should spend about 20 minutes on Questions 27-40, which are based on Reading Passage 3 below. For Questions 27-31, do the following statements agree with the views of the writer? Write YES if the statement agrees with the views of the writer, NO if the statement contradicts the views of the writer, or NOT GIVEN if it is impossible to say what the writer thinks about this. For Questions 32-35, choose the correct letter, A, B, C or D. For Questions 36-40, complete each sentence with the correct ending, A-G.",
+        "body": "Few experiences are as universally disliked as boredom. We describe it as something to be 'killed', and modern life offers an almost endless supply of weapons for the purpose. A queue at the bank, a delayed train, a pause in conversation: each is now an opportunity to reach for a phone. It would be easy to see this as a victory. If boredom is unpleasant and we have found a way to eliminate it, why should anyone complain? My argument in this essay is that we have been far too quick to treat boredom as a problem to be solved, and that in removing it from our lives we may be losing something of real value.\n\nIt is worth being clear about what boredom is. Psychologists generally describe it as a state in which we want to be engaged in satisfying activity but are unable to be. It is not the same as relaxation, which is pleasant, nor is it simply having nothing to do; a person can be extremely busy and still deeply bored, as anyone who has spent a day filling in forms will know. What defines boredom is the gap between the attention we have available and the meaning we can find for it.\n\nSeen in this way, boredom begins to look less like a malfunction and more like a signal. Just as hunger tells us that the body needs food, boredom tells us that our current situation is failing to satisfy us and that we should look for something better. The discomfort is the point: if boredom felt pleasant, it would not push us to change anything. Some researchers have gone further and suggested that the restlessness of boredom encourages the mind to wander, and that this wandering is closely linked to creative thinking. In several laboratory studies, participants who were first given a dull task - copying numbers from a telephone directory, for example - went on to produce more original ideas in a later creativity test than those who had not.\n\nI would not want to rest too much on such experiments. They are usually small, are often conducted with university students, and measure creativity in ways that may have little to do with the creative work people do in real life. Yet they are consistent with what many artists, scientists and writers have reported for generations: that their best ideas came not while they were working hard at a problem, but during idle moments - on a long walk, in the bath, or while staring out of a window.\n\nThe trouble with the smartphone is not that it is entertaining, but that it is entertaining in very small, very convenient pieces. It removes the discomfort of boredom without ever addressing its cause. Instead of prompting us to find a more meaningful activity, it offers an endless series of distractions which occupy our attention without satisfying it. Many people will recognise the experience of scrolling for half an hour and finishing feeling more restless than when they began. In this sense, constant distraction may actually make the underlying problem worse.\n\nChildren are an obvious concern here. A generation ago, a long school holiday contained large stretches of time with nothing planned, and children were left to invent their own games and occupations. Today, many parents feel under pressure to fill every hour with organised activities or screens, partly from a fear that an unoccupied child is a neglected one. I understand this anxiety, but I believe it is mistaken. Learning to cope with an empty afternoon, and to fill it with something of one's own choosing, is an important skill, and like any skill it can only be developed through practice.\n\nNone of this means that boredom is always good. Long-term, chronic boredom is associated with a range of harmful behaviours, and people who are trapped in dull, repetitive jobs with no prospect of change are not helped by being told that their situation is good for their creativity. The value of boredom lies in its ability to prompt action; where action is impossible, it is simply suffering. Employers and schools have a genuine responsibility to make work and study meaningful.\n\nWhat I am proposing, then, is not that we seek out boredom, but that we stop running from it quite so quickly. The next time you are waiting for a bus, try leaving the phone in your pocket. The first few minutes will probably be uncomfortable. But you may find, as the discomfort fades, that your mind starts to go somewhere interesting - and that is something no app can do for you.",
+        "questions": [
+          {
+            "type": "ynng",
+            "prompt": "Modern technology has made it easier for people to avoid being bored.",
+            "options": null,
+            "answers": [
+              "YES"
+            ],
+            "explanation": "Paragraph 1: modern life offers 'an almost endless supply of weapons' against boredom, such as reaching for a phone."
+          },
+          {
+            "type": "ynng",
+            "prompt": "Keeping busy is a reliable way to prevent boredom.",
+            "options": null,
+            "answers": [
+              "NO"
+            ],
+            "explanation": "Paragraph 2: 'a person can be extremely busy and still deeply bored'."
+          },
+          {
+            "type": "ynng",
+            "prompt": "Laboratory studies provide strong proof that boredom leads to creativity.",
+            "options": null,
+            "answers": [
+              "NO"
+            ],
+            "explanation": "Paragraph 4: 'I would not want to rest too much on such experiments' - the writer points out their limitations."
+          },
+          {
+            "type": "ynng",
+            "prompt": "Smartphones should be banned in schools.",
+            "options": null,
+            "answers": [
+              "NOT GIVEN"
+            ],
+            "explanation": "The writer criticises smartphone distraction but never discusses banning phones in schools."
+          },
+          {
+            "type": "ynng",
+            "prompt": "Parents who fill all of their children's free time with activities are making a mistake.",
+            "options": null,
+            "answers": [
+              "YES"
+            ],
+            "explanation": "Paragraph 6: 'I understand this anxiety, but I believe it is mistaken.'"
+          },
+          {
+            "type": "mcq",
+            "prompt": "How does the writer define boredom?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Having no tasks to complete."
+              },
+              {
+                "key": "B",
+                "text": "Wanting satisfying activity but being unable to find it."
+              },
+              {
+                "key": "C",
+                "text": "A pleasant form of rest."
+              },
+              {
+                "key": "D",
+                "text": "Tiredness caused by too much work."
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Paragraph 2: boredom is 'a state in which we want to be engaged in satisfying activity but are unable to be'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "Why does the writer compare boredom to hunger?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Both are physical sensations."
+              },
+              {
+                "key": "B",
+                "text": "Both become worse in modern societies."
+              },
+              {
+                "key": "C",
+                "text": "Both are signals that something needs to change."
+              },
+              {
+                "key": "D",
+                "text": "Both can be dangerous if ignored for long."
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Paragraph 3: 'Just as hunger tells us that the body needs food, boredom tells us that our current situation is failing to satisfy us'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "In the laboratory studies, participants who first completed a dull task",
+            "options": [
+              {
+                "key": "A",
+                "text": "produced more original ideas afterwards."
+              },
+              {
+                "key": "B",
+                "text": "refused to complete the creativity test."
+              },
+              {
+                "key": "C",
+                "text": "worked more slowly than other participants."
+              },
+              {
+                "key": "D",
+                "text": "said they felt more relaxed."
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "Paragraph 3: they 'went on to produce more original ideas in a later creativity test than those who had not'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What is the writer's main criticism of smartphones?",
+            "options": [
+              {
+                "key": "A",
+                "text": "They are too entertaining for young people."
+              },
+              {
+                "key": "B",
+                "text": "They remove the discomfort of boredom without dealing with its cause."
+              },
+              {
+                "key": "C",
+                "text": "They make it difficult to concentrate at work."
+              },
+              {
+                "key": "D",
+                "text": "They have replaced books as a source of ideas."
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Paragraph 5: 'It removes the discomfort of boredom without ever addressing its cause.'"
+          },
+          {
+            "type": "matching",
+            "prompt": "Complete the sentence with the correct ending, A-G. Relaxation differs from boredom because it ...",
+            "options": [
+              {
+                "key": "A",
+                "text": "is linked to a variety of damaging behaviours."
+              },
+              {
+                "key": "B",
+                "text": "can leave people more unsettled than before."
+              },
+              {
+                "key": "C",
+                "text": "should be shorter than they were in the past."
+              },
+              {
+                "key": "D",
+                "text": "is enjoyable rather than uncomfortable."
+              },
+              {
+                "key": "E",
+                "text": "should take responsibility for making activities meaningful."
+              },
+              {
+                "key": "F",
+                "text": "always improves performance in creativity tests."
+              },
+              {
+                "key": "G",
+                "text": "arrived when they were not actively working on a problem."
+              }
+            ],
+            "answers": [
+              "D"
+            ],
+            "explanation": "Paragraph 2: 'It is not the same as relaxation, which is pleasant'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Complete the sentence with the correct ending, A-G. Many artists, scientists and writers say that their best ideas ...",
+            "options": [
+              {
+                "key": "A",
+                "text": "is linked to a variety of damaging behaviours."
+              },
+              {
+                "key": "B",
+                "text": "can leave people more unsettled than before."
+              },
+              {
+                "key": "C",
+                "text": "should be shorter than they were in the past."
+              },
+              {
+                "key": "D",
+                "text": "is enjoyable rather than uncomfortable."
+              },
+              {
+                "key": "E",
+                "text": "should take responsibility for making activities meaningful."
+              },
+              {
+                "key": "F",
+                "text": "always improves performance in creativity tests."
+              },
+              {
+                "key": "G",
+                "text": "arrived when they were not actively working on a problem."
+              }
+            ],
+            "answers": [
+              "G"
+            ],
+            "explanation": "Paragraph 4: 'their best ideas came not while they were working hard at a problem, but during idle moments'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Complete the sentence with the correct ending, A-G. Scrolling on a phone for a long period ...",
+            "options": [
+              {
+                "key": "A",
+                "text": "is linked to a variety of damaging behaviours."
+              },
+              {
+                "key": "B",
+                "text": "can leave people more unsettled than before."
+              },
+              {
+                "key": "C",
+                "text": "should be shorter than they were in the past."
+              },
+              {
+                "key": "D",
+                "text": "is enjoyable rather than uncomfortable."
+              },
+              {
+                "key": "E",
+                "text": "should take responsibility for making activities meaningful."
+              },
+              {
+                "key": "F",
+                "text": "always improves performance in creativity tests."
+              },
+              {
+                "key": "G",
+                "text": "arrived when they were not actively working on a problem."
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Paragraph 5: people finish 'feeling more restless than when they began'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Complete the sentence with the correct ending, A-G. Chronic boredom ...",
+            "options": [
+              {
+                "key": "A",
+                "text": "is linked to a variety of damaging behaviours."
+              },
+              {
+                "key": "B",
+                "text": "can leave people more unsettled than before."
+              },
+              {
+                "key": "C",
+                "text": "should be shorter than they were in the past."
+              },
+              {
+                "key": "D",
+                "text": "is enjoyable rather than uncomfortable."
+              },
+              {
+                "key": "E",
+                "text": "should take responsibility for making activities meaningful."
+              },
+              {
+                "key": "F",
+                "text": "always improves performance in creativity tests."
+              },
+              {
+                "key": "G",
+                "text": "arrived when they were not actively working on a problem."
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "Paragraph 7: 'chronic boredom is associated with a range of harmful behaviours'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Complete the sentence with the correct ending, A-G. According to the writer, employers and schools ...",
+            "options": [
+              {
+                "key": "A",
+                "text": "is linked to a variety of damaging behaviours."
+              },
+              {
+                "key": "B",
+                "text": "can leave people more unsettled than before."
+              },
+              {
+                "key": "C",
+                "text": "should be shorter than they were in the past."
+              },
+              {
+                "key": "D",
+                "text": "is enjoyable rather than uncomfortable."
+              },
+              {
+                "key": "E",
+                "text": "should take responsibility for making activities meaningful."
+              },
+              {
+                "key": "F",
+                "text": "always improves performance in creativity tests."
+              },
+              {
+                "key": "G",
+                "text": "arrived when they were not actively working on a problem."
+              }
+            ],
+            "answers": [
+              "E"
+            ],
+            "explanation": "Paragraph 7: 'Employers and schools have a genuine responsibility to make work and study meaningful.'"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "General Training Reading Practice Test 1",
+    "test_type": "general",
+    "duration_minutes": 60,
+    "sections": [
+      {
+        "title": "Westfield Community Noticeboard",
+        "instructions": "Read the notices below and answer Questions 1-13. For Questions 1-7, choose the correct notice, A-F. You may use any letter more than once. For Questions 8-13, do the following statements agree with the information given in the passage? Write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.",
+        "body": "WESTFIELD COMMUNITY NOTICEBOARD\n\nA  Beginner Swimming for Adults\nNever learned to swim? Our friendly instructors offer small-group lessons for complete beginners aged 18 and over. Classes run on Tuesday and Thursday evenings from 7 to 8 pm at Westfield Leisure Centre. A course of eight lessons costs £64, payable in advance. Swimming caps must be worn and can be bought at reception for £3. Places are limited to six people per group, so early booking is recommended.\n\nB  Computer Skills for Everyone\nLearn how to send emails, shop safely online and make video calls with family. This free course, funded by the local council, is held in the Westfield Library meeting room every Monday from 10 am to 12 noon. Laptops are provided, but you are welcome to bring your own device. No previous experience is needed. To register, speak to any member of library staff.\n\nC  Second-hand Furniture Sale\nMoving abroad and must sell everything! Includes a six-seater dining table, two single beds with nearly new mattresses, a bookcase and various kitchen items. All in good condition. Buyers must collect - I am unable to deliver. Viewing on Saturday 14 June only, 9 am to 4 pm, at 22 Elm Road. Cash or bank transfer accepted.\n\nD  Westfield Walking Group\nJoin us for a relaxed walk every Sunday morning, meeting at 9.30 am outside the railway station. Walks last around two hours and usually finish at a café. Suitable for all fitness levels, though we recommend comfortable shoes. Dogs are welcome if kept on a lead. There is no charge and no need to book - just turn up!\n\nE  Conversational Spanish\nPlanning a holiday or simply want to improve your language skills? Join our evening classes for learners who already know the basics. Classes take place on Wednesdays at Westfield College, 6.30-8.30 pm, for ten weeks starting 4 September. The fee is £95, or £70 for students and people over 65. A textbook is included in the price.\n\nF  Lost: Silver Bracelet\nLost on Friday afternoon somewhere between the High Street post office and the bus station. The bracelet has great sentimental value as it belonged to my grandmother. A reward is offered for its return. Please call Amara on 07700 900482 or hand it in at the post office counter.",
+        "questions": [
+          {
+            "type": "matching",
+            "prompt": "Look at the six notices, A-F. Which notice mentions the following? an activity that is free and does not need to be booked",
+            "options": [
+              {
+                "key": "A",
+                "text": "Notice A"
+              },
+              {
+                "key": "B",
+                "text": "Notice B"
+              },
+              {
+                "key": "C",
+                "text": "Notice C"
+              },
+              {
+                "key": "D",
+                "text": "Notice D"
+              },
+              {
+                "key": "E",
+                "text": "Notice E"
+              },
+              {
+                "key": "F",
+                "text": "Notice F"
+              }
+            ],
+            "answers": [
+              "D"
+            ],
+            "explanation": "Notice D: 'There is no charge and no need to book'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Look at the six notices, A-F. Which notice mentions the following? equipment that is provided, although people may bring their own",
+            "options": [
+              {
+                "key": "A",
+                "text": "Notice A"
+              },
+              {
+                "key": "B",
+                "text": "Notice B"
+              },
+              {
+                "key": "C",
+                "text": "Notice C"
+              },
+              {
+                "key": "D",
+                "text": "Notice D"
+              },
+              {
+                "key": "E",
+                "text": "Notice E"
+              },
+              {
+                "key": "F",
+                "text": "Notice F"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Notice B: 'Laptops are provided, but you are welcome to bring your own device'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Look at the six notices, A-F. Which notice mentions the following? people having to transport items themselves",
+            "options": [
+              {
+                "key": "A",
+                "text": "Notice A"
+              },
+              {
+                "key": "B",
+                "text": "Notice B"
+              },
+              {
+                "key": "C",
+                "text": "Notice C"
+              },
+              {
+                "key": "D",
+                "text": "Notice D"
+              },
+              {
+                "key": "E",
+                "text": "Notice E"
+              },
+              {
+                "key": "F",
+                "text": "Notice F"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Notice C: 'Buyers must collect - I am unable to deliver'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Look at the six notices, A-F. Which notice mentions the following? a lower price for older people",
+            "options": [
+              {
+                "key": "A",
+                "text": "Notice A"
+              },
+              {
+                "key": "B",
+                "text": "Notice B"
+              },
+              {
+                "key": "C",
+                "text": "Notice C"
+              },
+              {
+                "key": "D",
+                "text": "Notice D"
+              },
+              {
+                "key": "E",
+                "text": "Notice E"
+              },
+              {
+                "key": "F",
+                "text": "Notice F"
+              }
+            ],
+            "answers": [
+              "E"
+            ],
+            "explanation": "Notice E: '£70 for students and people over 65'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Look at the six notices, A-F. Which notice mentions the following? an extra item that participants must buy",
+            "options": [
+              {
+                "key": "A",
+                "text": "Notice A"
+              },
+              {
+                "key": "B",
+                "text": "Notice B"
+              },
+              {
+                "key": "C",
+                "text": "Notice C"
+              },
+              {
+                "key": "D",
+                "text": "Notice D"
+              },
+              {
+                "key": "E",
+                "text": "Notice E"
+              },
+              {
+                "key": "F",
+                "text": "Notice F"
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "Notice A: 'Swimming caps must be worn and can be bought at reception for £3'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Look at the six notices, A-F. Which notice mentions the following? a payment for someone who helps",
+            "options": [
+              {
+                "key": "A",
+                "text": "Notice A"
+              },
+              {
+                "key": "B",
+                "text": "Notice B"
+              },
+              {
+                "key": "C",
+                "text": "Notice C"
+              },
+              {
+                "key": "D",
+                "text": "Notice D"
+              },
+              {
+                "key": "E",
+                "text": "Notice E"
+              },
+              {
+                "key": "F",
+                "text": "Notice F"
+              }
+            ],
+            "answers": [
+              "F"
+            ],
+            "explanation": "Notice F: 'A reward is offered for its return'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Look at the six notices, A-F. Which notice mentions the following? an activity that normally ends somewhere people can buy refreshments",
+            "options": [
+              {
+                "key": "A",
+                "text": "Notice A"
+              },
+              {
+                "key": "B",
+                "text": "Notice B"
+              },
+              {
+                "key": "C",
+                "text": "Notice C"
+              },
+              {
+                "key": "D",
+                "text": "Notice D"
+              },
+              {
+                "key": "E",
+                "text": "Notice E"
+              },
+              {
+                "key": "F",
+                "text": "Notice F"
+              }
+            ],
+            "answers": [
+              "D"
+            ],
+            "explanation": "Notice D: 'Walks ... usually finish at a café'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "The adult swimming lessons take place twice a week.",
+            "options": null,
+            "answers": [
+              "TRUE"
+            ],
+            "explanation": "Notice A: 'Classes run on Tuesday and Thursday evenings'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "The computer course is paid for by the library.",
+            "options": null,
+            "answers": [
+              "FALSE"
+            ],
+            "explanation": "Notice B: the course is 'funded by the local council'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "The person selling furniture is leaving the country.",
+            "options": null,
+            "answers": [
+              "TRUE"
+            ],
+            "explanation": "Notice C: 'Moving abroad and must sell everything!'"
+          },
+          {
+            "type": "tfng",
+            "prompt": "The furniture can be viewed on more than one day.",
+            "options": null,
+            "answers": [
+              "FALSE"
+            ],
+            "explanation": "Notice C: 'Viewing on Saturday 14 June only'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "Dogs may join the walking group without any restrictions.",
+            "options": null,
+            "answers": [
+              "FALSE"
+            ],
+            "explanation": "Notice D: 'Dogs are welcome if kept on a lead'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "The Spanish classes are taught by native speakers.",
+            "options": null,
+            "answers": [
+              "NOT GIVEN"
+            ],
+            "explanation": "Notice E gives the day, place, length and fee of the course but says nothing about who teaches it."
+          }
+        ]
+      },
+      {
+        "title": "Greenline Logistics: Leave and Absence Guide",
+        "instructions": "Read the text below and answer Questions 14-26. For Questions 14-20, complete the sentences using NO MORE THAN THREE WORDS AND/OR A NUMBER from the text. For Questions 21-23, choose the correct letter, A, B, C or D. For Questions 24-26, do the following statements agree with the information given in the passage? Write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.",
+        "body": "GREENLINE LOGISTICS: GUIDE TO ANNUAL LEAVE AND ABSENCE FOR NEW STAFF\n\nAnnual leave entitlement\nAll full-time employees are entitled to 25 days of paid annual leave per year, in addition to public holidays. Part-time staff receive an entitlement calculated in proportion to the hours they work. The leave year runs from 1 April to 31 March. During your first year with the company, your entitlement will be adjusted according to the date you joined. After five years of continuous service, you will receive two additional days of leave each year.\n\nBooking leave\nAll requests for leave must be made through the online staff portal, not by email or in person. Your line manager will normally respond within three working days. For periods of more than one week, you should submit your request at least four weeks in advance. Please be aware that during our busiest period, from mid-November to the end of December, no more than two members of any team may be on leave at the same time, and requests will be dealt with in the order they are received.\n\nCarrying over leave\nWe encourage all staff to take their full entitlement during the leave year. However, up to five unused days may be carried over into the following year, provided they are used by the end of June. Any days not taken by then will be lost. In exceptional circumstances, such as long-term illness, this limit may be extended with the approval of the Human Resources department.\n\nReporting sickness\nIf you are unable to come to work because of illness, you must telephone your line manager before 9 am on the first day of absence, or as soon as possible if you work an early shift. A text message or email is not acceptable unless you are unable to speak. You should explain the nature of your illness and give an indication of when you expect to return.\n\nFor absences of up to seven calendar days, you will need to complete a self-certification form on the staff portal when you return to work. If you are absent for more than seven days, you must provide a fit note from a doctor. Employees who are absent on more than three separate occasions within a six-month period will be invited to an informal meeting with their manager to discuss whether any support is needed.\n\nOther types of leave\nIn addition to annual leave, the company offers up to three days of paid compassionate leave following the death of a close family member. Staff who are called for jury service should inform their manager immediately and provide a copy of the official letter. Employees may also request unpaid leave for personal reasons; such requests are considered individually and are not guaranteed.\n\nQuestions\nIf you have any questions about your leave entitlement, please contact the HR team on extension 2140, or visit the HR office on the second floor, which is open from 10 am to 4 pm, Monday to Friday.",
+        "questions": [
+          {
+            "type": "gap",
+            "prompt": "Leave requests must be submitted through the online ______. Write NO MORE THAN THREE WORDS AND/OR A NUMBER from the text.",
+            "options": null,
+            "answers": [
+              "staff portal"
+            ],
+            "explanation": "Booking leave: 'All requests for leave must be made through the online staff portal'."
+          },
+          {
+            "type": "gap",
+            "prompt": "A line manager will usually reply to a leave request within ______. Write NO MORE THAN THREE WORDS AND/OR A NUMBER from the text.",
+            "options": null,
+            "answers": [
+              "three working days",
+              "3 working days"
+            ],
+            "explanation": "Booking leave: 'Your line manager will normally respond within three working days'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Requests for more than one week of leave should be made at least ______ in advance. Write NO MORE THAN THREE WORDS AND/OR A NUMBER from the text.",
+            "options": null,
+            "answers": [
+              "four weeks",
+              "4 weeks"
+            ],
+            "explanation": "Booking leave: 'you should submit your request at least four weeks in advance'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Any leave carried over must be used by the end of ______. Write NO MORE THAN THREE WORDS AND/OR A NUMBER from the text.",
+            "options": null,
+            "answers": [
+              "June"
+            ],
+            "explanation": "Carrying over leave: 'provided they are used by the end of June'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Staff who are ill must phone their line manager before ______ on the first day of absence. Write NO MORE THAN THREE WORDS AND/OR A NUMBER from the text.",
+            "options": null,
+            "answers": [
+              "9 am",
+              "9am",
+              "nine am"
+            ],
+            "explanation": "Reporting sickness: 'you must telephone your line manager before 9 am on the first day of absence'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Employees who are absent for more than seven days must provide a ______ from a doctor. Write NO MORE THAN THREE WORDS AND/OR A NUMBER from the text.",
+            "options": null,
+            "answers": [
+              "fit note"
+            ],
+            "explanation": "Reporting sickness: 'you must provide a fit note from a doctor'."
+          },
+          {
+            "type": "gap",
+            "prompt": "After the death of a close family member, staff can take up to three days of paid ______. Write NO MORE THAN THREE WORDS AND/OR A NUMBER from the text.",
+            "options": null,
+            "answers": [
+              "compassionate leave"
+            ],
+            "explanation": "Other types of leave: 'up to three days of paid compassionate leave following the death of a close family member'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What do employees receive after five years of continuous service?",
+            "options": [
+              {
+                "key": "A",
+                "text": "The right to carry over ten days of leave."
+              },
+              {
+                "key": "B",
+                "text": "Two extra days of annual leave per year."
+              },
+              {
+                "key": "C",
+                "text": "Priority when booking leave in December."
+              },
+              {
+                "key": "D",
+                "text": "Additional paid compassionate leave."
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Annual leave entitlement: 'After five years of continuous service, you will receive two additional days of leave each year'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What happens between mid-November and the end of December?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Requests are handled in order of arrival, and only two team members may be away at once."
+              },
+              {
+                "key": "B",
+                "text": "No annual leave can be taken by any member of staff."
+              },
+              {
+                "key": "C",
+                "text": "Leave must be requested by email instead of online."
+              },
+              {
+                "key": "D",
+                "text": "Managers must respond to requests within one working day."
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "Booking leave: 'no more than two members of any team may be on leave at the same time, and requests will be dealt with in the order they are received'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "An employee who is absent on four separate occasions within six months will",
+            "options": [
+              {
+                "key": "A",
+                "text": "lose part of their annual leave."
+              },
+              {
+                "key": "B",
+                "text": "have to provide a doctor's note for each absence."
+              },
+              {
+                "key": "C",
+                "text": "be invited to an informal meeting with their manager."
+              },
+              {
+                "key": "D",
+                "text": "be reported to the Human Resources department."
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Reporting sickness: staff absent 'on more than three separate occasions within a six-month period will be invited to an informal meeting with their manager'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "Employees can normally report sickness by sending a text message.",
+            "options": null,
+            "answers": [
+              "FALSE"
+            ],
+            "explanation": "Reporting sickness: 'A text message or email is not acceptable unless you are unable to speak'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "The company's leave year begins in April.",
+            "options": null,
+            "answers": [
+              "TRUE"
+            ],
+            "explanation": "Annual leave entitlement: 'The leave year runs from 1 April to 31 March'."
+          },
+          {
+            "type": "tfng",
+            "prompt": "Staff on jury service continue to receive their full salary from the company.",
+            "options": null,
+            "answers": [
+              "NOT GIVEN"
+            ],
+            "explanation": "Other types of leave: staff must inform their manager and provide the official letter, but nothing is said about pay."
+          }
+        ]
+      },
+      {
+        "title": "Growing More Than Vegetables",
+        "instructions": "Read the passage below and answer Questions 27-40. The passage has seven paragraphs, A-G.",
+        "body": "A. On a narrow strip of land between a railway line and a row of houses, a group of neighbours meets every Saturday morning. They bring tools, seedlings and flasks of tea, and spend a few hours weeding, watering and harvesting vegetables from raised beds they built themselves. Five years ago the site was a dumping ground for old tyres and broken furniture. Today it produces tomatoes, beans, spinach and herbs for more than thirty households, and has become, in the words of one member, 'the closest thing this street has to a village square'.\n\nB. Scenes like this are increasingly common in cities around the world. Community gardens - shared plots of land cultivated collectively by local residents - are not new. In many countries they first became popular during periods of hardship, when food was scarce and every available piece of land was put to use. What is different about the current revival is that most participants are not growing food out of necessity. Instead, they mention a mixture of reasons: a desire for fresh produce, an interest in the environment, the chance to get outdoors, and, above all, the opportunity to meet their neighbours.\n\nC. That last point is significant. Urban life can be surprisingly lonely. People may live for years in the same building without learning the names of those next door, and long working hours and frequent moves make it hard to build lasting connections. Gardens offer a reason to gather that does not depend on age, income or background. Members often say that working side by side on a shared task makes conversation easier than it would be at a formal social event. Several city councils now regard community gardens as a low-cost way to strengthen local ties, and some provide small grants to help new groups get started.\n\nD. There are health benefits too. Gardening involves a surprising amount of physical activity - digging, carrying and bending - but at a pace most people can manage, whatever their level of fitness. Doctors in some areas have begun to recommend gardening to patients recovering from illness or suffering from stress, a practice sometimes called 'green prescribing'. Being around plants and fresh air appears to improve mood, and people who grow their own vegetables tend to eat more of them. This is particularly true of children, who are often more willing to try a food they have watched grow.\n\nE. Running a community garden is not always easy, however. The most common problem is access to land. In crowded cities, open space is valuable, and many gardens operate on temporary agreements that allow the landowner to take back the site at short notice. Groups that have spent years improving the soil may suddenly find their plot sold for development. Water can also be an issue, as not every site has a tap, and carrying water by hand in hot weather quickly becomes exhausting. Finally, gardens depend heavily on a small number of committed volunteers; when these key people move away or lose interest, projects can quickly fall apart.\n\nF. Successful groups have found various ways of dealing with these challenges. Some have negotiated long-term leases with councils or housing associations, giving them the security to invest in permanent features such as sheds and paths. Others collect rainwater from nearby roofs in large tanks. To avoid relying on a few individuals, many gardens now share responsibilities through a rota, so that each member takes charge of a particular task - watering, composting or organising events - for a few weeks at a time. Regular open days, when the public is invited to visit, help to attract new members and keep the garden visible in the community.\n\nG. Community gardens will never feed a city on their own; the amount of food they produce is small compared with commercial farming. But to judge them only by the size of their harvest is to miss the point. Their real value lies in what they grow beyond the vegetables: friendships, practical skills, and a sense that ordinary residents can take an unloved corner of their neighbourhood and turn it into something worth sharing.",
+        "questions": [
+          {
+            "type": "matching",
+            "prompt": "Which paragraph, A-G, contains the following information? A description of what a site was like before it became a garden.",
+            "options": [
+              {
+                "key": "A",
+                "text": "Paragraph A"
+              },
+              {
+                "key": "B",
+                "text": "Paragraph B"
+              },
+              {
+                "key": "C",
+                "text": "Paragraph C"
+              },
+              {
+                "key": "D",
+                "text": "Paragraph D"
+              },
+              {
+                "key": "E",
+                "text": "Paragraph E"
+              },
+              {
+                "key": "F",
+                "text": "Paragraph F"
+              },
+              {
+                "key": "G",
+                "text": "Paragraph G"
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "Paragraph A: 'Five years ago the site was a dumping ground for old tyres and broken furniture'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Which paragraph, A-G, contains the following information? A reference to how gardens were used during difficult times in the past.",
+            "options": [
+              {
+                "key": "A",
+                "text": "Paragraph A"
+              },
+              {
+                "key": "B",
+                "text": "Paragraph B"
+              },
+              {
+                "key": "C",
+                "text": "Paragraph C"
+              },
+              {
+                "key": "D",
+                "text": "Paragraph D"
+              },
+              {
+                "key": "E",
+                "text": "Paragraph E"
+              },
+              {
+                "key": "F",
+                "text": "Paragraph F"
+              },
+              {
+                "key": "G",
+                "text": "Paragraph G"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Paragraph B: 'they first became popular during periods of hardship, when food was scarce'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Which paragraph, A-G, contains the following information? An explanation of why gardening is suitable for people of different fitness levels.",
+            "options": [
+              {
+                "key": "A",
+                "text": "Paragraph A"
+              },
+              {
+                "key": "B",
+                "text": "Paragraph B"
+              },
+              {
+                "key": "C",
+                "text": "Paragraph C"
+              },
+              {
+                "key": "D",
+                "text": "Paragraph D"
+              },
+              {
+                "key": "E",
+                "text": "Paragraph E"
+              },
+              {
+                "key": "F",
+                "text": "Paragraph F"
+              },
+              {
+                "key": "G",
+                "text": "Paragraph G"
+              }
+            ],
+            "answers": [
+              "D"
+            ],
+            "explanation": "Paragraph D: gardening involves physical activity 'at a pace most people can manage, whatever their level of fitness'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Which paragraph, A-G, contains the following information? The risk that a group may lose the land it uses.",
+            "options": [
+              {
+                "key": "A",
+                "text": "Paragraph A"
+              },
+              {
+                "key": "B",
+                "text": "Paragraph B"
+              },
+              {
+                "key": "C",
+                "text": "Paragraph C"
+              },
+              {
+                "key": "D",
+                "text": "Paragraph D"
+              },
+              {
+                "key": "E",
+                "text": "Paragraph E"
+              },
+              {
+                "key": "F",
+                "text": "Paragraph F"
+              },
+              {
+                "key": "G",
+                "text": "Paragraph G"
+              }
+            ],
+            "answers": [
+              "E"
+            ],
+            "explanation": "Paragraph E: temporary agreements 'allow the landowner to take back the site at short notice'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Which paragraph, A-G, contains the following information? A way of dividing work among members of a garden.",
+            "options": [
+              {
+                "key": "A",
+                "text": "Paragraph A"
+              },
+              {
+                "key": "B",
+                "text": "Paragraph B"
+              },
+              {
+                "key": "C",
+                "text": "Paragraph C"
+              },
+              {
+                "key": "D",
+                "text": "Paragraph D"
+              },
+              {
+                "key": "E",
+                "text": "Paragraph E"
+              },
+              {
+                "key": "F",
+                "text": "Paragraph F"
+              },
+              {
+                "key": "G",
+                "text": "Paragraph G"
+              }
+            ],
+            "answers": [
+              "F"
+            ],
+            "explanation": "Paragraph F: 'many gardens now share responsibilities through a rota'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Some councils offer ______ to help new garden groups get started. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "small grants"
+            ],
+            "explanation": "Paragraph C: 'some provide small grants to help new groups get started'."
+          },
+          {
+            "type": "gap",
+            "prompt": "When doctors recommend gardening to patients, this is sometimes called ______. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "green prescribing"
+            ],
+            "explanation": "Paragraph D: 'a practice sometimes called green prescribing'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Some gardens store rainwater from nearby roofs in large ______. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "tanks"
+            ],
+            "explanation": "Paragraph F: 'Others collect rainwater from nearby roofs in large tanks'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Gardens hold regular ______ to attract new members. Write NO MORE THAN TWO WORDS from the passage.",
+            "options": null,
+            "answers": [
+              "open days"
+            ],
+            "explanation": "Paragraph F: 'Regular open days, when the public is invited to visit, help to attract new members'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "According to paragraph B, what is different about the current interest in community gardens?",
+            "options": [
+              {
+                "key": "A",
+                "text": "The gardens are much larger than in the past."
+              },
+              {
+                "key": "B",
+                "text": "Governments are now paying for most gardens."
+              },
+              {
+                "key": "C",
+                "text": "Most people involved do not need to grow their own food."
+              },
+              {
+                "key": "D",
+                "text": "Gardening has become popular mainly with older people."
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Paragraph B: 'most participants are not growing food out of necessity'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "Why do members find it easier to talk to each other in the garden?",
+            "options": [
+              {
+                "key": "A",
+                "text": "They are working together on a shared task."
+              },
+              {
+                "key": "B",
+                "text": "They come from similar backgrounds."
+              },
+              {
+                "key": "C",
+                "text": "They already live in the same building."
+              },
+              {
+                "key": "D",
+                "text": "The garden organises formal social events."
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "Paragraph C: 'working side by side on a shared task makes conversation easier'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What does the writer say about children who watch vegetables grow?",
+            "options": [
+              {
+                "key": "A",
+                "text": "They become interested in studying science."
+              },
+              {
+                "key": "B",
+                "text": "They get more exercise than adults."
+              },
+              {
+                "key": "C",
+                "text": "They are more willing to eat those vegetables."
+              },
+              {
+                "key": "D",
+                "text": "They prefer them to fruit."
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Paragraph D: children 'are often more willing to try a food they have watched grow'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What do long-term leases allow garden groups to do?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Sell their produce to local shops."
+              },
+              {
+                "key": "B",
+                "text": "Build permanent features on the site."
+              },
+              {
+                "key": "C",
+                "text": "Manage without volunteers."
+              },
+              {
+                "key": "D",
+                "text": "Connect the site to a water supply."
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Paragraph F: leases give groups 'the security to invest in permanent features such as sheds and paths'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What is the writer's main point in paragraph G?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Community gardens could one day replace commercial farming."
+              },
+              {
+                "key": "B",
+                "text": "Gardens should concentrate on increasing their harvests."
+              },
+              {
+                "key": "C",
+                "text": "The value of community gardens goes beyond the food they produce."
+              },
+              {
+                "key": "D",
+                "text": "Most community gardens are too small to be useful."
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Paragraph G: 'Their real value lies in what they grow beyond the vegetables'."
+          }
+        ]
+      }
+    ]
+  }
+]

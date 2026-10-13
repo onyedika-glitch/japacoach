@@ -1,0 +1,72 @@
+# Japa Coach production stack, sized for a 1 vCPU / 4 GB VPS (e.g. Hostinger KVM 1).
+# The database is Supabase (configured in api/.env), so no Postgres container runs here.
+x-laravel: &laravel
+  build: ./api
+  image: japa-api
+  env_file: ./api/.env
+  restart: unless-stopped
+  volumes:
+    - api-storage:/var/www/api/storage
+    - public-media:/var/www/api/storage/app/public
+
+services:
+  app:
+    <<: *laravel
+    environment:
+      RUN_MIGRATIONS: "true"
+    mem_limit: 512m
+
+  # AI scoring, emails and content generation.
+  queue:
+    <<: *laravel
+    command: php artisan queue:work --queue=default --tries=3 --timeout=320 --max-time=3600 --memory=192 --sleep=3
+    mem_limit: 256m
+
+  # Transcription and text-to-speech: one job at a time on the single CPU.
+  speech-queue:
+    <<: *laravel
+    command: php artisan queue:work --queue=speech --tries=3 --timeout=950 --max-time=3600 --memory=192 --sleep=2
+    mem_limit: 256m
+
+  scheduler:
+    <<: *laravel
+    command: php artisan schedule:work
+    mem_limit: 192m
+
+  speech:
+    build: ./speech
+    image: japa-speech
+    restart: unless-stopped
+    environment:
+      SPEECH_SERVICE_TOKEN: ${SPEECH_SERVICE_TOKEN:?Set SPEECH_SERVICE_TOKEN in .env}
+      WHISPER_MODEL: ${WHISPER_MODEL:-base.en}
+      WHISPER_THREADS: ${WHISPER_THREADS:-1}
+    volumes:
+      - whisper-cache:/cache
+    mem_limit: 1600m
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/caddy/Dockerfile
+    image: japa-web
+    restart: unless-stopped
+    depends_on:
+      - app
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in .env}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - public-media:/var/www/api/storage/app/public:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    mem_limit: 128m
+
+volumes:
+  api-storage:
+  public-media:
+  whisper-cache:
+  caddy-data:
+  caddy-config:

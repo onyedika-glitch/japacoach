@@ -1,0 +1,29 @@
+# Japa Coach monorepo. api/ and frontend/ also have their own .gitignore files.
+
+# Secrets: never commit real keys (the *.example files are committed instead)
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+# Dependencies and build output
+node_modules/
+frontend/dist/
+
+# Python (speech service)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Downloaded AI model files (Docker downloads these during the build)
+*.onnx
+voices-*.bin
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

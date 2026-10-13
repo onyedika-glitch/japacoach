@@ -1,0 +1,30 @@
+# Local overrides: run the full stack on http://localhost:8088 (no domain, no HTTPS).
+# Used by ./dev.sh together with docker-compose.yml.
+x-local-env: &local-env
+  APP_ENV: local
+  APP_DEBUG: "true"
+  APP_URL: http://localhost:8088
+  FRONTEND_URL: http://localhost:8088
+  SANCTUM_STATEFUL_DOMAINS: localhost:8088
+  SESSION_SECURE_COOKIE: "false"
+  SESSION_DOMAIN: ""
+  GOOGLE_REDIRECT_URI: http://localhost:8088/auth/google/callback
+  SPEECH_SERVICE_URL: http://speech:8100
+  SPEECH_SERVICE_TOKEN: ${SPEECH_SERVICE_TOKEN}
+
+services:
+  app:
+    environment:
+      <<: *local-env
+      RUN_MIGRATIONS: "true"
+  queue:
+    environment: *local-env
+  speech-queue:
+    environment: *local-env
+  scheduler:
+    environment: *local-env
+  web:
+    environment:
+      DOMAIN: ":80"
+    ports: !override
+      - "8088:80"

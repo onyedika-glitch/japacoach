@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-figtree: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  --font-grotesk: 'Space Grotesk', 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #01b8c6;
+  --color-brand-dark: #00a0ad;
+  --color-brand-50: #f2fdff;
+  --color-brand-100: #d9f7fa;
+  --color-ink: #1d2b34;
+  --color-muted: #6a767d;
+  --color-accent: #f5a524;
+  --color-good: #16a34a;
+  --color-bad: #dc2626;
+
+  --animate-spin-slow: spin 18s linear infinite;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background: #fff;
+    color: var(--color-ink);
+    font-family: var(--font-figtree);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 h-12 font-semibold text-base transition disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-brand text-white hover:bg-brand-dark;
+  }
+  .btn-secondary {
+    @apply bg-white text-ink border border-gray-200 shadow-sm hover:bg-gray-50;
+  }
+  .btn-ghost {
+    @apply text-ink hover:bg-gray-100;
+  }
+  .btn-sm {
+    @apply h-9 px-3 text-sm rounded-lg;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-[0_15px_30px_rgba(0,0,0,0.04)];
+  }
+  .input {
+    @apply w-full h-12 rounded-xl border border-gray-200 bg-white px-4 text-base outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20;
+  }
+  .label {
+    @apply block text-sm font-medium text-ink mb-1.5;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+  .page-title {
+    @apply font-grotesk text-2xl sm:text-3xl font-bold text-ink;
+  }
+  .section-title {
+    @apply font-grotesk text-lg font-semibold text-ink;
+  }
+  .bg-grid {
+    background-image: url('@/assets/grid-bg.svg');
+  }
+}

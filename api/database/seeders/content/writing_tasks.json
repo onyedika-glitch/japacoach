@@ -1,0 +1,244 @@
+[
+  {
+    "task_number": 1,
+    "test_type": "academic",
+    "title": "Household spending on energy in four countries",
+    "prompt": "The bar chart below shows the average percentage of household income spent on energy in four countries in 2005 and 2020.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+    "visual": {
+      "type": "bar",
+      "title": "Average share of household income spent on energy, 2005 and 2020",
+      "unit": "%",
+      "labels": [
+        "Country A",
+        "Country B",
+        "Country C",
+        "Country D"
+      ],
+      "datasets": [
+        {
+          "label": "2005",
+          "data": [
+            6.5,
+            9.0,
+            4.2,
+            11.5
+          ]
+        },
+        {
+          "label": "2020",
+          "data": [
+            8.1,
+            7.4,
+            4.0,
+            14.2
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "task_number": 1,
+    "test_type": "academic",
+    "title": "Visitors to three museums",
+    "prompt": "The line graph below shows the number of visitors to three museums in a capital city between 2012 and 2022.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+    "visual": {
+      "type": "line",
+      "title": "Annual visitors to three city museums, 2012-2022",
+      "unit": "thousands of visitors",
+      "labels": [
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2020",
+        "2022"
+      ],
+      "datasets": [
+        {
+          "label": "Science Museum",
+          "data": [
+            420,
+            460,
+            510,
+            590,
+            180,
+            560
+          ]
+        },
+        {
+          "label": "History Museum",
+          "data": [
+            610,
+            590,
+            570,
+            540,
+            150,
+            470
+          ]
+        },
+        {
+          "label": "Modern Art Gallery",
+          "data": [
+            150,
+            210,
+            260,
+            330,
+            120,
+            390
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "task_number": 1,
+    "test_type": "academic",
+    "title": "How university students spend a typical weekday",
+    "prompt": "The pie chart below shows how full-time university students in one country spend a typical 24-hour weekday.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+    "visual": {
+      "type": "pie",
+      "title": "Average use of time by full-time university students on a weekday",
+      "unit": "% of 24 hours",
+      "labels": [
+        "Sleeping",
+        "Lectures and classes",
+        "Independent study",
+        "Paid work",
+        "Travel",
+        "Leisure and social",
+        "Other"
+      ],
+      "datasets": [
+        {
+          "label": "Share of day",
+          "data": [
+            32,
+            13,
+            12,
+            10,
+            6,
+            19,
+            8
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "task_number": 1,
+    "test_type": "academic",
+    "title": "Methods of commuting in three cities",
+    "prompt": "The table below shows the percentage of workers using different methods of transport to travel to work in three cities in 2023.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+    "visual": {
+      "type": "table",
+      "title": "Main method of travel to work, 2023 (% of workers)",
+      "columns": [
+        "Method",
+        "City X",
+        "City Y",
+        "City Z"
+      ],
+      "rows": [
+        [
+          "Private car",
+          48,
+          22,
+          31
+        ],
+        [
+          "Bus",
+          21,
+          30,
+          18
+        ],
+        [
+          "Train / metro",
+          9,
+          34,
+          12
+        ],
+        [
+          "Motorcycle",
+          4,
+          2,
+          23
+        ],
+        [
+          "Bicycle",
+          6,
+          7,
+          3
+        ],
+        [
+          "Walking",
+          12,
+          5,
+          13
+        ]
+      ]
+    }
+  },
+  {
+    "task_number": 1,
+    "test_type": "general",
+    "title": "Letter to a landlord about a problem",
+    "prompt": "You are renting a flat and there has been a problem with the water supply for the past two weeks. You have already told the building manager, but nothing has been done.\n\nWrite a letter to your landlord. In your letter\n\n- describe the problem with the water supply\n- explain how it is affecting you\n- say what you would like the landlord to do\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses at the top of your letter.\n\nBegin your letter as follows:\n\nDear Mr Adeyemi,",
+    "visual": null
+  },
+  {
+    "task_number": 1,
+    "test_type": "general",
+    "title": "Letter to a friend about a visit",
+    "prompt": "A friend from another country is planning to visit your city for a week next month and has asked for your advice.\n\nWrite a letter to your friend. In your letter\n\n- suggest the best places to stay\n- recommend some things to see and do\n- give advice about getting around the city\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses at the top of your letter.\n\nBegin your letter as follows:\n\nDear ...,",
+    "visual": null
+  },
+  {
+    "task_number": 1,
+    "test_type": "general",
+    "title": "Letter to a manager requesting time off",
+    "prompt": "You would like to take a short course which is related to your job. The course takes place on two weekday afternoons each week for three months.\n\nWrite a letter to your manager. In your letter\n\n- describe the course\n- explain how it would benefit your work\n- suggest how your duties could be covered while you are away\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses at the top of your letter.\n\nBegin your letter as follows:\n\nDear Ms Collins,",
+    "visual": null
+  },
+  {
+    "task_number": 2,
+    "test_type": "both",
+    "title": "Opinion: Free university education",
+    "prompt": "Some people believe that university education should be free for all students, paid for by the government.\n\nTo what extent do you agree or disagree?\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+    "visual": null
+  },
+  {
+    "task_number": 2,
+    "test_type": "both",
+    "title": "Discuss both views: Working from home",
+    "prompt": "Some people think that working from home is better for employees and businesses. Others believe that people work more effectively when they are together in an office.\n\nDiscuss both these views and give your own opinion.\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+    "visual": null
+  },
+  {
+    "task_number": 2,
+    "test_type": "both",
+    "title": "Advantages and disadvantages: Studying abroad",
+    "prompt": "Increasing numbers of young people choose to complete their higher education in a foreign country.\n\nDo the advantages of this outweigh the disadvantages?\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+    "visual": null
+  },
+  {
+    "task_number": 2,
+    "test_type": "both",
+    "title": "Problem and solution: Traffic congestion",
+    "prompt": "In many large cities, traffic congestion is becoming a serious problem.\n\nWhat are the main causes of this problem, and what measures could be taken to solve it?\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+    "visual": null
+  },
+  {
+    "task_number": 2,
+    "test_type": "both",
+    "title": "Two-part question: Online shopping",
+    "prompt": "Nowadays, many people buy most of their goods online rather than in local shops and markets.\n\nWhy is this happening? Is this a positive or negative development?\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+    "visual": null
+  },
+  {
+    "task_number": 2,
+    "test_type": "both",
+    "title": "Opinion: Children and household chores",
+    "prompt": "Some people say that children should be required to help with household tasks from a young age, while others think they should spend their free time on studying and play.\n\nDiscuss both these views and give your own opinion.\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+    "visual": null
+  }
+]

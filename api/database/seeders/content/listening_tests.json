@@ -1,0 +1,2357 @@
+[
+  {
+    "title": "Listening Practice Test 1",
+    "test_type": null,
+    "duration_minutes": 30,
+    "sections": [
+      {
+        "title": "Section 1: Hiring a room for a party",
+        "instructions": "Questions 1-10. Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer. For Questions 9 and 10, choose the correct letter, A, B or C.",
+        "script": [
+          {
+            "speaker": "Woman",
+            "text": "Good morning, Hillview Community Hall, Sandra speaking. How can I help you?"
+          },
+          {
+            "speaker": "Man",
+            "text": "Hello. I'm calling because I'd like to hire a room for a family party next month. Is that something you do?"
+          },
+          {
+            "speaker": "Woman",
+            "text": "Yes, of course. We have three rooms available for private hire. Can I start by taking a few details?"
+          },
+          {
+            "speaker": "Man",
+            "text": "Sure."
+          },
+          {
+            "speaker": "Woman",
+            "text": "What's your name, please?"
+          },
+          {
+            "speaker": "Man",
+            "text": "It's David Ogunleye."
+          },
+          {
+            "speaker": "Woman",
+            "text": "Could you spell the surname for me?"
+          },
+          {
+            "speaker": "Man",
+            "text": "Yes, it's O-G-U-N-L-E-Y-E."
+          },
+          {
+            "speaker": "Woman",
+            "text": "O-G-U-N-L-E-Y-E. Thank you, Mr Ogunleye. And is there a phone number we can reach you on?"
+          },
+          {
+            "speaker": "Man",
+            "text": "My mobile is 07946 318205."
+          },
+          {
+            "speaker": "Woman",
+            "text": "07946 318205. Lovely. And what kind of event is it?"
+          },
+          {
+            "speaker": "Man",
+            "text": "It's my mother's seventieth birthday. We're planning a lunch with the family and some of her old friends from church."
+          },
+          {
+            "speaker": "Woman",
+            "text": "How lovely. And what date were you thinking of?"
+          },
+          {
+            "speaker": "Man",
+            "text": "Saturday the 18th of May, if possible. I know it's quite short notice."
+          },
+          {
+            "speaker": "Woman",
+            "text": "Let me just check the calendar. Saturday the 18th... yes, we still have availability that day. How many guests are you expecting?"
+          },
+          {
+            "speaker": "Man",
+            "text": "About sixty, I think. Maybe a few more if my cousins come from Manchester."
+          },
+          {
+            "speaker": "Woman",
+            "text": "Right. In that case the Garden Room would be too small, because it only holds forty. I'd suggest either the Main Hall, which takes up to a hundred and twenty people, or the Lakeside Room, which holds seventy."
+          },
+          {
+            "speaker": "Man",
+            "text": "What's the difference, apart from the size?"
+          },
+          {
+            "speaker": "Woman",
+            "text": "The Main Hall has a stage and a sound system, so it's popular for weddings and dances. The Lakeside Room is smaller, but it has large windows looking over the water and doors that open onto a terrace."
+          },
+          {
+            "speaker": "Man",
+            "text": "The Lakeside Room sounds perfect. My mother loves being outside. How much is it?"
+          },
+          {
+            "speaker": "Woman",
+            "text": "On a Saturday, the Lakeside Room is forty-five pounds an hour. Most people book it for at least four hours."
+          },
+          {
+            "speaker": "Man",
+            "text": "We'd need it from twelve until five, so that's five hours."
+          },
+          {
+            "speaker": "Woman",
+            "text": "That would come to two hundred and twenty-five pounds. There's also a refundable deposit of one hundred pounds, which we return as long as the room is left clean and nothing is damaged."
+          },
+          {
+            "speaker": "Man",
+            "text": "That's fine. What about food? Are we allowed to bring our own?"
+          },
+          {
+            "speaker": "Woman",
+            "text": "You are. Some people use our recommended caterer, but you're welcome to bring your own food. The room has a small kitchen with a fridge and a microwave, but there's no oven, I'm afraid."
+          },
+          {
+            "speaker": "Man",
+            "text": "That's OK. My sisters are cooking, so we'll bring everything ready to serve. Do you provide plates and cutlery?"
+          },
+          {
+            "speaker": "Woman",
+            "text": "We do, and there's no extra charge for those. Tablecloths are extra, though. They're two pounds each."
+          },
+          {
+            "speaker": "Man",
+            "text": "We'll bring our own tablecloths, then. What about decorations? My nieces want to put up balloons and banners."
+          },
+          {
+            "speaker": "Woman",
+            "text": "Decorations are fine, but please don't use anything that sticks to the walls, like tape. There are hooks along the walls that you can hang things from. And candles aren't allowed, I'm afraid, for safety reasons, even on the birthday cake."
+          },
+          {
+            "speaker": "Man",
+            "text": "Oh, that's a shame, but I understand. And parking? Some of the guests are elderly."
+          },
+          {
+            "speaker": "Woman",
+            "text": "There's a car park right behind the building with about thirty spaces, and it's free at weekends. There are also two disabled spaces right next to the entrance."
+          },
+          {
+            "speaker": "Man",
+            "text": "Great. So how do I confirm the booking?"
+          },
+          {
+            "speaker": "Woman",
+            "text": "I'll post a booking form to your home address, and you'll need to pay the deposit within seven days to secure the date. The rest is due two weeks before the event."
+          },
+          {
+            "speaker": "Man",
+            "text": "Can I pay by card?"
+          },
+          {
+            "speaker": "Woman",
+            "text": "Yes, either by card over the phone or by bank transfer."
+          },
+          {
+            "speaker": "Man",
+            "text": "Lovely. Oh, one more thing. What time can we get in to set up?"
+          },
+          {
+            "speaker": "Woman",
+            "text": "The room's booked from twelve, but if nobody is using it before you, we can let you in half an hour early at no extra cost. I'll make a note of that on your booking."
+          },
+          {
+            "speaker": "Man",
+            "text": "That's really kind. Thank you so much for your help."
+          },
+          {
+            "speaker": "Woman",
+            "text": "You're welcome. I hope your mother has a wonderful day."
+          }
+        ],
+        "questions": [
+          {
+            "type": "gap",
+            "prompt": "Name: David ______ Write ONE WORD AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "Ogunleye"
+            ],
+            "explanation": "The man spells his surname: 'O-G-U-N-L-E-Y-E'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Mobile number: ______ Write ONE WORD AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "07946 318205",
+              "07946318205"
+            ],
+            "explanation": "The man says: 'My mobile is 07946 318205.'"
+          },
+          {
+            "type": "gap",
+            "prompt": "Type of event: mother's ______ birthday lunch Write ONE WORD AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "seventieth",
+              "70th"
+            ],
+            "explanation": "The man says: 'It's my mother's seventieth birthday.'"
+          },
+          {
+            "type": "gap",
+            "prompt": "Date: Saturday ______ May Write ONE WORD AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "18th",
+              "18"
+            ],
+            "explanation": "The man says: 'Saturday the 18th of May'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Number of guests: about ______ Write ONE WORD AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "sixty",
+              "60"
+            ],
+            "explanation": "The man says: 'About sixty, I think.'"
+          },
+          {
+            "type": "gap",
+            "prompt": "Room chosen: the ______ Room Write ONE WORD AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "Lakeside"
+            ],
+            "explanation": "The man says: 'The Lakeside Room sounds perfect.'"
+          },
+          {
+            "type": "gap",
+            "prompt": "Cost per hour: £______ Write ONE WORD AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "45",
+              "forty-five"
+            ],
+            "explanation": "The woman says the Lakeside Room is 'forty-five pounds an hour'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Refundable deposit: £______ Write ONE WORD AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "100",
+              "one hundred"
+            ],
+            "explanation": "The woman mentions 'a refundable deposit of one hundred pounds'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "Which of the following does the hall provide free of charge?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Tablecloths"
+              },
+              {
+                "key": "B",
+                "text": "Plates and cutlery"
+              },
+              {
+                "key": "C",
+                "text": "Use of an oven"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "The woman says plates and cutlery are provided with 'no extra charge'; tablecloths cost two pounds each and there is no oven."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What is NOT allowed in the room?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Hanging decorations on hooks"
+              },
+              {
+                "key": "B",
+                "text": "Bringing home-cooked food"
+              },
+              {
+                "key": "C",
+                "text": "Lighting candles"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "The woman says: 'candles aren't allowed, I'm afraid, for safety reasons'."
+          }
+        ]
+      },
+      {
+        "title": "Section 2: Oakridge Heritage Village",
+        "instructions": "Questions 11-20. For Question 11 and Questions 17-20, choose the correct letter, A, B or C. For Questions 12-16, choose the correct activity, A-G, for each place.",
+        "script": [
+          {
+            "speaker": "Guide",
+            "text": "Good morning, everyone, and welcome to Oakridge Heritage Village. My name's Peter, and I'll be giving you a short introduction before you set off to explore on your own. The village is an open-air museum, which means that instead of keeping everything in glass cases, we've rebuilt more than twenty historic buildings from around the region, and you're free to walk in and out of them. Most of them were brought here piece by piece from their original locations, with every brick and beam numbered, and then put back together exactly as they were."
+          },
+          {
+            "speaker": "Guide",
+            "text": "At the moment you're standing in the visitor centre. If you look at the map in your leaflet, you'll see that the village is laid out along one main street, with the river on your left as you walk down it. I'd like to tell you about a few buildings that have something special going on today."
+          },
+          {
+            "speaker": "Guide",
+            "text": "The first building you'll come to is the bakery. It dates from around 1880, and it still has its original brick oven. Our bakers light it at seven every morning, and from about eleven o'clock you can buy bread and buns made to traditional recipes. They tend to sell out by early afternoon, so don't leave it too late."
+          },
+          {
+            "speaker": "Guide",
+            "text": "Further along on the right is the blacksmith's workshop. Our blacksmith, Joe, gives demonstrations there throughout the day, but for safety reasons visitors have to stay behind the rope barrier. Children love watching the sparks, but please keep them close to you. Joe is also happy to answer questions once he's finished working on a piece."
+          },
+          {
+            "speaker": "Guide",
+            "text": "Opposite the blacksmith's you'll find the schoolhouse. This is one of the most popular buildings with families. At half past eleven and again at two o'clock, one of our volunteers dresses up as a Victorian teacher and runs a lesson. Children sit at the old wooden desks and practise writing on slates. Be warned, the teacher is very strict! Adults are welcome to join in too, although there are only thirty seats, so arrive early if you want one."
+          },
+          {
+            "speaker": "Guide",
+            "text": "At the end of the street, beside the river, is the water mill. It's the oldest building on the site, and parts of it are over three hundred years old. The wheel is turning today, and inside you can see how grain was ground into flour. The upper floor of the mill is closed at the moment while we repair the staircase, but the ground floor is open as usual."
+          },
+          {
+            "speaker": "Guide",
+            "text": "Finally, if you cross the small bridge, you'll come to the farmhouse. Here you can try your hand at some traditional crafts, and today we're running a basket-weaving workshop. It's free, but you'll need to pick up a ticket here at the visitor centre, because numbers are limited to twelve per session."
+          },
+          {
+            "speaker": "Guide",
+            "text": "Now, a few practical points. Toilets are located in the visitor centre and behind the farmhouse. If you'd like something to eat, the tea room is next to the bakery and serves hot meals until three. You're also welcome to bring your own food, and there are picnic tables on the grass beside the river. We do ask that you don't feed the animals in the farmyard, as they're on a special diet."
+          },
+          {
+            "speaker": "Guide",
+            "text": "The village closes at five o'clock, but the last entry to the buildings is at half past four, so please plan your visit with that in mind. Photography is allowed everywhere except inside the schoolhouse during lessons, because some of our volunteers prefer not to be photographed. And if you're thinking of coming back, our annual pass costs only twice the price of a single ticket, and you can upgrade today by showing your ticket at the shop."
+          },
+          {
+            "speaker": "Guide",
+            "text": "Right, that's everything from me. Enjoy your visit, and if you have any questions, our staff are all wearing green jackets, so they're easy to spot."
+          }
+        ],
+        "questions": [
+          {
+            "type": "mcq",
+            "prompt": "What does the guide say about most of the buildings in the village?",
+            "options": [
+              {
+                "key": "A",
+                "text": "They are modern copies of historic buildings."
+              },
+              {
+                "key": "B",
+                "text": "They were moved from their original locations."
+              },
+              {
+                "key": "C",
+                "text": "They are still standing where they were first built."
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "The guide says: 'Most of them were brought here piece by piece from their original locations'."
+          },
+          {
+            "type": "matching",
+            "prompt": "What can visitors do at the following place today? Choose the correct letter, A-G. The bakery",
+            "options": [
+              {
+                "key": "A",
+                "text": "see how flour was produced"
+              },
+              {
+                "key": "B",
+                "text": "climb to the upper floor"
+              },
+              {
+                "key": "C",
+                "text": "take part in a lesson"
+              },
+              {
+                "key": "D",
+                "text": "make a basket"
+              },
+              {
+                "key": "E",
+                "text": "buy freshly baked food"
+              },
+              {
+                "key": "F",
+                "text": "feed the animals"
+              },
+              {
+                "key": "G",
+                "text": "watch someone working from a safe distance"
+              }
+            ],
+            "answers": [
+              "E"
+            ],
+            "explanation": "The guide says that at the bakery 'you can buy bread and buns made to traditional recipes'."
+          },
+          {
+            "type": "matching",
+            "prompt": "What can visitors do at the following place today? Choose the correct letter, A-G. The blacksmith's workshop",
+            "options": [
+              {
+                "key": "A",
+                "text": "see how flour was produced"
+              },
+              {
+                "key": "B",
+                "text": "climb to the upper floor"
+              },
+              {
+                "key": "C",
+                "text": "take part in a lesson"
+              },
+              {
+                "key": "D",
+                "text": "make a basket"
+              },
+              {
+                "key": "E",
+                "text": "buy freshly baked food"
+              },
+              {
+                "key": "F",
+                "text": "feed the animals"
+              },
+              {
+                "key": "G",
+                "text": "watch someone working from a safe distance"
+              }
+            ],
+            "answers": [
+              "G"
+            ],
+            "explanation": "The guide says visitors watch demonstrations but 'have to stay behind the rope barrier'."
+          },
+          {
+            "type": "matching",
+            "prompt": "What can visitors do at the following place today? Choose the correct letter, A-G. The schoolhouse",
+            "options": [
+              {
+                "key": "A",
+                "text": "see how flour was produced"
+              },
+              {
+                "key": "B",
+                "text": "climb to the upper floor"
+              },
+              {
+                "key": "C",
+                "text": "take part in a lesson"
+              },
+              {
+                "key": "D",
+                "text": "make a basket"
+              },
+              {
+                "key": "E",
+                "text": "buy freshly baked food"
+              },
+              {
+                "key": "F",
+                "text": "feed the animals"
+              },
+              {
+                "key": "G",
+                "text": "watch someone working from a safe distance"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "The guide says a volunteer 'runs a lesson' and adults are welcome to join in."
+          },
+          {
+            "type": "matching",
+            "prompt": "What can visitors do at the following place today? Choose the correct letter, A-G. The water mill",
+            "options": [
+              {
+                "key": "A",
+                "text": "see how flour was produced"
+              },
+              {
+                "key": "B",
+                "text": "climb to the upper floor"
+              },
+              {
+                "key": "C",
+                "text": "take part in a lesson"
+              },
+              {
+                "key": "D",
+                "text": "make a basket"
+              },
+              {
+                "key": "E",
+                "text": "buy freshly baked food"
+              },
+              {
+                "key": "F",
+                "text": "feed the animals"
+              },
+              {
+                "key": "G",
+                "text": "watch someone working from a safe distance"
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "The guide says 'inside you can see how grain was ground into flour'. The upper floor is closed (B)."
+          },
+          {
+            "type": "matching",
+            "prompt": "What can visitors do at the following place today? Choose the correct letter, A-G. The farmhouse",
+            "options": [
+              {
+                "key": "A",
+                "text": "see how flour was produced"
+              },
+              {
+                "key": "B",
+                "text": "climb to the upper floor"
+              },
+              {
+                "key": "C",
+                "text": "take part in a lesson"
+              },
+              {
+                "key": "D",
+                "text": "make a basket"
+              },
+              {
+                "key": "E",
+                "text": "buy freshly baked food"
+              },
+              {
+                "key": "F",
+                "text": "feed the animals"
+              },
+              {
+                "key": "G",
+                "text": "watch someone working from a safe distance"
+              }
+            ],
+            "answers": [
+              "D"
+            ],
+            "explanation": "The guide says 'today we're running a basket-weaving workshop'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What must visitors do if they want to attend the basket-weaving workshop?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Pay a small fee at the farmhouse"
+              },
+              {
+                "key": "B",
+                "text": "Collect a ticket from the visitor centre"
+              },
+              {
+                "key": "C",
+                "text": "Book in advance online"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "The guide says: 'you'll need to pick up a ticket here at the visitor centre'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "Where can visitors eat food they have brought with them?",
+            "options": [
+              {
+                "key": "A",
+                "text": "In the tea room"
+              },
+              {
+                "key": "B",
+                "text": "On the grass by the river"
+              },
+              {
+                "key": "C",
+                "text": "In the farmyard"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "The guide says: 'there are picnic tables on the grass beside the river'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What time is the last entry to the buildings?",
+            "options": [
+              {
+                "key": "A",
+                "text": "4.00 pm"
+              },
+              {
+                "key": "B",
+                "text": "4.30 pm"
+              },
+              {
+                "key": "C",
+                "text": "5.00 pm"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "The guide says: 'the last entry to the buildings is at half past four'. The village closes at five."
+          },
+          {
+            "type": "mcq",
+            "prompt": "Where is photography NOT permitted?",
+            "options": [
+              {
+                "key": "A",
+                "text": "In the water mill"
+              },
+              {
+                "key": "B",
+                "text": "Anywhere in the farmyard"
+              },
+              {
+                "key": "C",
+                "text": "In the schoolhouse during lessons"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "The guide says photography is allowed 'everywhere except inside the schoolhouse during lessons'."
+          }
+        ]
+      },
+      {
+        "title": "Section 3: Student travel survey tutorial",
+        "instructions": "Questions 21-30. For Question 21, write ONE WORD AND/OR A NUMBER. For Questions 22-26, choose the correct letter, A, B or C. For Questions 27-30, choose the correct letter, A-D.",
+        "script": [
+          {
+            "speaker": "Tutor",
+            "text": "Come in, both of you, and take a seat. So, you're here to talk about your project for the human geography module. Remind me what you've chosen."
+          },
+          {
+            "speaker": "Amina",
+            "text": "We're looking at how students travel to the campus. We want to find out which forms of transport people use and why, and then suggest ways the university could encourage more sustainable travel."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Good, that's a very practical topic. How far have you got?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Well, we've done a first round of data collection. We stood at the three main entrances for three mornings, between eight and ten, and counted everyone arriving, and we also asked a sample of students how long their journey had taken."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "And what did you find?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "On average, the journey took about thirty-five minutes. The thing that surprised us most was that the most common way of arriving wasn't the bus, as we'd expected, but walking."
+          },
+          {
+            "speaker": "Amina",
+            "text": "We think that's because so many students now rent rooms in the streets close to the campus, rather than living in the city centre."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "That's an interesting hypothesis. How are you going to test it?"
+          },
+          {
+            "speaker": "Amina",
+            "text": "We were going to do a questionnaire. We've drafted about twenty questions so far."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Twenty is quite a lot for a survey you're handing out at the entrance. People are on their way to lectures and won't want to spend more than a few minutes. I'd cut it down to eight or ten at most, and make most of them multiple choice so they're quick to answer."
+          },
+          {
+            "speaker": "Tom",
+            "text": "OK, that makes sense. We also thought about interviewing the university's transport officer."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Definitely do that. She'll be able to tell you things you can't observe, like how many parking permits are issued and what the bus companies have agreed to. Have you contacted her yet?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Not yet."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "I'd do it soon. She's extremely busy at the moment because the new parking charges start next month, so her diary will fill up quickly."
+          },
+          {
+            "speaker": "Amina",
+            "text": "There was one problem with our data. On the third morning there was a rail strike, so a lot more people drove or got lifts, and we're not sure whether to include those figures."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "What's your instinct?"
+          },
+          {
+            "speaker": "Amina",
+            "text": "I think we should leave them out, because it wasn't a typical day."
+          },
+          {
+            "speaker": "Tom",
+            "text": "But I think they're still useful. Strikes and road closures happen quite often, so it's part of reality."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "You could do both. Present the results with and without that day, and explain the difference. That's actually a more sophisticated approach, and it shows the examiners you've thought carefully about your data."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Good idea."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Now, what about your reading? What sources have you looked at?"
+          },
+          {
+            "speaker": "Amina",
+            "text": "We found a national travel survey published by the government, which has lots of statistics."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "That's useful for background, but remember that it covers the whole population, and students behave quite differently. You need something closer to your own context. Have you looked at studies from other universities?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "We found one from a university in the Netherlands where they introduced free bike hire for students, and car use dropped by nearly a third in two years."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Excellent, that's exactly the kind of thing you need. You could compare their situation with ours. Right, let's talk about dividing up the work. There's quite a lot to do before the presentation."
+          },
+          {
+            "speaker": "Amina",
+            "text": "I'm happy to redesign the questionnaire, since I wrote the first draft."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Fine. And the interview with the transport officer?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "I'll do that. I sat on the students' union transport committee last year, so I know what to ask."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Good. Who's going to write the literature review?"
+          },
+          {
+            "speaker": "Amina",
+            "text": "Me, I think. I've already started reading."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "And what about the slides?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "We thought we'd do those together at the end, once everything else is finished."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Sensible. And I'll book the seminar room with the projector for you, because students can't reserve it themselves. Any final questions?"
+          },
+          {
+            "speaker": "Amina",
+            "text": "How long should the presentation be?"
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Fifteen minutes, plus five for questions. Don't go over, because timing is part of the mark."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Thanks, that's really helpful."
+          }
+        ],
+        "questions": [
+          {
+            "type": "gap",
+            "prompt": "Average journey time to campus: about ______ minutes. Write ONE WORD AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "thirty-five",
+              "35"
+            ],
+            "explanation": "Tom says: 'On average, the journey took about thirty-five minutes.'"
+          },
+          {
+            "type": "mcq",
+            "prompt": "What was the most common way of travelling to campus?",
+            "options": [
+              {
+                "key": "A",
+                "text": "By bus"
+              },
+              {
+                "key": "B",
+                "text": "On foot"
+              },
+              {
+                "key": "C",
+                "text": "By car"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Tom says the most common way 'wasn't the bus, as we'd expected, but walking'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What does the tutor advise the students to do with their questionnaire?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Add more open questions"
+              },
+              {
+                "key": "B",
+                "text": "Reduce the number of questions"
+              },
+              {
+                "key": "C",
+                "text": "Distribute it online"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "The tutor says: 'I'd cut it down to eight or ten at most'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "Why does the tutor say the students should contact the transport officer soon?",
+            "options": [
+              {
+                "key": "A",
+                "text": "She is about to leave the university."
+              },
+              {
+                "key": "B",
+                "text": "She is busy preparing for new parking charges."
+              },
+              {
+                "key": "C",
+                "text": "They need her permission to collect data."
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "The tutor says: 'She's extremely busy at the moment because the new parking charges start next month'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What does the tutor suggest they do with the data from the third morning?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Leave it out of the results"
+              },
+              {
+                "key": "B",
+                "text": "Collect the data again on a normal day"
+              },
+              {
+                "key": "C",
+                "text": "Show the results both with and without it"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "The tutor says: 'Present the results with and without that day, and explain the difference.'"
+          },
+          {
+            "type": "mcq",
+            "prompt": "What does the tutor say about the national travel survey?",
+            "options": [
+              {
+                "key": "A",
+                "text": "It is mainly useful as background."
+              },
+              {
+                "key": "B",
+                "text": "It is too old to be reliable."
+              },
+              {
+                "key": "C",
+                "text": "It should be their main source."
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "The tutor says: 'That's useful for background, but remember that it covers the whole population'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Who will be responsible for the following task? Choose the correct letter, A-D. Redesigning the questionnaire",
+            "options": [
+              {
+                "key": "A",
+                "text": "Amina"
+              },
+              {
+                "key": "B",
+                "text": "Tom"
+              },
+              {
+                "key": "C",
+                "text": "Both Amina and Tom"
+              },
+              {
+                "key": "D",
+                "text": "The tutor"
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "Amina says: 'I'm happy to redesign the questionnaire'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Who will be responsible for the following task? Choose the correct letter, A-D. Interviewing the transport officer",
+            "options": [
+              {
+                "key": "A",
+                "text": "Amina"
+              },
+              {
+                "key": "B",
+                "text": "Tom"
+              },
+              {
+                "key": "C",
+                "text": "Both Amina and Tom"
+              },
+              {
+                "key": "D",
+                "text": "The tutor"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Tom says: 'I'll do that' about the interview."
+          },
+          {
+            "type": "matching",
+            "prompt": "Who will be responsible for the following task? Choose the correct letter, A-D. Preparing the slides",
+            "options": [
+              {
+                "key": "A",
+                "text": "Amina"
+              },
+              {
+                "key": "B",
+                "text": "Tom"
+              },
+              {
+                "key": "C",
+                "text": "Both Amina and Tom"
+              },
+              {
+                "key": "D",
+                "text": "The tutor"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Tom says: 'We thought we'd do those together at the end'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Who will be responsible for the following task? Choose the correct letter, A-D. Booking the seminar room",
+            "options": [
+              {
+                "key": "A",
+                "text": "Amina"
+              },
+              {
+                "key": "B",
+                "text": "Tom"
+              },
+              {
+                "key": "C",
+                "text": "Both Amina and Tom"
+              },
+              {
+                "key": "D",
+                "text": "The tutor"
+              }
+            ],
+            "answers": [
+              "D"
+            ],
+            "explanation": "The tutor says: 'I'll book the seminar room with the projector for you'."
+          }
+        ]
+      },
+      {
+        "title": "Section 4: Lecture on sleep in animals",
+        "instructions": "Questions 31-40. Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. For Questions 38 and 40, choose the correct letter, A, B or C.",
+        "script": [
+          {
+            "speaker": "Lecturer",
+            "text": "Good afternoon. In today's lecture I want to look at a question that has puzzled biologists for a very long time: why do animals sleep, and why do different species sleep in such different ways?"
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "Let's start with a definition, because that's less obvious than it sounds. Scientists generally identify sleep by a set of behaviours rather than by what's happening inside the brain, since we can't attach electrodes to every animal we want to study. An animal is considered to be asleep if it is inactive, if it usually adopts a particular posture, and, most importantly, if it is less responsive to its surroundings, so that it takes a stronger stimulus to get a reaction. Crucially, unlike an animal that is unconscious, a sleeping animal can be woken up fairly quickly."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "Using this definition, we find sleep, or something very like it, almost everywhere we look. Mammals and birds sleep, of course, but so do reptiles, fish and even insects. Fruit flies, for example, have periods of rest during which they're much harder to disturb, and if you keep them awake, they'll rest for longer the next day to make up for it, which is exactly what we do after a late night. Researchers call this sleep rebound, and it's one of the strongest pieces of evidence that sleep is a genuine need rather than simply a way of passing time."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "So how much sleep do animals need? The range is enormous. Some species of bat sleep for around twenty hours a day, while giraffes and elephants may sleep for only three or four. One pattern that has emerged is that large plant-eating animals tend to sleep less. The usual explanation is food: grass and leaves contain relatively little energy, so these animals have to spend most of their waking hours eating. Being asleep also makes them vulnerable to predators, which is another reason to keep it short."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "Some of the most fascinating cases involve animals that simply can't afford to switch off completely. Dolphins and some other marine mammals have to come to the surface regularly to breathe, so total unconsciousness would be dangerous. Their solution is what's known as unihemispheric sleep, in which one half of the brain sleeps while the other half stays awake. They usually keep open the eye that is connected to the waking half of the brain, which helps them watch for threats and stay in contact with the group."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "Birds can do something similar. Ducks sleeping in a row have been observed keeping one eye open, and it's the birds at the ends of the row, in the most exposed positions, that do this most often. Even more remarkable is a study of frigatebirds, large seabirds that can stay in the air for weeks at a time over the ocean. By recording their brain activity during flight, researchers found that they do sleep while flying, sometimes with one half of the brain and sometimes with both. But they sleep for less than an hour a day in the air, compared with more than twelve hours a day when they're back on land."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "That brings us to the big question: what is sleep actually for? There are several theories. One is energy conservation, the idea that sleeping reduces the amount of energy an animal uses during periods when it can't feed efficiently. Another, which has received a lot of attention recently, is that sleep allows the brain to clear away waste products that build up during waking hours. A third theory links sleep to memory: during sleep, the brain seems to strengthen important connections formed during the day and weaken less useful ones."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "These theories aren't really in competition. Most researchers now believe that sleep probably serves several functions at once, and that the balance between them may differ from species to species. That's partly why studying unusual sleepers like frigatebirds is so valuable: they show us what is absolutely essential and what can be given up when necessary."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "For next week, I'd like you to read the chapter on sleep in the course textbook, and we'll be looking in more detail at human sleep cycles."
+          }
+        ],
+        "questions": [
+          {
+            "type": "gap",
+            "prompt": "Sleep is usually identified by observing ______ rather than brain activity. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "behaviours",
+              "behaviors"
+            ],
+            "explanation": "The lecturer says: 'Scientists generally identify sleep by a set of behaviours rather than by what's happening inside the brain'."
+          },
+          {
+            "type": "gap",
+            "prompt": "A sleeping animal is less ______ to its surroundings. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "responsive"
+            ],
+            "explanation": "The lecturer says: 'it is less responsive to its surroundings'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Unlike an unconscious animal, a sleeping animal can be woken ______. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "fairly quickly",
+              "quickly"
+            ],
+            "explanation": "The lecturer says: 'a sleeping animal can be woken up fairly quickly'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Fruit flies kept awake rest for longer the next day; this is known as ______. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "sleep rebound"
+            ],
+            "explanation": "The lecturer says: 'Researchers call this sleep rebound'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Some bats sleep for about ______ hours a day. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "twenty",
+              "20"
+            ],
+            "explanation": "The lecturer says: 'Some species of bat sleep for around twenty hours a day'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Large plant-eaters sleep less because their food contains relatively little ______. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "energy"
+            ],
+            "explanation": "The lecturer says: 'grass and leaves contain relatively little energy'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Dolphins use ______ sleep, in which half of the brain stays awake. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "unihemispheric"
+            ],
+            "explanation": "The lecturer says: 'what's known as unihemispheric sleep'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "Which ducks in a row most often keep one eye open?",
+            "options": [
+              {
+                "key": "A",
+                "text": "The youngest birds"
+              },
+              {
+                "key": "B",
+                "text": "The birds in the middle of the row"
+              },
+              {
+                "key": "C",
+                "text": "The birds at the ends of the row"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "The lecturer says: 'it's the birds at the ends of the row, in the most exposed positions, that do this most often'."
+          },
+          {
+            "type": "gap",
+            "prompt": "While flying, frigatebirds sleep for less than ______ a day. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+            "options": null,
+            "answers": [
+              "an hour",
+              "one hour",
+              "1 hour"
+            ],
+            "explanation": "The lecturer says: 'they sleep for less than an hour a day in the air'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What does the lecturer say about the theories of why animals sleep?",
+            "options": [
+              {
+                "key": "A",
+                "text": "The energy conservation theory is the most widely accepted."
+              },
+              {
+                "key": "B",
+                "text": "Sleep probably serves more than one of these functions."
+              },
+              {
+                "key": "C",
+                "text": "The memory theory has now been disproved."
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "The lecturer says: 'Most researchers now believe that sleep probably serves several functions at once'."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Listening Practice Test 2",
+    "test_type": null,
+    "duration_minutes": 30,
+    "sections": [
+      {
+        "title": "Section 1: Renting a storage unit",
+        "instructions": "Questions 1-10. Complete the form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer, or choose the correct letter.",
+        "script": [
+          {
+            "speaker": "Woman",
+            "text": "Good morning, SafeKeep Storage, Lucy speaking. How can I help you?"
+          },
+          {
+            "speaker": "Man",
+            "text": "Hi there. I'm calling because I'd like to rent a storage unit. I'm moving out of my flat at the end of the month, and my new place won't be ready until later in the year, so I need somewhere to keep my things for a while."
+          },
+          {
+            "speaker": "Woman",
+            "text": "No problem at all. I'll just take a few details first, and then I can tell you what we've got available. Could I have your name, please?"
+          },
+          {
+            "speaker": "Man",
+            "text": "Yes, it's Daniel Okonkwo."
+          },
+          {
+            "speaker": "Woman",
+            "text": "And could you spell your surname for me?"
+          },
+          {
+            "speaker": "Man",
+            "text": "Sure. It's O-K-O-N-K-W-O."
+          },
+          {
+            "speaker": "Woman",
+            "text": "Thank you, Mr Okonkwo. And what's the best number to contact you on?"
+          },
+          {
+            "speaker": "Man",
+            "text": "My mobile is probably best. It's 07832 559 104."
+          },
+          {
+            "speaker": "Woman",
+            "text": "Let me read that back: 07832 559 104."
+          },
+          {
+            "speaker": "Man",
+            "text": "That's right."
+          },
+          {
+            "speaker": "Woman",
+            "text": "And your current address?"
+          },
+          {
+            "speaker": "Man",
+            "text": "It's 14 Harcourt Road, and the postcode is BR3 6TN."
+          },
+          {
+            "speaker": "Woman",
+            "text": "BR3 6TN. Lovely. Now, can you tell me roughly how much you need to store?"
+          },
+          {
+            "speaker": "Man",
+            "text": "It's basically everything from a one-bedroom flat. So there's a double bed, a sofa, a small dining table with four chairs, a fridge, and maybe twenty or so boxes of books and clothes."
+          },
+          {
+            "speaker": "Woman",
+            "text": "OK. For that amount I wouldn't recommend our small unit, which is really just for boxes. The large unit would be far more than you need, so I'd suggest the medium unit. It's about the size of a single garage."
+          },
+          {
+            "speaker": "Man",
+            "text": "That sounds about right. How much does that cost?"
+          },
+          {
+            "speaker": "Woman",
+            "text": "The medium unit is normally £32 a week, but we have a special offer this month, so it's £28 a week."
+          },
+          {
+            "speaker": "Man",
+            "text": "And is there any reduction if I rent it for a longer period? I think I'll need it for about four months."
+          },
+          {
+            "speaker": "Woman",
+            "text": "Yes, there is. If you book for twelve weeks or more, you get 20 percent off the weekly price. So with four months you'd qualify for that."
+          },
+          {
+            "speaker": "Man",
+            "text": "Great. And when could I start? I'm planning to move my things on a Saturday."
+          },
+          {
+            "speaker": "Woman",
+            "text": "We have medium units free from next week. Which date were you thinking of?"
+          },
+          {
+            "speaker": "Man",
+            "text": "Well, the removal company is booked for the 18th of June."
+          },
+          {
+            "speaker": "Woman",
+            "text": "The 18th of June. That's fine, I'll reserve a unit from that date."
+          },
+          {
+            "speaker": "Man",
+            "text": "Do I need insurance for the contents?"
+          },
+          {
+            "speaker": "Woman",
+            "text": "Yes, all customers must have insurance. You have two choices. You can use your own home insurance, but you'd have to bring us a certificate showing that it covers items in storage. Or you can take out our own cover, which costs £3 a week."
+          },
+          {
+            "speaker": "Man",
+            "text": "I don't think my policy includes storage, and I'd rather not deal with the paperwork. I'll go with yours."
+          },
+          {
+            "speaker": "Woman",
+            "text": "OK, I'll add that. Now, access. The site is open from six in the morning until ten at night, every day of the week. When you arrive, you'll need to enter a PIN code at the gate. We'll send that to your phone the day before you move in."
+          },
+          {
+            "speaker": "Man",
+            "text": "And can I park a van close to the unit? Some of the furniture is quite heavy."
+          },
+          {
+            "speaker": "Woman",
+            "text": "Yes, there's a loading bay right next to the lift, and we also have trolleys you can borrow free of charge."
+          },
+          {
+            "speaker": "Man",
+            "text": "That's helpful. Do you sell packing materials as well? I've got plenty of boxes, but I'm worried about my mattress getting dusty."
+          },
+          {
+            "speaker": "Woman",
+            "text": "We do. We sell tape, bubble wrap and boxes, and we also have a mattress cover for £9. It's made of thick plastic and fits most double beds."
+          },
+          {
+            "speaker": "Man",
+            "text": "Perfect, I'll buy one of those when I arrive."
+          },
+          {
+            "speaker": "Woman",
+            "text": "Lastly, when you come in on the first day, please bring some proof of identity, like a passport or driving licence, and a recent utility bill."
+          },
+          {
+            "speaker": "Man",
+            "text": "No problem. Thanks very much for your help."
+          }
+        ],
+        "questions": [
+          {
+            "type": "gap",
+            "prompt": "Customer's surname: ______\nWrite NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "Okonkwo"
+            ],
+            "explanation": "The man spells his surname: 'O-K-O-N-K-W-O'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Mobile number: ______\nWrite NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "07832 559 104",
+              "07832559104"
+            ],
+            "explanation": "The man says 'My mobile ... It's 07832 559 104', and the woman reads it back."
+          },
+          {
+            "type": "gap",
+            "prompt": "Postcode: ______\nWrite NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "BR3 6TN",
+              "BR36TN"
+            ],
+            "explanation": "The man says 'the postcode is BR3 6TN'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Size of unit recommended: ______\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "medium"
+            ],
+            "explanation": "The woman rejects the small and large units and says 'I'd suggest the medium unit'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Weekly price with this month's offer: £______\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "28",
+              "£28"
+            ],
+            "explanation": "The normal price is £32, but 'we have a special offer this month, so it's £28 a week'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Discount for bookings of twelve weeks or more: ______ percent\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "20",
+              "twenty"
+            ],
+            "explanation": "'If you book for twelve weeks or more, you get 20 percent off'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Start date: ______\nWrite NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "18th of June",
+              "18th June",
+              "18 June",
+              "June 18",
+              "June 18th"
+            ],
+            "explanation": "The man says 'the removal company is booked for the 18th of June' and the woman confirms."
+          },
+          {
+            "type": "mcq",
+            "prompt": "Which insurance arrangement does the man choose?",
+            "options": [
+              {
+                "key": "A",
+                "text": "his own home insurance"
+              },
+              {
+                "key": "B",
+                "text": "the company's insurance at £3 a week"
+              },
+              {
+                "key": "C",
+                "text": "no insurance until he moves in"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "The man says his policy probably does not include storage and 'I'll go with yours' after hearing the company cover costs £3 a week. Insurance is compulsory, so C is wrong."
+          },
+          {
+            "type": "gap",
+            "prompt": "To enter the site, customers must use a ______ at the gate.\nWrite NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "PIN code",
+              "PIN"
+            ],
+            "explanation": "'you'll need to enter a PIN code at the gate'."
+          },
+          {
+            "type": "gap",
+            "prompt": "The man will buy a ______ to protect his bed.\nWrite NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "mattress cover"
+            ],
+            "explanation": "The woman mentions 'a mattress cover for £9' and the man says he will buy one."
+          }
+        ]
+      },
+      {
+        "title": "Section 2: Volunteering at Riverside Community Library",
+        "instructions": "Questions 11-14: Choose the correct letter, A, B or C. Questions 15-20: What will volunteers do in each area of the library? Choose SIX answers from the list, A-G.",
+        "script": [
+          {
+            "speaker": "Coordinator",
+            "text": "Good evening, everyone, and thank you for coming along to this information session. My name is Grace Mensah and I'm the volunteer coordinator here at the new Riverside Community Library. Tonight I'm going to tell you a little about the building, and then explain the different volunteer roles we're hoping to fill."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "First, a bit of background. The library opened in March, after nearly two years of construction. A lot of people assume it was built on the site of the old textile factory, but in fact the factory stood across the road, where the new flats are now. This site was previously a bus depot, and if you look carefully at the entrance you can still see some of the original brick arches, which the architects decided to keep."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "The building has some unusual environmental features. The original plans included solar panels on the roof, but these were dropped because of the cost. Instead, the roof was turned into a garden where volunteers and local schoolchildren grow vegetables, which are then given to the food bank next door. It's become one of the most popular parts of the building."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "Now, what do we ask of our volunteers? When we first advertised, we asked people to commit to at least three months, but we found that put a lot of people off, so we've dropped that requirement. What we do ask is that you give a minimum of two hours a week, and that you let us know in advance if you can't come."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "All new volunteers attend a training session before they start. We used to run these on Saturday mornings, but they clashed with our busiest time, and Monday evenings didn't suit people with young children. So training now takes place on Wednesday afternoons, from two until five. If that's impossible for you, speak to me afterwards and we'll try to arrange something."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "Right, let me go through the main areas of the library and what volunteers do in each one."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "On the ground floor you'll find the children's zone. The staff there run the lending desk and the craft activities, but what we really need from volunteers is people to read stories aloud to the under-fives, especially during our morning sessions for parents and toddlers."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "Next to that is the digital hub, which has thirty computers. Many of our older visitors have never used a computer before, so volunteers sit with them and help them do things like send emails, apply for jobs online or video-call relatives abroad."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "Moving up to the first floor, there are the study rooms. Every weekday from four o'clock, these fill up with secondary school students, and volunteers support them with their homework, particularly maths and science. You don't need to be a teacher, just patient and reasonably confident with the subject."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "Also on the first floor is the community archive. This is a project I'm particularly excited about. Volunteers meet long-time residents of the area and record their oral histories, their memories of how the neighbourhood has changed, so that future generations can listen to them."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "In the basement, there's the sorting room. We receive hundreds of donated books every month, and volunteers there organise them, checking their condition and deciding whether they go onto the shelves or to our charity sales."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "And finally, on the top floor, next to the roof garden, we have the language café. Every Thursday evening, people who are learning English come along, and volunteers chat with them over tea and coffee, so they can practise their conversation in a relaxed setting."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "Some of you have asked about school tours. We do get lots of visits from local schools, but those tours are led by our professional staff, so they're not a volunteer role."
+          },
+          {
+            "speaker": "Coordinator",
+            "text": "OK, I'll stop there and take some questions."
+          }
+        ],
+        "questions": [
+          {
+            "type": "mcq",
+            "prompt": "The library was built on the site of a former",
+            "options": [
+              {
+                "key": "A",
+                "text": "bus depot."
+              },
+              {
+                "key": "B",
+                "text": "textile factory."
+              },
+              {
+                "key": "C",
+                "text": "block of flats."
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "'This site was previously a bus depot'. The textile factory stood across the road, where the flats are now."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What is special about the library's roof?",
+            "options": [
+              {
+                "key": "A",
+                "text": "It is covered in solar panels."
+              },
+              {
+                "key": "B",
+                "text": "It is used to grow vegetables."
+              },
+              {
+                "key": "C",
+                "text": "It collects rainwater for the building."
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Solar panels 'were dropped because of the cost'; instead 'the roof was turned into a garden where volunteers and local schoolchildren grow vegetables'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What is the minimum commitment for volunteers?",
+            "options": [
+              {
+                "key": "A",
+                "text": "two hours a week"
+              },
+              {
+                "key": "B",
+                "text": "one afternoon a fortnight"
+              },
+              {
+                "key": "C",
+                "text": "three months"
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "The three-month requirement was dropped; 'you give a minimum of two hours a week'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "When does volunteer training now take place?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Monday evenings"
+              },
+              {
+                "key": "B",
+                "text": "Saturday mornings"
+              },
+              {
+                "key": "C",
+                "text": "Wednesday afternoons"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Saturday mornings clashed with busy times and Monday evenings didn't suit parents, 'So training now takes place on Wednesday afternoons'."
+          },
+          {
+            "type": "matching",
+            "prompt": "What will volunteers do in each area of the library?\nChildren's zone",
+            "options": [
+              {
+                "key": "A",
+                "text": "help people use computers"
+              },
+              {
+                "key": "B",
+                "text": "read stories to young children"
+              },
+              {
+                "key": "C",
+                "text": "organise donated books"
+              },
+              {
+                "key": "D",
+                "text": "teach English conversation"
+              },
+              {
+                "key": "E",
+                "text": "help with homework"
+              },
+              {
+                "key": "F",
+                "text": "record people's memories"
+              },
+              {
+                "key": "G",
+                "text": "lead school tours"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "In the children's zone 'we really need ... people to read stories aloud to the under-fives'."
+          },
+          {
+            "type": "matching",
+            "prompt": "What will volunteers do in each area of the library?\nDigital hub",
+            "options": [
+              {
+                "key": "A",
+                "text": "help people use computers"
+              },
+              {
+                "key": "B",
+                "text": "read stories to young children"
+              },
+              {
+                "key": "C",
+                "text": "organise donated books"
+              },
+              {
+                "key": "D",
+                "text": "teach English conversation"
+              },
+              {
+                "key": "E",
+                "text": "help with homework"
+              },
+              {
+                "key": "F",
+                "text": "record people's memories"
+              },
+              {
+                "key": "G",
+                "text": "lead school tours"
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "In the digital hub volunteers 'help them do things like send emails, apply for jobs online'."
+          },
+          {
+            "type": "matching",
+            "prompt": "What will volunteers do in each area of the library?\nStudy rooms",
+            "options": [
+              {
+                "key": "A",
+                "text": "help people use computers"
+              },
+              {
+                "key": "B",
+                "text": "read stories to young children"
+              },
+              {
+                "key": "C",
+                "text": "organise donated books"
+              },
+              {
+                "key": "D",
+                "text": "teach English conversation"
+              },
+              {
+                "key": "E",
+                "text": "help with homework"
+              },
+              {
+                "key": "F",
+                "text": "record people's memories"
+              },
+              {
+                "key": "G",
+                "text": "lead school tours"
+              }
+            ],
+            "answers": [
+              "E"
+            ],
+            "explanation": "In the study rooms 'volunteers support them with their homework'."
+          },
+          {
+            "type": "matching",
+            "prompt": "What will volunteers do in each area of the library?\nCommunity archive",
+            "options": [
+              {
+                "key": "A",
+                "text": "help people use computers"
+              },
+              {
+                "key": "B",
+                "text": "read stories to young children"
+              },
+              {
+                "key": "C",
+                "text": "organise donated books"
+              },
+              {
+                "key": "D",
+                "text": "teach English conversation"
+              },
+              {
+                "key": "E",
+                "text": "help with homework"
+              },
+              {
+                "key": "F",
+                "text": "record people's memories"
+              },
+              {
+                "key": "G",
+                "text": "lead school tours"
+              }
+            ],
+            "answers": [
+              "F"
+            ],
+            "explanation": "In the community archive volunteers 'record their oral histories, their memories of how the neighbourhood has changed'."
+          },
+          {
+            "type": "matching",
+            "prompt": "What will volunteers do in each area of the library?\nSorting room",
+            "options": [
+              {
+                "key": "A",
+                "text": "help people use computers"
+              },
+              {
+                "key": "B",
+                "text": "read stories to young children"
+              },
+              {
+                "key": "C",
+                "text": "organise donated books"
+              },
+              {
+                "key": "D",
+                "text": "teach English conversation"
+              },
+              {
+                "key": "E",
+                "text": "help with homework"
+              },
+              {
+                "key": "F",
+                "text": "record people's memories"
+              },
+              {
+                "key": "G",
+                "text": "lead school tours"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "In the sorting room volunteers 'organise' the 'donated books'."
+          },
+          {
+            "type": "matching",
+            "prompt": "What will volunteers do in each area of the library?\nLanguage café",
+            "options": [
+              {
+                "key": "A",
+                "text": "help people use computers"
+              },
+              {
+                "key": "B",
+                "text": "read stories to young children"
+              },
+              {
+                "key": "C",
+                "text": "organise donated books"
+              },
+              {
+                "key": "D",
+                "text": "teach English conversation"
+              },
+              {
+                "key": "E",
+                "text": "help with homework"
+              },
+              {
+                "key": "F",
+                "text": "record people's memories"
+              },
+              {
+                "key": "G",
+                "text": "lead school tours"
+              }
+            ],
+            "answers": [
+              "D"
+            ],
+            "explanation": "In the language café volunteers chat with English learners 'so they can practise their conversation'. School tours (G) are led by staff, not volunteers."
+          }
+        ]
+      },
+      {
+        "title": "Section 3: A research project on canteen food waste",
+        "instructions": "Questions 21-24: Choose the correct letter, A, B or C. Questions 25-30: Who will be responsible for each task? Choose A, B or C.",
+        "script": [
+          {
+            "speaker": "Tutor",
+            "text": "Come in, Chidi, Hannah. So, you wanted to talk about your research project on food waste in the university canteen. How's it going?"
+          },
+          {
+            "speaker": "Hannah",
+            "text": "Pretty well, I think. We've done the pilot study and we've got a few questions about the next stage."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Good. Remind me first why you chose this topic. I know there's already quite a lot of published research on household food waste."
+          },
+          {
+            "speaker": "Chidi",
+            "text": "That's true, but it was really Hannah's idea. She works part-time in the canteen on weekends."
+          },
+          {
+            "speaker": "Hannah",
+            "text": "Yes, and every Saturday I'd see bins full of food that had hardly been touched. I just kept wondering why students were throwing so much away, so it felt like something worth investigating."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "That's a good starting point. Personal experience can be a strong motivation. So, what did the pilot study tell you?"
+          },
+          {
+            "speaker": "Chidi",
+            "text": "Well, the main thing we learned was about our questionnaire. We gave it to twenty students, and most of them gave up halfway through. It was just far too long, so we've cut it from forty questions to fifteen."
+          },
+          {
+            "speaker": "Hannah",
+            "text": "We also looked at what kind of food was thrown away. We expected rice to be the biggest category, but actually it was vegetables."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Interesting. And had you compared lunch and dinner?"
+          },
+          {
+            "speaker": "Chidi",
+            "text": "Not yet. We only collected data at lunchtime in the pilot."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "OK. Now, for the main study, how many students are you planning to survey?"
+          },
+          {
+            "speaker": "Hannah",
+            "text": "About a hundred and fifty. We wondered if we should try to get more."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Actually, a hundred and fifty is plenty for a project of this size. What I'd suggest instead is collecting your data over a longer period, at least four weeks rather than one. The canteen menu rotates, so if you only look at one week, the results may just reflect what happened to be served that week."
+          },
+          {
+            "speaker": "Chidi",
+            "text": "That makes sense. We hadn't thought about the menu."
+          },
+          {
+            "speaker": "Hannah",
+            "text": "We also want to weigh the food left on plates. Do you see any problems with that?"
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Hygiene isn't really an issue as long as you wear gloves, and I don't think the time involved will be a problem if you do it in shifts. The main thing is that you'll need written permission from the catering manager before you start. Without that, you can't go behind the counter."
+          },
+          {
+            "speaker": "Chidi",
+            "text": "Right, we'll email her this week."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Good. Now, have you decided how you're dividing up the work?"
+          },
+          {
+            "speaker": "Chidi",
+            "text": "Mostly. Hannah's going to redesign the questionnaire, since she wrote the first version."
+          },
+          {
+            "speaker": "Hannah",
+            "text": "And Chidi's going to do the weighing, because he has more free time at lunchtime than I do."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "What about interviewing the kitchen staff?"
+          },
+          {
+            "speaker": "Hannah",
+            "text": "I'll do that. I know most of them already, so they'll probably be more relaxed talking to me."
+          },
+          {
+            "speaker": "Chidi",
+            "text": "And I'll take care of the statistical analysis. I did a course on that software last year."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "And the literature review?"
+          },
+          {
+            "speaker": "Chidi",
+            "text": "We were going to split it, but in the end we thought it would be more consistent if we worked on it together, reading the same articles and discussing them."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "That's sensible. And the final presentation?"
+          },
+          {
+            "speaker": "Hannah",
+            "text": "I'm going to prepare that. Chidi's not keen on designing slides."
+          },
+          {
+            "speaker": "Chidi",
+            "text": "It's true. I'll proofread it, though."
+          },
+          {
+            "speaker": "Tutor",
+            "text": "Good. It sounds as though you're well organised. Just make sure you agree on deadlines for each stage, and keep a shared record of any changes you make to the plan, so neither of you is surprised later on. Let's meet again in three weeks to see how the data collection is going."
+          },
+          {
+            "speaker": "Hannah",
+            "text": "Thanks. That's been really useful."
+          }
+        ],
+        "questions": [
+          {
+            "type": "mcq",
+            "prompt": "Why did the students choose canteen food waste as their topic?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Hannah had noticed the problem at work."
+              },
+              {
+                "key": "B",
+                "text": "Their tutor recommended it."
+              },
+              {
+                "key": "C",
+                "text": "Little research had been done on food waste."
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "Chidi says 'it was really Hannah's idea. She works part-time in the canteen' and Hannah saw bins full of food. The tutor says there is already a lot of research."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What was the main finding of the pilot study?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Students waste more food at lunch than at dinner."
+              },
+              {
+                "key": "B",
+                "text": "Rice was the food most often thrown away."
+              },
+              {
+                "key": "C",
+                "text": "The questionnaire was too long."
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "'the main thing we learned was about our questionnaire ... It was just far too long'. Vegetables, not rice, were wasted most, and lunch and dinner were not compared."
+          },
+          {
+            "type": "mcq",
+            "prompt": "What does the tutor advise the students to do in the main study?",
+            "options": [
+              {
+                "key": "A",
+                "text": "survey more students"
+              },
+              {
+                "key": "B",
+                "text": "include canteen staff in the survey"
+              },
+              {
+                "key": "C",
+                "text": "collect data over a longer period"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "The tutor says 150 is plenty and suggests 'collecting your data over a longer period, at least four weeks' because the menu rotates."
+          },
+          {
+            "type": "mcq",
+            "prompt": "According to the tutor, what is the main issue with weighing food waste?",
+            "options": [
+              {
+                "key": "A",
+                "text": "hygiene"
+              },
+              {
+                "key": "B",
+                "text": "the time it will take"
+              },
+              {
+                "key": "C",
+                "text": "getting permission"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Hygiene and time are not problems; 'The main thing is that you'll need written permission from the catering manager'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Who will be responsible for each task?\nRedesigning the questionnaire",
+            "options": [
+              {
+                "key": "A",
+                "text": "Chidi"
+              },
+              {
+                "key": "B",
+                "text": "Hannah"
+              },
+              {
+                "key": "C",
+                "text": "both Chidi and Hannah"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "'Hannah's going to redesign the questionnaire'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Who will be responsible for each task?\nWeighing food waste",
+            "options": [
+              {
+                "key": "A",
+                "text": "Chidi"
+              },
+              {
+                "key": "B",
+                "text": "Hannah"
+              },
+              {
+                "key": "C",
+                "text": "both Chidi and Hannah"
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "'Chidi's going to do the weighing'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Who will be responsible for each task?\nInterviewing kitchen staff",
+            "options": [
+              {
+                "key": "A",
+                "text": "Chidi"
+              },
+              {
+                "key": "B",
+                "text": "Hannah"
+              },
+              {
+                "key": "C",
+                "text": "both Chidi and Hannah"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Hannah: 'I'll do that. I know most of them already'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Who will be responsible for each task?\nStatistical analysis",
+            "options": [
+              {
+                "key": "A",
+                "text": "Chidi"
+              },
+              {
+                "key": "B",
+                "text": "Hannah"
+              },
+              {
+                "key": "C",
+                "text": "both Chidi and Hannah"
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "Chidi: 'I'll take care of the statistical analysis'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Who will be responsible for each task?\nLiterature review",
+            "options": [
+              {
+                "key": "A",
+                "text": "Chidi"
+              },
+              {
+                "key": "B",
+                "text": "Hannah"
+              },
+              {
+                "key": "C",
+                "text": "both Chidi and Hannah"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "Chidi: 'we thought it would be more consistent if we worked on it together'."
+          },
+          {
+            "type": "matching",
+            "prompt": "Who will be responsible for each task?\nPreparing the presentation",
+            "options": [
+              {
+                "key": "A",
+                "text": "Chidi"
+              },
+              {
+                "key": "B",
+                "text": "Hannah"
+              },
+              {
+                "key": "C",
+                "text": "both Chidi and Hannah"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "Hannah: 'I'm going to prepare that'. Chidi will only proofread it."
+          }
+        ]
+      },
+      {
+        "title": "Section 4: Urban heat islands",
+        "instructions": "Questions 31-33: Choose the correct letter, A, B or C. Questions 34-40: Complete the notes below. Write ONE WORD ONLY for each answer.",
+        "script": [
+          {
+            "speaker": "Lecturer",
+            "text": "Good morning. In today's lecture in our series on urban environments, I'm going to look at a phenomenon known as the urban heat island. Put simply, this is the tendency for cities to be noticeably warmer than the countryside around them. On a calm, clear night, the centre of a large city can be as much as ten degrees Celsius warmer than nearby farmland."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "The effect was first described in the early nineteenth century by an amateur scientist called Luke Howard, who kept careful temperature records in and around London. Interestingly, Howard is better remembered today for something else entirely: he was the man who gave clouds the names we still use, such as cumulus and stratus. But his observation that the city was consistently warmer than the surrounding villages was the beginning of a whole field of research."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "So why does this happen? There are several causes. The first relates to the materials cities are built from. Concrete, brick and especially asphalt absorb a great deal of energy from the sun during the day and then release it slowly at night. That's why the difference between city and countryside is usually greatest after sunset, not in the middle of the afternoon, as many people assume."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "A second cause is the shape of the city itself. Tall buildings on either side of a narrow street create what researchers call an urban canyon. Heat that would normally escape into the sky is trapped between the walls, and the buildings also reduce wind speed, so there's less movement of air to carry the warmth away."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "Third, there's the lack of vegetation. In rural areas, plants release water through their leaves in a process called evapotranspiration, which has a cooling effect, a bit like sweating does for the human body. When land is covered in roads and buildings, this natural cooling largely disappears."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "Finally, cities generate a great deal of waste heat from vehicles, factories and air-conditioning units. And air conditioning creates a vicious circle: the hotter the city becomes, the more people use it, and the more heat is pumped out into the streets."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "Why does all this matter? The most serious consequence is for health. During heatwaves, death rates in cities rise sharply, and elderly people living alone are particularly at risk. There are also economic costs, mainly through higher demand for electricity, and environmental ones, since warmer air speeds up the formation of ground-level ozone, a harmful pollutant."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "What can be done? One of the simplest solutions is to change the colour of surfaces. So-called cool roofs, which are painted white or covered in reflective material, can reduce the temperature of a roof by over twenty degrees on a sunny day. Several cities are now experimenting with lighter-coloured road surfaces as well."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "A second approach is to bring back vegetation. Planting street trees is especially effective, because trees provide shade as well as cooling through evapotranspiration. Some cities have also introduced green roofs, which are covered in plants. These are more expensive than cool roofs, but they have the added benefit of absorbing rainwater, which reduces the risk of flooding."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "Lastly, urban planners are paying more attention to the layout of new developments, for example by designing wide streets that line up with the direction of the prevailing wind, creating what are sometimes called ventilation corridors."
+          },
+          {
+            "speaker": "Lecturer",
+            "text": "In the next part of the lecture, we'll look at a case study of one city that has used all three approaches."
+          }
+        ],
+        "questions": [
+          {
+            "type": "mcq",
+            "prompt": "On a calm, clear night, a city centre can be up to how much warmer than nearby farmland?",
+            "options": [
+              {
+                "key": "A",
+                "text": "two degrees Celsius"
+              },
+              {
+                "key": "B",
+                "text": "five degrees Celsius"
+              },
+              {
+                "key": "C",
+                "text": "ten degrees Celsius"
+              }
+            ],
+            "answers": [
+              "C"
+            ],
+            "explanation": "'the centre of a large city can be as much as ten degrees Celsius warmer than nearby farmland'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "Luke Howard is best known today for",
+            "options": [
+              {
+                "key": "A",
+                "text": "naming types of cloud."
+              },
+              {
+                "key": "B",
+                "text": "inventing a new thermometer."
+              },
+              {
+                "key": "C",
+                "text": "designing parks in London."
+              }
+            ],
+            "answers": [
+              "A"
+            ],
+            "explanation": "'he was the man who gave clouds the names we still use'."
+          },
+          {
+            "type": "mcq",
+            "prompt": "When is the temperature difference between city and countryside usually greatest?",
+            "options": [
+              {
+                "key": "A",
+                "text": "in the middle of the afternoon"
+              },
+              {
+                "key": "B",
+                "text": "after sunset"
+              },
+              {
+                "key": "C",
+                "text": "early in the morning"
+              }
+            ],
+            "answers": [
+              "B"
+            ],
+            "explanation": "'the difference between city and countryside is usually greatest after sunset, not in the middle of the afternoon'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Causes: Materials such as concrete, brick and especially ______ absorb energy during the day.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "asphalt"
+            ],
+            "explanation": "'Concrete, brick and especially asphalt absorb a great deal of energy'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Causes: Tall buildings beside narrow streets form an urban ______, which traps heat and reduces wind.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "canyon"
+            ],
+            "explanation": "'Tall buildings on either side of a narrow street create what researchers call an urban canyon'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Causes: Plants cool the air through a process called ______.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "evapotranspiration"
+            ],
+            "explanation": "'plants release water through their leaves in a process called evapotranspiration'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Causes: Waste heat from vehicles, factories and ______ units.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "air-conditioning",
+              "air conditioning"
+            ],
+            "explanation": "'waste heat from vehicles, factories and air-conditioning units'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Effects: Elderly people who live ______ are most at risk during heatwaves.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "alone"
+            ],
+            "explanation": "'elderly people living alone are particularly at risk'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Solutions: Green roofs are more expensive than cool roofs but also absorb ______.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "rainwater"
+            ],
+            "explanation": "Green roofs 'have the added benefit of absorbing rainwater, which reduces the risk of flooding'."
+          },
+          {
+            "type": "gap",
+            "prompt": "Solutions: Wide streets lined up with the wind create ventilation ______.\nWrite ONE WORD AND/OR A NUMBER for each answer.",
+            "options": null,
+            "answers": [
+              "corridors"
+            ],
+            "explanation": "'creating what are sometimes called ventilation corridors'."
+          }
+        ]
+      }
+    ]
+  }
+]
