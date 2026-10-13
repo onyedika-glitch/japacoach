@@ -15,11 +15,7 @@
       </svg>
 
       <div class="relative max-w-3xl mx-auto">
-        <span class="chip bg-white border border-brand/20 text-brand-dark text-sm px-3 py-1">
-          <Sparkles class="w-4 h-4" /> AI examiner for all 4 IELTS modules
-        </span>
-
-        <h1 class="mt-6 font-figtree tracking-[-0.02em] text-[2.4rem] leading-[1.1] sm:text-6xl md:text-7xl font-bold text-ink">
+        <h1 class="font-figtree tracking-[-0.02em] text-[2.4rem] leading-[1.1] sm:text-6xl md:text-7xl font-bold text-ink">
           Hit your <span class="text-brand">IELTS band</span><br class="hidden sm:block" />
           before your test date.
         </h1>
@@ -68,7 +64,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
-import { Mic, Sparkles } from 'lucide-vue-next'
+import { Mic } from 'lucide-vue-next'
 
 const shape = ref<SVGElement | null>(null)
 const shape2 = ref<SVGElement | null>(null)
