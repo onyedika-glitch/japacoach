@@ -118,4 +118,30 @@ return [
         'examiner' => env('KOKORO_EXAMINER_VOICE', 'bf_emma'),
         'listening' => ['bf_emma', 'bm_george', 'af_heart', 'am_michael', 'bf_isabella', 'bm_lewis'],
     ],
+    /*
+    |--------------------------------------------------------------------------
+    | Search engines
+    |--------------------------------------------------------------------------
+    |
+    | Public pages listed in /sitemap.xml. Update "updated" when a page's content
+    | changes so Google re-crawls it; everything behind login stays out.
+    |
+    */
+
+    'seo' => [
+        'pages' => [
+            ['path' => '/', 'priority' => '1.0', 'changefreq' => 'weekly', 'updated' => '2026-10-13'],
+            ['path' => '/pricing', 'priority' => '0.9', 'changefreq' => 'monthly', 'updated' => '2026-10-13'],
+            ['path' => '/signup', 'priority' => '0.8', 'changefreq' => 'monthly', 'updated' => '2026-10-13'],
+            ['path' => '/login', 'priority' => '0.4', 'changefreq' => 'yearly', 'updated' => '2026-10-13'],
+            ['path' => '/terms', 'priority' => '0.3', 'changefreq' => 'yearly', 'updated' => '2026-10-13'],
+            ['path' => '/privacy', 'priority' => '0.3', 'changefreq' => 'yearly', 'updated' => '2026-10-13'],
+        ],
+
+        // Areas behind login: blocked in robots.txt so crawl budget goes to public pages.
+        'disallow' => [
+            '/dashboard', '/speaking', '/writing', '/reading', '/listening', '/practice', '/mock',
+            '/study-plan', '/billing', '/referrals', '/settings', '/admin', '/api/', '/auth/', '/payment/',
+        ],
+    ],
 ];

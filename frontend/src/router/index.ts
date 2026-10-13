@@ -15,12 +15,12 @@ const app = (meta: Record<string, unknown> = {}) => ({ layout: 'app' as const, r
 const focus = (meta: Record<string, unknown> = {}) => ({ layout: 'focus' as const, requiresAuth: true, ...meta })
 
 const routes: RouteRecordRaw[] = [
-  { path: '/', name: 'home', component: () => import('@/views/HomeView.vue'), meta: { layout: 'public' } },
-  { path: '/pricing', name: 'pricing', component: () => import('@/views/PricingView.vue'), meta: { layout: 'public', title: 'Pricing' } },
-  { path: '/terms', name: 'terms', component: () => import('@/views/TermsView.vue'), meta: { layout: 'public', title: 'Terms' } },
-  { path: '/privacy', name: 'privacy', component: () => import('@/views/PrivacyView.vue'), meta: { layout: 'public', title: 'Privacy' } },
-  { path: '/login', name: 'login', component: () => import('@/views/LoginView.vue'), meta: { layout: 'public', guestOnly: true, title: 'Log in' } },
-  { path: '/signup', name: 'signup', component: () => import('@/views/SignupView.vue'), meta: { layout: 'public', guestOnly: true, title: 'Sign up' } },
+  { path: '/', name: 'home', component: () => import('@/views/HomeView.vue'), meta: { layout: 'public', description: 'Practise IELTS Speaking, Writing, Reading and Listening with an AI examiner. Get an estimated band score and specific fixes in minutes. Built for Nigerians preparing to relocate.' } },
+  { path: '/pricing', name: 'pricing', component: () => import('@/views/PricingView.vue'), meta: { layout: 'public', title: 'Pricing', description: 'Japa Coach plans from ₦1,500 a week. Start free with a speaking test, then unlock full mock tests, writing evaluations and unlimited reading and listening practice.' } },
+  { path: '/terms', name: 'terms', component: () => import('@/views/TermsView.vue'), meta: { layout: 'public', title: 'Terms', description: 'The terms for using Japa Coach, the AI IELTS practice platform.' } },
+  { path: '/privacy', name: 'privacy', component: () => import('@/views/PrivacyView.vue'), meta: { layout: 'public', title: 'Privacy', description: 'How Japa Coach collects, uses and protects your data, including speaking recordings.' } },
+  { path: '/login', name: 'login', component: () => import('@/views/LoginView.vue'), meta: { layout: 'public', guestOnly: true, title: 'Log in', description: 'Log in to Japa Coach to continue your IELTS practice.' } },
+  { path: '/signup', name: 'signup', component: () => import('@/views/SignupView.vue'), meta: { layout: 'public', guestOnly: true, title: 'Sign up', description: 'Create a free Japa Coach account and take your first AI-marked IELTS speaking test. No card needed.' } },
 
   { path: '/dashboard', name: 'dashboard', component: () => import('@/views/app/DashboardView.vue'), meta: app({ title: 'Dashboard' }) },
 
@@ -47,7 +47,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/settings', name: 'settings', component: () => import('@/views/app/SettingsView.vue'), meta: app({ title: 'Settings' }) },
   { path: '/admin', name: 'admin', component: () => import('@/views/app/AdminView.vue'), meta: app({ title: 'Admin', requiresAdmin: true }) },
 
-  { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('@/views/NotFoundView.vue'), meta: { layout: 'public', title: 'Not found' } },
+  { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('@/views/NotFoundView.vue'), meta: { layout: 'public', title: 'Not found', noindex: true } },
 ]
 
 const router = createRouter({
@@ -76,8 +76,47 @@ router.beforeEach(async (to) => {
   return true
 })
 
+const DEFAULT_TITLE = 'Japa Coach: AI IELTS practice for Nigerians'
+const DEFAULT_DESCRIPTION =
+  'Practise IELTS Speaking, Writing, Reading and Listening with an AI examiner. Get an estimated band score and specific fixes in minutes.'
+
+/** Create or update a <meta> tag in <head>. */
+function setMeta(attribute: 'name' | 'property', key: string, content: string) {
+  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`)
+  if (!el) {
+    el = document.createElement('meta')
+    el.setAttribute(attribute, key)
+    document.head.appendChild(el)
+  }
+  el.setAttribute('content', content)
+}
+
+function setCanonical(url: string) {
+  let link = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
+  if (!link) {
+    link = document.createElement('link')
+    link.rel = 'canonical'
+    document.head.appendChild(link)
+  }
+  link.href = url
+}
+
+// Search engines: unique title/description/canonical per public page; private app pages are noindex.
 router.afterEach((to) => {
-  document.title = to.meta.title ? `${to.meta.title} · Japa Coach` : 'Japa Coach: AI IELTS practice for Nigerians'
+  const title = to.meta.title ? `${to.meta.title} · Japa Coach` : DEFAULT_TITLE
+  const description = (to.meta.description as string | undefined) ?? DEFAULT_DESCRIPTION
+  const url = `${window.location.origin}${to.path === '/' ? '/' : to.path}`
+  const indexable = !to.meta.requiresAuth && !to.meta.noindex
+
+  document.title = title
+  setMeta('name', 'description', description)
+  setMeta('name', 'robots', indexable ? 'index, follow' : 'noindex, nofollow')
+  setMeta('property', 'og:title', title)
+  setMeta('property', 'og:description', description)
+  setMeta('property', 'og:url', url)
+  setMeta('name', 'twitter:title', title)
+  setMeta('name', 'twitter:description', description)
+  setCanonical(url)
 })
 
 export default router

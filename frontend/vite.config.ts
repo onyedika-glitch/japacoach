@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
 
 const backend = process.env.VITE_BACKEND_URL ?? 'http://localhost:8000'
-const proxied = ['/api', '/sanctum', '/auth', '/payment', '/storage']
+const proxied = ['/api', '/sanctum', '/auth', '/payment', '/storage', '/sitemap.xml', '/robots.txt']
 
 // https://vite.dev/config/
 export default defineConfig({

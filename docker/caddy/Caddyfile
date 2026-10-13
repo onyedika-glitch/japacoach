@@ -18,7 +18,7 @@
 		file_server
 	}
 
-	@laravel path /api/* /sanctum/* /auth/google* /payment/* /up
+	@laravel path /api/* /sanctum/* /auth/google* /payment/* /up /sitemap.xml /robots.txt
 	handle @laravel {
 		root * /var/www/api/public
 		php_fastcgi app:9000 {
