@@ -118,6 +118,8 @@
           <RouterLink to="/speaking" class="btn btn-primary"><RotateCcw class="w-4 h-4" /> Practise again</RouterLink>
           <RouterLink to="/study-plan" class="btn btn-secondary">Update my study plan</RouterLink>
         </div>
+
+        <ReviewPrompt module="speaking" />
       </template>
     </template>
   </div>
@@ -133,6 +135,7 @@ import BandBadge from '@/components/ui/BandBadge.vue'
 import CriterionGrid from '@/components/CriterionGrid.vue'
 import CorrectionList from '@/components/CorrectionList.vue'
 import BulletList from '@/components/BulletList.vue'
+import ReviewPrompt from '@/components/ReviewPrompt.vue'
 import { api, errorMessage } from '@/lib/api'
 import { clock, dateTime } from '@/lib/format'
 import { usePolling } from '@/composables/usePolling'

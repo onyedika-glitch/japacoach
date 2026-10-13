@@ -88,6 +88,8 @@
           <RouterLink :to="`/${attempt.module}`" class="btn btn-primary">Try another test</RouterLink>
           <RouterLink to="/dashboard" class="btn btn-secondary">Back to dashboard</RouterLink>
         </div>
+
+        <ReviewPrompt :module="attempt.module" />
       </template>
     </template>
   </div>
@@ -100,6 +102,7 @@ import { ArrowLeft, CheckCircle2, XCircle } from 'lucide-vue-next'
 import Spinner from '@/components/ui/Spinner.vue'
 import Alert from '@/components/ui/Alert.vue'
 import BandBadge from '@/components/ui/BandBadge.vue'
+import ReviewPrompt from '@/components/ReviewPrompt.vue'
 import { api, errorMessage } from '@/lib/api'
 import { dateTime, moduleLabels } from '@/lib/format'
 import type { AnswerValue, PracticeAttempt } from '@/lib/types'

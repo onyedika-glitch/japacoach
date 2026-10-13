@@ -25,6 +25,9 @@
           <Stat label="Revenue (30 days)" :value="money(stats.revenue_30d, stats.currency)" />
           <Stat label="Revenue (all time)" :value="money(stats.revenue_total, stats.currency)" />
         </div>
+        <button v-if="stats.reviews_pending" class="mt-4 w-full card p-4 text-left text-sm hover:border-brand" @click="openPendingReviews">
+          <strong>{{ stats.reviews_pending }} review{{ stats.reviews_pending > 1 ? 's' : '' }}</strong> waiting for approval. Review now
+        </button>
         <h2 class="section-title mt-8">Attempts in the last 7 days</h2>
         <div class="mt-3 grid grid-cols-2 lg:grid-cols-4 gap-4">
           <Stat v-for="(v, k) in stats.attempts_7d" :key="k" :label="moduleLabels[k] ?? k" :value="v" />
@@ -132,6 +135,45 @@
       <Pager :meta="paymentsMeta" @page="loadPayments" />
     </section>
 
+    <!-- REVIEWS -->
+    <section v-else-if="tab === 'reviews'" class="mt-6">
+      <div class="flex gap-2">
+        <select v-model="reviewStatus" class="input h-10 w-44" @change="loadReviews(1)">
+          <option value="">All reviews</option>
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="hidden">Hidden</option>
+        </select>
+      </div>
+      <p class="text-sm text-muted mt-3">Approved reviews appear on the homepage. Reviews where the user did not allow publishing stay private.</p>
+      <Spinner v-if="reviewsLoading" block />
+      <div v-else class="mt-4 space-y-3">
+        <div v-for="r in adminReviews" :key="r.id" class="card p-5">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div class="text-accent tracking-wider" :aria-label="`${r.rating} out of 5`">{{ '★'.repeat(r.rating) }}<span class="text-gray-300">{{ '★'.repeat(5 - r.rating) }}</span></div>
+              <div class="font-semibold mt-1">
+                {{ r.display_name }}<span v-if="r.location" class="text-muted font-normal">, {{ r.location }}</span>
+                <span v-if="r.band && r.module" class="chip bg-brand-50 text-brand-dark ml-1">{{ moduleLabels[r.module] }} {{ r.band.toFixed(1) }}</span>
+              </div>
+              <div class="text-xs text-muted">{{ r.user?.email }} · {{ dateTime(r.updated_at) }}</div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="chip" :class="r.status === 'approved' ? 'bg-good/10 text-good' : r.status === 'hidden' ? 'bg-gray-100 text-muted' : 'bg-accent/10 text-ink'">{{ r.status }}</span>
+              <span v-if="!r.can_publish" class="chip bg-gray-100 text-muted">private</span>
+            </div>
+          </div>
+          <p class="mt-3 text-[15px] leading-relaxed whitespace-pre-line">{{ r.comment }}</p>
+          <div class="mt-4 flex gap-2">
+            <button v-if="r.status !== 'approved' && r.can_publish" class="btn btn-primary btn-sm" @click="setReviewStatus(r, 'approved')">Approve</button>
+            <button v-if="r.status !== 'hidden'" class="btn btn-secondary btn-sm" @click="setReviewStatus(r, 'hidden')">Hide</button>
+          </div>
+        </div>
+        <div v-if="!adminReviews.length" class="card p-6 text-center text-muted">No reviews yet.</div>
+      </div>
+      <Pager :meta="reviewsMeta" @page="loadReviews" />
+    </section>
+
     <!-- CONTENT -->
     <section v-else-if="tab === 'content'" class="mt-6">
       <div class="card p-5">
@@ -201,8 +243,9 @@ import Spinner from '@/components/ui/Spinner.vue'
 import Alert from '@/components/ui/Alert.vue'
 import { api, errorMessage } from '@/lib/api'
 import { date, dateTime, moduleLabels, money, planLabel } from '@/lib/format'
+import type { Review } from '@/lib/types'
 
-type Tab = 'stats' | 'users' | 'payments' | 'content'
+type Tab = 'stats' | 'users' | 'payments' | 'reviews' | 'content'
 interface Meta {
   current_page: number
   last_page: number
@@ -215,6 +258,7 @@ interface AdminStats {
   revenue_total: number
   revenue_30d: number
   currency: string
+  reviews_pending: number
   attempts_7d: Record<string, number>
   content: {
     speaking_questions: number
@@ -245,6 +289,12 @@ interface AdminPayment {
   status: string
   created_at: string
 }
+interface AdminReview extends Review {
+  status: 'pending' | 'approved' | 'hidden'
+  can_publish: boolean
+  user: { id: number; name: string; email: string } | null
+  updated_at: string
+}
 interface AdminContent {
   speaking_questions: { id: number; part: number; topic: string; prompt: string; is_published: boolean; has_audio: boolean }[]
   writing_tasks: { id: number; task_number: number; test_type: string; title: string; is_published: boolean }[]
@@ -255,6 +305,7 @@ const tabs: { key: Tab; label: string }[] = [
   { key: 'stats', label: 'Overview' },
   { key: 'users', label: 'Users' },
   { key: 'payments', label: 'Payments' },
+  { key: 'reviews', label: 'Reviews' },
   { key: 'content', label: 'Content' },
 ]
 const planIds = ['free', 'weekly', 'monthly', 'sprint']
@@ -272,6 +323,11 @@ const paymentStatus = ref('')
 const adminPayments = ref<AdminPayment[]>([])
 const paymentsMeta = ref<Meta | null>(null)
 const paymentsLoading = ref(false)
+
+const reviewStatus = ref('pending')
+const adminReviews = ref<AdminReview[]>([])
+const reviewsMeta = ref<Meta | null>(null)
+const reviewsLoading = ref(false)
 
 const content = ref<AdminContent | null>(null)
 const gen = reactive({ type: 'speaking', count: 5, test_type: 'academic' })
@@ -314,6 +370,30 @@ async function loadPayments(page = 1) {
   paymentsLoading.value = false
 }
 
+async function loadReviews(page = 1) {
+  reviewsLoading.value = true
+  await guard(async () => {
+    const { data } = await api.get<{ data: AdminReview[]; meta: Meta }>('/api/admin/reviews', {
+      params: { status: reviewStatus.value || undefined, page },
+    })
+    adminReviews.value = data.data
+    reviewsMeta.value = data.meta
+  })
+  reviewsLoading.value = false
+}
+
+async function setReviewStatus(r: AdminReview, status: AdminReview['status']) {
+  await guard(async () => {
+    await api.patch(`/api/admin/reviews/${r.id}`, { status })
+    r.status = status
+  })
+}
+
+function openPendingReviews() {
+  reviewStatus.value = 'pending'
+  tab.value = 'reviews'
+}
+
 const loadContent = () =>
   guard(async () => {
     content.value = (await api.get<AdminContent>('/api/admin/content')).data
@@ -353,6 +433,7 @@ watch(
     if (t === 'stats') loadStats()
     if (t === 'users' && !users.value.length) loadUsers()
     if (t === 'payments' && !adminPayments.value.length) loadPayments()
+    if (t === 'reviews') loadReviews()
     if (t === 'content') loadContent()
   },
   { immediate: false },

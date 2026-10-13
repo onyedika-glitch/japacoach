@@ -170,6 +170,14 @@ class User extends Authenticatable
     }
 
     /**
+     * @return HasOne<Review, $this>
+     */
+    public function review(): HasOne
+    {
+        return $this->hasOne(Review::class);
+    }
+
+    /**
      * @return HasOne<StudyPlan, $this>
      */
     public function studyPlan(): HasOne

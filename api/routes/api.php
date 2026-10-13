@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\MockExamController;
 use App\Http\Controllers\Api\PracticeController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\ReferralController;
+use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\SpeakingAttemptController;
 use App\Http\Controllers\Api\StudyPlanController;
 use App\Http\Controllers\Api\WritingController;
@@ -20,6 +21,7 @@ Route::middleware('throttle:auth')->group(function () {
     Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 });
 
+Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 Route::get('/billing/plans', [BillingController::class, 'plans'])->name('billing.plans');
 Route::post('/webhooks/bachs', [PaymentController::class, 'webhook'])->name('webhooks.bachs');
 
@@ -64,12 +66,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/billing/checkout', [BillingController::class, 'checkout'])->middleware('throttle:ai')->name('billing.checkout');
     Route::get('/billing/payments', [BillingController::class, 'payments'])->name('billing.payments');
     Route::get('/referrals', ReferralController::class)->name('referrals');
+    Route::get('/me/review', [ReviewController::class, 'show'])->name('me.review.show');
+    Route::put('/me/review', [ReviewController::class, 'upsert'])->middleware('throttle:ai')->name('me.review.update');
 
     Route::middleware(EnsureUserIsAdmin::class)->prefix('admin')->name('admin.')->group(function () {
         Route::get('/stats', [AdminController::class, 'stats'])->name('stats');
         Route::get('/users', [AdminController::class, 'users'])->name('users.index');
         Route::patch('/users/{user}', [AdminController::class, 'updateUser'])->name('users.update');
         Route::get('/payments', [AdminController::class, 'payments'])->name('payments.index');
+        Route::get('/reviews', [AdminController::class, 'reviews'])->name('reviews.index');
+        Route::patch('/reviews/{review}', [AdminController::class, 'updateReview'])->name('reviews.update');
         Route::get('/content', [AdminController::class, 'content'])->name('content.index');
         Route::post('/content/generate', [AdminController::class, 'generate'])->name('content.generate');
         Route::patch('/content/{type}/{id}', [AdminController::class, 'updateContent'])->whereIn('type', ['speaking', 'writing', 'practice'])->whereNumber('id')->name('content.update');

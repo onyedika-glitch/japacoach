@@ -4,6 +4,7 @@
     <How />
     <AI />
     <Services />
+    <Testimonials />
     <Products />
     <Faq />
     <section class="px-4 sm:px-6 py-20">
@@ -23,4 +24,5 @@ import AI from '@/components/AI.vue'
 import Services from '@/components/Services.vue'
 import Products from '@/components/Products.vue'
 import Faq from '@/components/Faq.vue'
+import Testimonials from '@/components/Testimonials.vue'
 </script>

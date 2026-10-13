@@ -56,11 +56,14 @@
       <Alert v-if="message" :tone="messageTone">{{ message }}</Alert>
       <button class="btn btn-primary w-full sm:w-auto" :disabled="saving">{{ saving ? 'Saving…' : 'Save changes' }}</button>
     </form>
+
+    <ReviewPrompt standalone class="mt-6" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { reactive, ref, watchEffect } from 'vue'
+import ReviewPrompt from '@/components/ReviewPrompt.vue'
 import Alert from '@/components/ui/Alert.vue'
 import { errorMessage } from '@/lib/api'
 import type { TestType } from '@/lib/types'
