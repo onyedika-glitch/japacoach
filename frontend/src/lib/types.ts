@@ -260,3 +260,15 @@ export interface Paginated<T> {
   links: { first: string | null; last: string | null; prev: string | null; next: string | null }
   meta: { current_page: number; last_page: number; per_page: number; total: number }
 }
+
+export interface Review {
+  id: number
+  rating: number
+  comment: string
+  display_name: string
+  location: string | null
+  module: 'speaking' | 'writing' | 'reading' | 'listening' | null
+  band: number | null
+  can_publish?: boolean
+  status?: 'pending' | 'approved' | 'hidden'
+}

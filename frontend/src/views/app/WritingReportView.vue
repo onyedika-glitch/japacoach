@@ -76,6 +76,8 @@
           <RouterLink :to="`/writing/task/${attempt.task.id}`" class="btn btn-primary"><RotateCcw class="w-4 h-4" /> Rewrite this task</RouterLink>
           <RouterLink to="/writing" class="btn btn-secondary">Try another task</RouterLink>
         </div>
+
+        <ReviewPrompt module="writing" />
       </template>
     </template>
   </div>
@@ -83,6 +85,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import ReviewPrompt from '@/components/ReviewPrompt.vue'
 import { useRoute } from 'vue-router'
 import { AlertTriangle, ArrowLeft, PenLine, RotateCcw, Target, ThumbsUp } from 'lucide-vue-next'
 import Spinner from '@/components/ui/Spinner.vue'

@@ -11,6 +11,7 @@ use App\Models\Payment;
 use App\Models\PracticeAttempt;
 use App\Models\PracticeSection;
 use App\Models\PracticeTest;
+use App\Models\Review;
 use App\Models\SpeakingAttempt;
 use App\Models\SpeakingQuestion;
 use App\Models\User;
@@ -35,6 +36,7 @@ class AdminController extends Controller
             'revenue_total' => (float) (clone $completed)->sum('amount'),
             'revenue_30d' => (float) (clone $completed)->where('paid_at', '>=', now()->subDays(30))->sum('amount'),
             'currency' => config('japa.currency'),
+            'reviews_pending' => Review::where('status', 'pending')->count(),
             'attempts_7d' => [
                 'speaking' => SpeakingAttempt::where('created_at', '>=', $weekAgo)->count(),
                 'writing' => WritingAttempt::where('created_at', '>=', $weekAgo)->count(),
@@ -112,6 +114,46 @@ class AdminController extends Controller
                 ->latest()
                 ->paginate(25)
         );
+    }
+
+    public function reviews(Request $request): JsonResponse
+    {
+        $request->validate(['status' => ['nullable', Rule::in(Review::STATUSES)]]);
+
+        $reviews = Review::with('user:id,name,email')
+            ->when($request->filled('status'), fn ($query) => $query->where('status', $request->query('status')))
+            ->latest('updated_at')
+            ->paginate(25);
+
+        return response()->json([
+            'data' => collect($reviews->items())->map(fn (Review $review): array => $review->toPublicArray() + [
+                'status' => $review->status,
+                'can_publish' => $review->can_publish,
+                'user' => $review->user?->only(['id', 'name', 'email']),
+                'updated_at' => $review->updated_at?->toIso8601String(),
+            ]),
+            'meta' => [
+                'current_page' => $reviews->currentPage(),
+                'last_page' => $reviews->lastPage(),
+                'total' => $reviews->total(),
+            ],
+        ]);
+    }
+
+    public function updateReview(Request $request, Review $review): JsonResponse
+    {
+        $validated = $request->validate(['status' => ['required', Rule::in(Review::STATUSES)]]);
+
+        if ($validated['status'] === 'approved' && ! $review->can_publish) {
+            return response()->json(['message' => 'This user did not allow their review to be published.'], 422);
+        }
+
+        $review->forceFill([
+            'status' => $validated['status'],
+            'approved_at' => $validated['status'] === 'approved' ? now() : null,
+        ])->save();
+
+        return response()->json(['message' => 'Review updated.']);
     }
 
     public function content(): JsonResponse
