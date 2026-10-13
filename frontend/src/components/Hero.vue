@@ -22,7 +22,7 @@
 
         <p class="mt-6 text-lg md:text-xl text-muted max-w-2xl mx-auto">
           Practise Speaking, Writing, Reading &amp; Listening with an AI examiner. Get an estimated band score and specific fixes in
-          minutes — built for Nigerians preparing to relocate.
+          minutes. Built for Nigerians preparing to relocate.
         </p>
 
         <div class="mt-9 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">

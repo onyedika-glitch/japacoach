@@ -67,7 +67,7 @@ class ProgressService
         $speaking = $user->speakingAttempts()->latest()->limit($limit)->get()
             ->map(fn ($a): array => [
                 'id' => $a->id, 'module' => 'speaking',
-                'title' => $a->mode === 'full' ? 'Full speaking test' : 'Speaking drill — '.str_replace('part', 'Part ', $a->mode),
+                'title' => $a->mode === 'full' ? 'Full speaking test' : 'Speaking drill: '.str_replace('part', 'Part ', $a->mode),
                 'band' => $a->overall_band, 'status' => $a->status, 'created_at' => $a->created_at->toIso8601String(),
             ]);
         $writing = $user->writingAttempts()->with('task:id,task_number,title')->latest()->limit($limit)->get()

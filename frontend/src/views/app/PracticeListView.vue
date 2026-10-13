@@ -11,7 +11,7 @@
     <div class="mt-6 card p-4 text-sm flex gap-3">
       <component :is="isReading ? Lightbulb : Headphones" class="w-5 h-5 text-brand shrink-0" />
       <span v-if="isReading">Tip: skim the passage first, then read each question and scan for keywords. Don't spend more than 20 minutes per passage.</span>
-      <span v-else>Use earphones and a quiet room. Read the questions before each recording starts — in the real test you hear each recording once.</span>
+      <span v-else>Use earphones and a quiet room. Read the questions before each recording starts. In the real test you hear each recording once.</span>
     </div>
 
     <Spinner v-if="loading" block />
@@ -33,7 +33,7 @@
           </button>
         </div>
       </div>
-      <p v-if="!filtered.length" class="text-muted">No tests available yet — check back soon.</p>
+      <p v-if="!filtered.length" class="text-muted">No tests available yet. Check back soon.</p>
     </div>
     <Alert v-if="startError" tone="error" class="mt-4">{{ startError }}</Alert>
   </div>

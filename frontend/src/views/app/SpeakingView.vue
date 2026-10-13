@@ -54,7 +54,7 @@
         <BandBadge v-else :value="a.overall_band" size="sm" />
       </RouterLink>
     </div>
-    <p v-else class="mt-3 text-muted">No speaking attempts yet — try a Part 1 drill first. It takes about 4 minutes.</p>
+    <p v-else class="mt-3 text-muted">No speaking attempts yet. Try a Part 1 drill first. It takes about 4 minutes.</p>
     <div v-if="nextPage" class="mt-4 text-center">
       <button class="btn btn-secondary btn-sm" @click="loadHistory(nextPage)">Load more</button>
     </div>
@@ -83,7 +83,7 @@ const modes: { mode: SpeakingMode; title: string; time: string; text: string; ic
   {
     mode: 'full',
     title: 'Full speaking mock',
-    time: '11–14 min',
+    time: '11 to 14 min',
     text: 'All three parts, just like the real test: interview, cue card with 1 minute to prepare, then discussion.',
     icon: Mic,
   },

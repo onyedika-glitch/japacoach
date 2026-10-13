@@ -10,7 +10,7 @@
         <div class="flex-1">
           <h1 class="font-grotesk text-2xl font-bold">Mock exam · {{ exam.test_type === 'general' ? 'General Training' : 'Academic' }}</h1>
           <p class="text-sm mt-1" :class="exam.status === 'completed' ? 'text-gray-300' : 'text-muted'">
-            {{ exam.status === 'completed' ? 'Completed — here is your overall estimate.' : `Started ${dateTime(exam.created_at)}. Do the parts in order.` }}
+            {{ exam.status === 'completed' ? 'Completed. Here is your overall estimate.' : `Started ${dateTime(exam.created_at)}. Do the parts in order.` }}
           </p>
         </div>
         <div v-if="exam.status === 'completed'" class="text-center">
@@ -207,7 +207,7 @@ const steps = computed(() => {
     {
       key: 'speaking',
       label: 'Speaking',
-      detail: 'All 3 parts · 11–14 minutes',
+      detail: 'All 3 parts · 11 to 14 minutes',
       status: p.speaking.status,
       band: p.speaking.band,
       locked: !writingDone,

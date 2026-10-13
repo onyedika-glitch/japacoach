@@ -3,7 +3,7 @@
     <h1 class="page-title">Billing</h1>
 
     <Alert v-if="status === 'success'" tone="success" class="mt-6">
-      <strong>Payment confirmed.</strong> Your plan is active — happy practising!
+      <strong>Payment confirmed.</strong> Your plan is active. Happy practising!
     </Alert>
     <Alert v-else-if="status === 'pending'" tone="warning" class="mt-6">
       <strong>Payment is still processing.</strong> This usually takes a minute. We'll activate your plan automatically once it's confirmed.
@@ -21,7 +21,7 @@
           <template v-if="auth.user.is_premium && auth.user.plan_expires_at">
             Active until {{ date(auth.user.plan_expires_at) }}. Buying again adds days to your current plan.
           </template>
-          <template v-else>Free plan — limited practice each month.</template>
+          <template v-else>Free plan: limited practice each month.</template>
         </div>
       </div>
     </div>

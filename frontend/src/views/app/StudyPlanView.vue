@@ -23,7 +23,7 @@
         <CalendarCheck class="w-12 h-12 text-brand mx-auto" />
         <h2 class="font-grotesk text-xl font-bold mt-4">No plan yet</h2>
         <p class="text-muted mt-2 max-w-md mx-auto">
-          Take at least one test in each module for the best plan — but you can generate one now and rebuild it later.
+          Take at least one test in each module for the best plan, but you can generate one now and rebuild it later.
         </p>
         <button class="btn btn-primary mt-6" :disabled="generating || !profileReady" @click="generate">
           {{ generating ? 'Building your plan…' : 'Generate my study plan' }}

@@ -37,7 +37,7 @@
     </p>
 
     <h2>Cookies</h2>
-    <p>We use essential cookies only — to keep you signed in and protect forms from abuse.</p>
+    <p>We use essential cookies only: to keep you signed in and to protect forms from abuse.</p>
 
     <h2>Contact</h2>
     <p>Questions about your data? Reach us through the support details in your dashboard.</p>

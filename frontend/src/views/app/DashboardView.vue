@@ -28,12 +28,12 @@
           <div class="text-sm text-gray-300">Overall estimate</div>
           <div class="font-grotesk text-5xl font-bold mt-1">{{ band(d.latest.overall) }}</div>
           <div class="text-sm text-gray-300 mt-1">
-            Target <span class="text-white font-semibold">{{ d.user.target_band ? band(d.user.target_band) : '—' }}</span>
+            Target <span class="text-white font-semibold">{{ d.user.target_band ? band(d.user.target_band) : 'not set' }}</span>
           </div>
         </div>
         <div class="card p-5">
           <CalendarDays class="w-5 h-5 text-brand" />
-          <div class="font-grotesk text-3xl font-bold mt-2">{{ d.days_to_test ?? '—' }}</div>
+          <div class="font-grotesk text-3xl font-bold mt-2">{{ d.days_to_test ?? 'N/A' }}</div>
           <div class="text-sm text-muted">{{ d.days_to_test === null ? 'No test date set' : 'days to your test' }}</div>
         </div>
         <div class="card p-5">

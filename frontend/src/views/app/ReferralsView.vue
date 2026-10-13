@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="page-title">Refer friends</h1>
-    <p class="text-muted mt-1">Everyone you know is preparing for IELTS. Help them — and earn extra full speaking mocks.</p>
+    <p class="text-muted mt-1">Everyone you know is preparing for IELTS. Help them, and earn extra full speaking mocks.</p>
 
     <Spinner v-if="loading" block />
     <Alert v-else-if="error" tone="error" class="mt-6">{{ error }}</Alert>
@@ -71,7 +71,7 @@ const copied = ref(false)
 
 const link = computed(() => (info.value ? `${window.location.origin}/signup?ref=${encodeURIComponent(info.value.code)}` : ''))
 const message = computed(
-  () => `I'm preparing for IELTS with Japa Coach — an AI examiner that gives you a band score and fixes in minutes. Try a free speaking test: ${link.value}`,
+  () => `I'm preparing for IELTS with Japa Coach, an AI examiner that gives you a band score and fixes in minutes. Try a free speaking test: ${link.value}`,
 )
 const whatsappHref = computed(() => `https://wa.me/?text=${encodeURIComponent(message.value)}`)
 const canShare = typeof navigator !== 'undefined' && 'share' in navigator

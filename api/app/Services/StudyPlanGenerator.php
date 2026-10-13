@@ -6,6 +6,7 @@ use App\Exceptions\ExternalServiceException;
 use App\Models\StudyPlan;
 use App\Models\User;
 use App\Services\Ai\DeepSeekClient;
+use App\Support\Text;
 use Illuminate\Support\Facades\Log;
 
 /**
@@ -47,9 +48,9 @@ class StudyPlanGenerator
         $bands = collect($latest)->map(fn (?float $band, string $module): string => "{$module}: ".($band ?? 'not yet tested'))->implode(', ');
 
         $result = $this->ai->json(
-            'You are an expert IELTS coach creating realistic study plans for busy Nigerian candidates who study on their phones. Reply with JSON only.',
+            'You are an expert IELTS coach creating realistic study plans for busy Nigerian candidates who study on their phones. '.Text::NO_DASHES.' Reply with JSON only.',
             "Candidate: {$user->test_type} IELTS, target overall band {$user->target_band}, test in {$daysLeft} days.\n"
-            ."Latest estimated bands — {$bands}.\n"
+            ."Latest estimated bands: {$bands}.\n"
             ."Create a {$weeks}-week plan (5 study days per week, 30-75 minutes per day) prioritising the weakest modules and anything below target.\n"
             .'Tasks must be things the candidate can do in this app: speaking drills (part 1/2/3), full speaking mock, writing Task 1/Task 2 practice, reading tests, listening tests, full mock exam (include one in the final week if there is time), plus short self-study tasks such as vocabulary review.'
             ."\nJSON shape: {\"summary\": \"2-3 sentences\", \"weeks\": [{\"week\": 1, \"focus\": \"short focus\", \"days\": [{\"day\": \"Monday\", \"tasks\": [{\"module\": \"speaking|writing|reading|listening|general\", \"title\": \"short task\", \"minutes\": 20}]}]}], \"tips\": [\"4-6 practical tips\"]}",
@@ -61,11 +62,11 @@ class StudyPlanGenerator
             throw new ExternalServiceException('Study plan response had no weeks.');
         }
 
-        return [
+        return Text::withoutDashesDeep([
             'summary' => (string) ($result['summary'] ?? ''),
             'weeks' => array_slice(array_values($result['weeks']), 0, $weeks),
             'tips' => array_values(array_filter((array) ($result['tips'] ?? []), 'is_string')),
-        ];
+        ]);
     }
 
     /**

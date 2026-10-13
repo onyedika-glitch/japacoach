@@ -31,7 +31,7 @@ const services = [
   { icon: PenLine, tint: brand, title: 'Writing', text: 'Task 1 (charts, tables, letters) and Task 2 essays with a timer, word count, corrections and a model answer.' },
   { icon: BookOpen, tint: brand, title: 'Reading', text: 'Academic and General passages with every common question type, auto-marked with explanations.' },
   { icon: Headphones, tint: brand, title: 'Listening', text: 'Four sections in British and American voices, auto-marked, with transcripts after you finish.' },
-  { icon: ClipboardList, tint: accent, title: 'Full mock exam', text: 'Listening → Reading → Writing → Speaking, with an overall band — the closest thing to test day.' },
+  { icon: ClipboardList, tint: accent, title: 'Full mock exam', text: 'Listening → Reading → Writing → Speaking, with an overall band. The closest thing to test day.' },
   { icon: CalendarCheck, tint: accent, title: 'Study plan', text: 'A week-by-week plan built from your test date, target band and weakest skills.' },
   { icon: LineChart, tint: accent, title: 'Progress tracking', text: 'Bands over time for every module, streaks and your recent attempts in one dashboard.' },
 ]

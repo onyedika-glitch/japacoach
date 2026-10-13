@@ -5,6 +5,7 @@ namespace App\Services\Scoring;
 use App\Models\SpeakingAnswer;
 use App\Models\SpeakingAttempt;
 use App\Services\Ai\DeepSeekClient;
+use App\Support\Text;
 
 /**
  * Scores a speaking attempt from its transcripts and fluency metrics using the AI examiner.
@@ -20,7 +21,7 @@ class SpeakingScorer
         $answers = $attempt->answers()->with('question')->where('status', 'transcribed')->get();
         $metrics = SpeakingMetrics::combine($answers->pluck('metrics')->filter()->values()->all());
 
-        $result = $this->ai->json($this->systemPrompt(), $this->userPrompt($answers->all(), $metrics), 0.2, 5000);
+        $result = Text::withoutDashesDeep($this->ai->json($this->systemPrompt(), $this->userPrompt($answers->all(), $metrics), 0.2, 5000));
 
         $scores = [];
         foreach (self::CRITERIA as $criterion) {
@@ -52,16 +53,18 @@ class SpeakingScorer
     private function systemPrompt(): string
     {
         $descriptors = BandDescriptors::SPEAKING;
+        $noDashes = Text::NO_DASHES;
 
         return <<<PROMPT
 You are a strict but encouraging certified IELTS Speaking examiner. You assess Nigerian candidates preparing to study or work abroad.
 You receive automatic speech-to-text transcripts of the candidate's answers plus measured fluency metrics. Transcripts may contain recognition errors; do not penalise obvious transcription glitches, but treat words flagged as unclear as possible pronunciation problems.
-Mark against these band descriptors and be realistic — do not inflate scores. Very short or off-topic answers must score low.
+Mark against these band descriptors and be realistic: do not inflate scores. Very short or off-topic answers must score low.
 
 {$descriptors}
 
 Pronunciation must be estimated from the unclear-word list, speaking rate and pauses, since you cannot hear the audio; say so briefly in its comment.
 Nigerian English features that do not impede understanding should not be heavily penalised.
+{$noDashes}
 
 Reply with JSON only, in this exact shape:
 {
@@ -95,7 +98,7 @@ PROMPT;
             if ($question->cue_points) {
                 $prompt .= ' (You should say: '.implode('; ', $question->cue_points).')';
             }
-            $lines[] = "PART {$answer->part} — Examiner: {$prompt}\nCandidate ({$answer->duration_seconds}s): ".($answer->transcript ?: '[no speech detected]');
+            $lines[] = "PART {$answer->part}. Examiner: {$prompt}\nCandidate ({$answer->duration_seconds}s): ".($answer->transcript ?: '[no speech detected]');
         }
 
         $unclear = implode(', ', $metrics['unclear_words']) ?: 'none';

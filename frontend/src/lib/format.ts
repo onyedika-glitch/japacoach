@@ -4,12 +4,12 @@ export function money(amount: number, currency = 'NGN'): string {
 }
 
 export function band(value: number | null | undefined): string {
-  if (value === null || value === undefined) return '–'
+  if (value === null || value === undefined) return 'N/A'
   return Number(value).toFixed(1)
 }
 
 export function date(value: string | null | undefined, opts: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'short', year: 'numeric' }): string {
-  if (!value) return '–'
+  if (!value) return 'N/A'
   const d = new Date(value)
   if (Number.isNaN(d.getTime())) return value
   return d.toLocaleDateString('en-GB', opts)

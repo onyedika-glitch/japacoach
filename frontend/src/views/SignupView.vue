@@ -1,8 +1,8 @@
 <template>
-  <AuthCard title="Take your free speaking test" subtitle="Create a free account — no card needed.">
+  <AuthCard title="Take your free speaking test" subtitle="Create a free account. No card needed.">
     <div v-if="referral" class="mb-5 rounded-xl bg-accent/10 text-sm p-3 flex gap-2">
       <Gift class="w-5 h-5 text-accent shrink-0" />
-      <span>You were invited by a friend — you'll get a bonus full speaking mock when you join.</span>
+      <span>You were invited by a friend, so you'll get a bonus full speaking mock when you join.</span>
     </div>
     <GoogleButton :href="googleHref" />
     <Divider />

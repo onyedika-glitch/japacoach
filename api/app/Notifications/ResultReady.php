@@ -30,7 +30,7 @@ class ResultReady extends Notification implements ShouldQueue
     {
         $url = rtrim(config('japa.frontend_url'), '/')."/{$this->module}/report/{$this->attemptId}";
         $module = ucfirst($this->module);
-        $band = $this->band !== null ? number_format($this->band, 1) : '—';
+        $band = $this->band !== null ? number_format($this->band, 1) : 'N/A';
 
         return (new MailMessage)
             ->subject("Your {$module} result: estimated band {$band}")
@@ -38,6 +38,6 @@ class ResultReady extends Notification implements ShouldQueue
             ->line("Your examiner has finished marking your {$this->module} practice. Your estimated band is {$band}.")
             ->line('Open your report to see exactly what to fix before your next attempt.')
             ->action('View my feedback', $url)
-            ->line('Keep going — small daily practice adds up.');
+            ->line('Keep going. Small daily practice adds up.');
     }
 }

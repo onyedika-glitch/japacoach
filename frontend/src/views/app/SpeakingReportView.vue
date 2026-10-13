@@ -15,7 +15,7 @@
         </div>
         <h1 class="font-grotesk text-2xl font-bold mt-6">Your examiner is marking…</h1>
         <p class="text-muted mt-2 max-w-md mx-auto">
-          We're transcribing every answer and checking fluency, vocabulary, grammar and pronunciation. A full mock can take a few minutes — you can
+          We're transcribing every answer and checking fluency, vocabulary, grammar and pronunciation. A full mock can take a few minutes, so you can
           leave this page and come back; we'll email you when it's ready.
         </p>
         <div class="mt-6 text-sm text-muted">{{ transcribedCount }} of {{ attempt.questions?.length ?? 0 }} answers transcribed</div>
@@ -43,7 +43,7 @@
             <p v-if="attempt.feedback?.summary" class="mt-3 text-[15px] leading-relaxed">{{ attempt.feedback.summary }}</p>
           </div>
         </div>
-        <p class="text-xs text-muted mt-2">Estimated band based on the public IELTS speaking descriptors — not an official result.</p>
+        <p class="text-xs text-muted mt-2">Estimated band based on the public IELTS speaking descriptors. Not an official result.</p>
 
         <section v-if="attempt.scores" class="mt-8">
           <h2 class="section-title mb-3">Your four criteria</h2>

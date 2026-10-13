@@ -18,7 +18,7 @@
 
     <h2>3. Your account</h2>
     <p>
-      You must give accurate information and keep your password safe. One account is for one person — please don't share it. We may suspend
+      You must give accurate information and keep your password safe. One account is for one person, so please don't share it. We may suspend
       accounts that abuse the service, for example by automating requests or reselling access.
     </p>
 

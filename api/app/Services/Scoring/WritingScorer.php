@@ -4,6 +4,7 @@ namespace App\Services\Scoring;
 
 use App\Models\WritingAttempt;
 use App\Services\Ai\DeepSeekClient;
+use App\Support\Text;
 
 /**
  * Scores a Task 1 or Task 2 response with the AI examiner.
@@ -30,7 +31,7 @@ class WritingScorer
         $task = $attempt->task;
         $criteria = self::criteriaFor($task->task_number);
 
-        $result = $this->ai->json($this->systemPrompt($task->task_number, $task->test_type), $this->userPrompt($attempt), 0.2, 6000);
+        $result = Text::withoutDashesDeep($this->ai->json($this->systemPrompt($task->task_number, $task->test_type), $this->userPrompt($attempt), 0.2, 6000));
 
         $scores = [];
         foreach ($criteria as $criterion) {
@@ -74,6 +75,7 @@ class WritingScorer
     private function systemPrompt(int $taskNumber, string $testType): string
     {
         $descriptors = BandDescriptors::WRITING;
+        $noDashes = Text::NO_DASHES;
         $taskName = $taskNumber === 1
             ? ($testType === 'general' ? 'General Training Task 1 (letter, minimum 150 words)' : 'Academic Task 1 (describe visual information, minimum 150 words)')
             : 'Task 2 (essay, minimum 250 words)';
@@ -81,7 +83,8 @@ class WritingScorer
 
         return <<<PROMPT
 You are a strict but encouraging certified IELTS Writing examiner marking {$taskName}.
-Mark against these band descriptors and be realistic — do not inflate scores. Responses under the minimum word count lose marks for task achievement/response.
+Mark against these band descriptors and be realistic: do not inflate scores. Responses under the minimum word count lose marks for task achievement/response.
+{$noDashes}
 
 {$descriptors}
 

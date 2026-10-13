@@ -4,7 +4,7 @@
       <div class="text-center max-w-2xl mx-auto">
         <h4 class="text-brand-dark font-semibold">Pricing</h4>
         <h2 class="mt-3 font-figtree text-3xl sm:text-5xl font-bold tracking-[-0.02em]">Less than one prep class</h2>
-        <p class="mt-4 text-lg text-muted">Start free. Pay only when you're ready — no automatic debits.</p>
+        <p class="mt-4 text-lg text-muted">Start free. Pay only when you're ready, with no automatic debits.</p>
       </div>
 
       <div v-if="loading" class="mt-14 grid md:grid-cols-4 gap-5">

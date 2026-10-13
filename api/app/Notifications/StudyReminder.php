@@ -25,7 +25,7 @@ class StudyReminder extends Notification implements ShouldQueue
     public function toMail(User $notifiable): MailMessage
     {
         $message = (new MailMessage)
-            ->subject($this->daysToTest !== null ? "{$this->daysToTest} days to your IELTS — practise today" : 'Keep your IELTS practice going')
+            ->subject($this->daysToTest !== null ? "{$this->daysToTest} days to your IELTS. Practise today!" : 'Keep your IELTS practice going')
             ->greeting("Hi {$notifiable->name},");
 
         if ($notifiable->streak_days > 1) {

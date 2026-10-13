@@ -8,7 +8,7 @@
         </h2>
         <p class="mt-5 text-lg text-muted">
           Your answers are transcribed, measured for pace and pauses, then marked against the public IELTS band descriptors. You get a band for each
-          criterion — and the exact sentences to fix.
+          criterion, plus the exact sentences to fix.
         </p>
 
         <div class="relative mt-10 hidden md:grid place-items-center h-56">
@@ -44,10 +44,10 @@ let tween: gsap.core.Tween | null = null
 
 const cards = [
   { icon: Waves, title: 'Fluency & Coherence', text: 'Do you speak at a natural pace, without long pauses, and link your ideas clearly?' },
-  { icon: BookA, title: 'Lexical Resource', text: 'Range and accuracy of vocabulary — including idioms and less common words.' },
+  { icon: BookA, title: 'Lexical Resource', text: 'Range and accuracy of vocabulary, including idioms and less common words.' },
   { icon: SpellCheck, title: 'Grammatical Range & Accuracy', text: 'A mix of simple and complex sentences, with as few errors as possible.' },
-  { icon: AudioLines, title: 'Pronunciation', text: 'How clearly you can be understood — word stress, sounds and intonation.' },
-  { icon: Zap, title: 'Instant feedback', text: 'See your mistakes, better versions of your answers, and words to use instead — minutes after you finish, not days.' },
+  { icon: AudioLines, title: 'Pronunciation', text: 'How clearly you can be understood: word stress, sounds and intonation.' },
+  { icon: Zap, title: 'Instant feedback', text: 'See your mistakes, better versions of your answers, and words to use instead, minutes after you finish (not days).' },
 ]
 
 onMounted(() => {

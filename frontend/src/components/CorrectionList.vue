@@ -5,7 +5,7 @@
       <div class="text-good font-medium mt-1 flex gap-2"><ArrowRight class="w-4 h-4 mt-1 shrink-0" />{{ c.corrected }}</div>
       <div class="text-sm text-muted mt-1.5">{{ c.explanation }}</div>
     </li>
-    <li v-if="!corrections.length" class="text-muted text-sm">No corrections — nice work.</li>
+    <li v-if="!corrections.length" class="text-muted text-sm">No corrections. Nice work!</li>
   </ul>
 </template>
 

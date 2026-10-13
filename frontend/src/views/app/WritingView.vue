@@ -3,7 +3,7 @@
     <h1 class="page-title">Writing</h1>
     <p class="text-muted mt-1">
       Timed tasks marked on the four writing criteria.
-      <span v-if="auth.user">Showing <strong>{{ auth.user.test_type === 'general' ? 'General Training' : 'Academic' }}</strong> tasks —
+      <span v-if="auth.user">Showing <strong>{{ auth.user.test_type === 'general' ? 'General Training' : 'Academic' }}</strong> tasks,
         <RouterLink to="/settings" class="text-brand-dark font-semibold">change</RouterLink>.</span>
     </p>
 
@@ -40,7 +40,7 @@
         <h3 class="font-semibold mt-3">{{ t.title }}</h3>
         <p class="text-sm text-muted mt-1 line-clamp-3">{{ t.prompt }}</p>
       </RouterLink>
-      <p v-if="!filtered.length" class="text-muted">No tasks available yet — check back soon.</p>
+      <p v-if="!filtered.length" class="text-muted">No tasks available yet. Check back soon.</p>
     </div>
 
     <h2 class="section-title mt-10">Your writing history</h2>

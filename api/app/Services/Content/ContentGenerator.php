@@ -6,13 +6,14 @@ use App\Models\PracticeTest;
 use App\Models\SpeakingQuestion;
 use App\Models\WritingTask;
 use App\Services\Ai\DeepSeekClient;
+use App\Support\Text;
 
 /**
  * Generates original IELTS-style practice content with DeepSeek and stores it through the importer.
  */
 class ContentGenerator
 {
-    private const SYSTEM = 'You are a senior IELTS test writer. Write ORIGINAL material at real IELTS difficulty — never copy published IELTS or Cambridge material. Answers must be unambiguous and verifiable. Reply with JSON only.';
+    private const SYSTEM = 'You are a senior IELTS test writer. Write ORIGINAL material at real IELTS difficulty and never copy published IELTS or Cambridge material. Answers must be unambiguous and verifiable. '.Text::NO_DASHES.' Reply with JSON only.';
 
     private const QUESTION_RULES = <<<'TEXT'
 Question object: {"type": "mcq"|"tfng"|"ynng"|"gap"|"matching", "prompt": "...", "options": [{"key": "A", "text": "..."}] or null, "answers": ["..."], "explanation": "where/why in the text"}
@@ -87,7 +88,7 @@ PROMPT, 0.8, 6000);
                 ."\nJSON: {\"title\": \"passage title\", \"instructions\": \"instructions for the candidate\", \"body\": \"passage text with paragraphs separated by \\n\\n\", \"questions\": [question objects]}", 0.8, 7000);
         }
 
-        $title = ($sections[0]['title'] ?? 'Reading test').' — '.ucfirst($testType).' Reading';
+        $title = ($sections[0]['title'] ?? 'Reading test').': '.ucfirst($testType).' Reading';
 
         return $this->importer->importPracticeTest('reading', [
             'title' => $title,
@@ -118,7 +119,7 @@ PROMPT, 0.8, 6000);
         }
 
         return $this->importer->importPracticeTest('listening', [
-            'title' => ($sections[0]['title'] ?? 'Listening').' — Listening test',
+            'title' => ($sections[0]['title'] ?? 'Listening').': Listening test',
             'duration_minutes' => 30,
             'sections' => $sections,
         ]);

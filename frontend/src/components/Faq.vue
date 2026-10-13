@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'Do I need a laptop?',
-    a: 'No. Everything works in your phone browser, including the speaking test — you just need to allow microphone access.',
+    a: 'No. Everything works in your phone browser, including the speaking test. You just need to allow microphone access.',
   },
   {
     q: 'Academic or General Training?',
@@ -40,11 +40,11 @@ const faqs = [
   },
   {
     q: 'How long does marking take?',
-    a: 'Writing and reading results come back within a minute or two. A full speaking mock can take a few minutes because every answer is transcribed and analysed — we will show your report as soon as it is ready.',
+    a: 'Writing and reading results come back within a minute or two. A full speaking mock can take a few minutes because every answer is transcribed and analysed. We will show your report as soon as it is ready.',
   },
   {
     q: 'How do I pay? Will you debit my card every month?',
-    a: 'You pay once for a fixed number of days of access through our payment partner, Bachs. There are no automatic renewals — we will remind you before your access ends.',
+    a: 'You pay once for a fixed number of days of access through our payment partner, Bachs. There are no automatic renewals, and we will remind you before your access ends.',
   },
   {
     q: 'What happens to my recordings?',

@@ -8,7 +8,7 @@
         <span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" :class="dotClass" />
         <span>{{ item }}</span>
       </li>
-      <li v-if="!items.length" class="text-muted">—</li>
+      <li v-if="!items.length" class="text-muted">None yet</li>
     </ul>
   </div>
 </template>

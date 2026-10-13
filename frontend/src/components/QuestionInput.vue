@@ -27,7 +27,7 @@
           @change="emit('update:modelValue', ($event.target as HTMLSelectElement).value)"
         >
           <option value="">Choose…</option>
-          <option v-for="o in options" :key="o.key" :value="o.key">{{ o.key }} — {{ o.text }}</option>
+          <option v-for="o in options" :key="o.key" :value="o.key">{{ o.key }}. {{ o.text }}</option>
         </select>
 
         <!-- MCQ / TFNG / YNNG: radio buttons -->

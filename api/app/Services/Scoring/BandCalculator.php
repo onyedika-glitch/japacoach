@@ -94,7 +94,7 @@ class BandCalculator
     }
 
     /**
-     * Clamp an AI-provided band to 0–9 in half-band steps.
+     * Clamp an AI-provided band to 0 to 9 in half-band steps.
      */
     public static function normalize(mixed $band): float
     {

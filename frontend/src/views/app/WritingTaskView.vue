@@ -25,7 +25,7 @@
           </div>
           <div class="text-sm" :class="words >= task.min_words ? 'text-good font-semibold' : 'text-muted'">{{ words }} / {{ task.min_words }} words</div>
         </div>
-        <p v-if="timer.remaining.value < 0" class="text-xs text-bad mt-1">Time's up in a real test — finish your last sentence and submit.</p>
+        <p v-if="timer.remaining.value < 0" class="text-xs text-bad mt-1">Time's up in a real test. Finish your last sentence and submit.</p>
 
         <textarea
           v-model="essay"
@@ -125,7 +125,7 @@ async function submit() {
     storage()?.removeItem(startKey)
     router.replace(mockId ? `/mock/${mockId}` : `/writing/report/${data.attempt.id}`)
   } catch (e) {
-    if (!isLimitError(e)) submitError.value = errorMessage(e, 'Could not submit. Your draft is saved — try again.')
+    if (!isLimitError(e)) submitError.value = errorMessage(e, 'Could not submit. Your draft is saved, so try again.')
   } finally {
     submitting.value = false
   }

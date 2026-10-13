@@ -36,7 +36,7 @@
             <p v-if="attempt.feedback?.summary" class="mt-3 text-[15px] leading-relaxed">{{ attempt.feedback.summary }}</p>
           </div>
         </div>
-        <p class="text-xs text-muted mt-2">Estimated band based on the public IELTS writing descriptors — not an official result.</p>
+        <p class="text-xs text-muted mt-2">Estimated band based on the public IELTS writing descriptors. Not an official result.</p>
 
         <section v-if="attempt.scores" class="mt-8">
           <h2 class="section-title mb-3">Your four criteria</h2>

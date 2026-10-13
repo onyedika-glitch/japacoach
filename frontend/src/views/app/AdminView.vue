@@ -168,7 +168,7 @@
       <template v-else>
         <ContentTable
           title="Speaking questions"
-          :rows="content.speaking_questions.map((q) => ({ id: q.id, published: q.is_published, cols: [`Part ${q.part}`, q.topic, q.prompt, q.has_audio ? '🔊' : '—'] }))"
+          :rows="content.speaking_questions.map((q) => ({ id: q.id, published: q.is_published, cols: [`Part ${q.part}`, q.topic, q.prompt, q.has_audio ? '🔊' : 'No audio'] }))"
           :headers="['Part', 'Topic', 'Prompt', 'Audio']"
           @toggle="(id, v) => togglePublish('speaking', id, v)"
         />
@@ -184,7 +184,7 @@
             content.practice_tests.map((t) => ({
               id: t.id,
               published: t.is_published,
-              cols: [t.module, t.test_type, t.title, String(t.question_count), t.missing_audio ? `${t.missing_audio} missing` : '—'],
+              cols: [t.module, t.test_type, t.title, String(t.question_count), t.missing_audio ? `${t.missing_audio} missing` : 'Ready'],
             }))
           "
           :headers="['Module', 'Type', 'Title', 'Qs', 'Audio']"

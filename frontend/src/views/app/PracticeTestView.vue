@@ -108,7 +108,7 @@
 
       <!-- Question navigator -->
       <div class="mt-4 card p-4">
-        <div class="text-xs text-muted mb-2">Questions — {{ answeredTotal }} of {{ totalQuestions }} answered</div>
+        <div class="text-xs text-muted mb-2">Questions: {{ answeredTotal }} of {{ totalQuestions }} answered</div>
         <div class="flex flex-wrap gap-1.5">
           <button
             v-for="q in allQuestions"

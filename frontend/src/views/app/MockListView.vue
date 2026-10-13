@@ -14,7 +14,7 @@
         </div>
       </div>
       <p class="text-sm text-muted mt-5">
-        About 2 hours 45 minutes in total. You can take a break between parts — your progress is saved. A mock uses one full speaking mock, two
+        About 2 hours 45 minutes in total. You can take a break between parts, and your progress is saved. A mock uses one full speaking mock, two
         writing evaluations and one reading and listening test from your plan.
       </p>
       <button class="btn btn-primary mt-6 w-full sm:w-auto px-8" :disabled="creating" @click="create">
@@ -60,7 +60,7 @@ const parts = [
   { label: 'Listening', time: '30 min', icon: Headphones },
   { label: 'Reading', time: '60 min', icon: BookOpen },
   { label: 'Writing', time: '60 min', icon: PenLine },
-  { label: 'Speaking', time: '11–14 min', icon: Mic },
+  { label: 'Speaking', time: '11 to 14 min', icon: Mic },
 ]
 
 onMounted(async () => {

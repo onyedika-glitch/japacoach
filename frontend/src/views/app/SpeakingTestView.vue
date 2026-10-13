@@ -11,11 +11,11 @@
       <h1 class="font-grotesk text-2xl font-bold mt-4">Microphone check</h1>
       <p class="text-muted mt-2">
         The examiner will ask {{ questions.length }} question{{ questions.length === 1 ? '' : 's' }}. Recording starts automatically after each
-        question — speak naturally, then tap <strong>Done</strong>.
+        question. Speak naturally, then tap <strong>Done</strong>.
       </p>
 
       <template v-if="rec.permission.value === 'granted'">
-        <p class="mt-6 text-sm font-medium">Say something — the bar should move.</p>
+        <p class="mt-6 text-sm font-medium">Say something. The bar should move.</p>
         <div class="mt-2 h-3 rounded-full bg-gray-100 overflow-hidden max-w-xs mx-auto">
           <div class="h-full bg-brand transition-[width] duration-75" :style="{ width: Math.round(rec.level.value * 100) + '%' }" />
         </div>
@@ -74,7 +74,7 @@
 
         <!-- Prep timer (Part 2) -->
         <div v-if="phase === 'prep'" class="card p-6 mt-4 text-center">
-          <div class="text-sm text-muted">Preparation time — make notes if you like</div>
+          <div class="text-sm text-muted">Preparation time: make notes if you like</div>
           <div class="font-grotesk text-5xl font-bold mt-2 tabular-nums">{{ clock(prep.remaining.value) }}</div>
           <textarea v-model="notes" class="input h-28 py-3 mt-4 text-sm" placeholder="Your notes (not marked)" />
           <button class="btn btn-secondary mt-4" @click="startRecording">I'm ready to speak</button>
@@ -93,7 +93,7 @@
           <button class="btn btn-primary w-full mt-6 h-14 text-lg" :disabled="rec.elapsed.value < 2" @click="finishAnswer">
             <Check class="w-5 h-5" /> Done
           </button>
-          <p v-if="current.part === 2 && rec.elapsed.value < 60" class="text-xs text-muted mt-2">Try to keep talking for 1–2 minutes.</p>
+          <p v-if="current.part === 2 && rec.elapsed.value < 60" class="text-xs text-muted mt-2">Try to keep talking for 1 to 2 minutes.</p>
         </div>
       </template>
 
@@ -159,8 +159,8 @@ const maxSeconds = computed(() => (current.value?.part === 2 ? 120 : 60))
 const failedUploads = computed(() => Object.entries(uploads).filter(([, u]) => u.status === 'error'))
 
 const partInfo: Record<number, { title: string; text: string }> = {
-  1: { title: 'Introduction and interview', text: 'Short questions about familiar topics. Aim for 2–4 sentences per answer.' },
-  2: { title: 'Individual long turn', text: "You'll get a cue card and 1 minute to prepare. Then speak for 1–2 minutes." },
+  1: { title: 'Introduction and interview', text: 'Short questions about familiar topics. Aim for 2 to 4 sentences per answer.' },
+  2: { title: 'Individual long turn', text: "You'll get a cue card and 1 minute to prepare. Then speak for 1 to 2 minutes." },
   3: { title: 'Two-way discussion', text: 'Deeper questions linked to Part 2. Give opinions, reasons and examples.' },
 }
 
@@ -269,7 +269,7 @@ function speak(q: SpeakingQuestion) {
   u.onend = afterQuestionSpoken
   window.speechSynthesis.cancel()
   window.speechSynthesis.speak(u)
-  // Some mobile browsers never fire onend — fall back to an estimate.
+  // Some mobile browsers never fire onend, so fall back to an estimate.
   speechFallbackTimer = setTimeout(afterQuestionSpoken, Math.max(4000, text.split(' ').length * 450 + 1500))
 }
 
