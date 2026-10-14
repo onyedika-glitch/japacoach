@@ -85,6 +85,7 @@ class _DashboardBody extends StatelessWidget {
       ),
       const SizedBox(height: 16),
       GridView.count(
+        padding: EdgeInsets.zero,
         crossAxisCount: 2,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),

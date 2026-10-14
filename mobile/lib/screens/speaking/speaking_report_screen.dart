@@ -141,6 +141,7 @@ class _Report extends StatelessWidget {
       if (m != null) ...[
         const SectionTitle('Your delivery'),
         GridView.count(
+          padding: EdgeInsets.zero,
           crossAxisCount: 2,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
