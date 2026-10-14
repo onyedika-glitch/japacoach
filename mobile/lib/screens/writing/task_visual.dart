@@ -51,7 +51,7 @@ class TaskVisual extends StatelessWidget {
         .map((d) => (label: (d as Map)['label']?.toString() ?? '', data: (d['data'] as List? ?? []).map((v) => (v as num).toDouble()).toList()))
         .toList();
     if (labels.isEmpty || datasets.isEmpty) return [const Text('Chart unavailable.')];
-    final maxY = datasets.expand((d) => d.data).fold<double>(0, math.max) * 1.15;
+    final maxY = _niceMax(datasets.expand((d) => d.data).fold<double>(0, math.max));
 
     Widget bottomTitle(double v, TitleMeta _) {
       final i = v.round();
@@ -135,4 +135,11 @@ class TaskVisual extends StatelessWidget {
       ],
     ];
   }
+}
+
+/// Rounds the top of the axis up to a clean step (e.g. 610 -> 650), so the top label reads well.
+double _niceMax(double max) {
+  if (max <= 0) return 1;
+  final step = math.pow(10, (math.log(max) / math.ln10).floor()).toDouble() / 2;
+  return (max * 1.05 / step).ceil() * step;
 }

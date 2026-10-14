@@ -176,7 +176,7 @@ class CorrectionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (corrections.isEmpty) return const Text('No corrections needed.', style: TextStyle(color: AppColors.muted));
-    return Column(children: [
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
       for (final c in corrections)
         Padding(
           padding: const EdgeInsets.only(bottom: 10),
