@@ -21,6 +21,7 @@
         <ul class="space-y-2 text-sm">
           <li><RouterLink to="/terms" class="hover:text-white">Terms of use</RouterLink></li>
           <li><RouterLink to="/privacy" class="hover:text-white">Privacy policy</RouterLink></li>
+          <li><RouterLink to="/delete-account" class="hover:text-white">Delete account</RouterLink></li>
         </ul>
       </div>
     </div>

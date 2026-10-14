@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Http;
@@ -77,11 +78,13 @@ class MobileAuthTest extends TestCase
     public function test_user_can_delete_their_account(): void
     {
         $user = User::factory()->create();
+        $payment = Payment::factory()->for($user)->create(['status' => 'completed']);
         $token = $user->createToken('phone')->plainTextToken;
 
         $this->withToken($token)->deleteJson('/api/me')->assertJsonValidationErrors('confirm');
         $this->withToken($token)->deleteJson('/api/me', ['confirm' => 'DELETE'])->assertOk();
 
         $this->assertModelMissing($user);
+        $this->assertNull($payment->refresh()->user_id, 'Payment records are kept, unlinked.');
     }
 }
