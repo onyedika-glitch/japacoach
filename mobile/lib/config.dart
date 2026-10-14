@@ -3,8 +3,11 @@
 class AppConfig {
   static const apiUrl = String.fromEnvironment('API_URL', defaultValue: 'https://japacoach.com');
 
-  /// The Google OAuth *web* client ID (the same one the website uses). Google sign-in is hidden when empty.
-  static const googleServerClientId = String.fromEnvironment('GOOGLE_SERVER_CLIENT_ID');
+  /// The Google OAuth *web* client ID (the same one the website uses; not a secret). Google sign-in is hidden when empty.
+  static const googleServerClientId = String.fromEnvironment(
+    'GOOGLE_SERVER_CLIENT_ID',
+    defaultValue: '671451700757-ekv0pamep93sdablqohkqada5385mis2.apps.googleusercontent.com',
+  );
 
   static const websiteUrl = 'https://japacoach.com';
   static const supportEmail = 'hello@japacoach.com';
