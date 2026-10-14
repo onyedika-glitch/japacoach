@@ -37,6 +37,7 @@ FULL MOCK EXAMS AND A STUDY PLAN
 BUILT FOR YOU
 • Works on everyday Android phones
 • Start free with no card
+• Upgrade with a weekly, monthly or 90 day pass through Google Play, with no automatic renewal
 • Email reminders before your test date (you can turn them off)
 • Delete your account and data at any time from Settings
 
@@ -59,7 +60,8 @@ Privacy policy: https://japacoach.com/privacy
 Account deletion: https://japacoach.com/delete-account
 
 ## Data safety answers (summary)
-Collected: Name, Email address, User IDs (account), Voice or sound recordings (speaking answers), Other user generated content (essays, answers), App activity (test results).
+Collected: Name, Email address, User IDs (account), Purchase history (plan passes bought through Google Play), Voice or sound recordings (speaking answers), Other user generated content (essays, answers), App activity (test results).
+Payment details are handled by Google Play; the app never sees card numbers.
 Shared with third parties: Essays and speaking transcripts are processed by an AI provider to generate feedback (processing on our behalf; not sold).
 Purpose: App functionality, Account management.
 Encrypted in transit: Yes. Users can request deletion: Yes (in app and at /delete-account).

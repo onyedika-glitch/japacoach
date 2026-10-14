@@ -79,7 +79,10 @@ class _DashboardBody extends StatelessWidget {
               text: d.daysToTest == null ? 'No test date' : '${d.daysToTest} days to test',
             ),
             const SizedBox(height: 8),
-            _Stat(icon: Icons.workspace_premium_rounded, color: AppColors.brand100, text: '${planLabel(user.isPremium ? user.plan : 'free')} plan'),
+            GestureDetector(
+              onTap: () => context.push('/plans'),
+              child: _Stat(icon: Icons.workspace_premium_rounded, color: AppColors.brand100, text: '${planLabel(user.isPremium ? user.plan : 'free')} plan'),
+            ),
           ]),
         ]),
       ),
