@@ -27,7 +27,9 @@ class AdminController extends Controller
     public function stats(): JsonResponse
     {
         $weekAgo = now()->subDays(7);
-        $completed = Payment::where('status', 'completed');
+        // Google Play test purchases (license testers) move no money.
+        $completed = Payment::where('status', 'completed')
+            ->where(fn ($query) => $query->whereNull('metadata->test')->orWhere('metadata->test', false));
 
         return response()->json([
             'users_total' => User::count(),

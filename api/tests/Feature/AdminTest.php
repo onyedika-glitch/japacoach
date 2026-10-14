@@ -22,6 +22,7 @@ class AdminTest extends TestCase
     {
         Payment::factory()->create(['status' => 'completed', 'amount' => 4000, 'paid_at' => now()]);
         Payment::factory()->create(['status' => 'pending', 'amount' => 10000]);
+        Payment::factory()->create(['status' => 'completed', 'amount' => 1500, 'paid_at' => now(), 'metadata' => ['provider' => 'google_play', 'test' => true]]);
 
         $this->actingAs(User::factory()->admin()->create())->getJson('/api/admin/stats')
             ->assertOk()
