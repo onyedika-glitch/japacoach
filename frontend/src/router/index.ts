@@ -19,6 +19,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/pricing', name: 'pricing', component: () => import('@/views/PricingView.vue'), meta: { layout: 'public', title: 'Pricing', description: 'Japa Coach plans from ₦1,500 a week. Start free with a speaking test, then unlock full mock tests, writing evaluations and unlimited reading and listening practice.' } },
   { path: '/terms', name: 'terms', component: () => import('@/views/TermsView.vue'), meta: { layout: 'public', title: 'Terms', description: 'The terms for using Japa Coach, the AI IELTS practice platform.' } },
   { path: '/privacy', name: 'privacy', component: () => import('@/views/PrivacyView.vue'), meta: { layout: 'public', title: 'Privacy', description: 'How Japa Coach collects, uses and protects your data, including speaking recordings.' } },
+  { path: '/delete-account', name: 'delete-account', component: () => import('@/views/DeleteAccountView.vue'), meta: { layout: 'public', title: 'Delete your account', description: 'How to delete your Japa Coach account and data, on the website or in the mobile app.' } },
   { path: '/login', name: 'login', component: () => import('@/views/LoginView.vue'), meta: { layout: 'public', guestOnly: true, title: 'Log in', description: 'Log in to Japa Coach to continue your IELTS practice.' } },
   { path: '/signup', name: 'signup', component: () => import('@/views/SignupView.vue'), meta: { layout: 'public', guestOnly: true, title: 'Sign up', description: 'Create a free Japa Coach account and take your first AI-marked IELTS speaking test. No card needed.' } },
 

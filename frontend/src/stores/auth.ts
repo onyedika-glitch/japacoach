@@ -58,9 +58,14 @@ export const useAuthStore = defineStore('auth', () => {
     user.value = data.user
   }
 
+  async function deleteAccount() {
+    await api.delete('/api/me', { data: { confirm: 'DELETE' } })
+    user.value = null
+  }
+
   function setUser(u: User) {
     user.value = u
   }
 
-  return { user, booted, isLoggedIn, isAdmin, boot, fetchMe, login, register, logout, update, setUser }
+  return { user, booted, isLoggedIn, isAdmin, boot, fetchMe, login, register, logout, update, deleteAccount, setUser }
 })

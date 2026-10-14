@@ -25,7 +25,7 @@ class PaymentResource extends JsonResource
             'status' => $this->status,
             'paid_at' => $this->paid_at?->toIso8601String(),
             'created_at' => $this->created_at?->toIso8601String(),
-            'user' => $this->whenLoaded('user', fn () => [
+            'user' => $this->whenLoaded('user', fn () => $this->user === null ? null : [
                 'id' => $this->user->id,
                 'name' => $this->user->name,
                 'email' => $this->user->email,

@@ -22,6 +22,11 @@ class PaymentFulfiller
 
             $locked->forceFill(['status' => 'completed', 'paid_at' => now()])->save();
 
+            // The account was deleted before the payment finished: keep the record, nothing to grant.
+            if ($locked->user_id === null) {
+                return;
+            }
+
             $user = User::whereKey($locked->user_id)->lockForUpdate()->firstOrFail();
             $days = (int) config("japa.plans.{$locked->plan}.days", 30);
             $user->grantPlan($locked->plan, $days);

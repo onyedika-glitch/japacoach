@@ -141,6 +141,7 @@ return [
             ['path' => '/login', 'priority' => '0.4', 'changefreq' => 'yearly', 'updated' => '2026-10-13'],
             ['path' => '/terms', 'priority' => '0.3', 'changefreq' => 'yearly', 'updated' => '2026-10-13'],
             ['path' => '/privacy', 'priority' => '0.3', 'changefreq' => 'yearly', 'updated' => '2026-10-13'],
+            ['path' => '/delete-account', 'priority' => '0.2', 'changefreq' => 'yearly', 'updated' => '2026-10-14'],
         ],
 
         // Areas behind login: blocked in robots.txt so crawl budget goes to public pages.

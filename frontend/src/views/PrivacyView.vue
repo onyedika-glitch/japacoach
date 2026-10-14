@@ -32,8 +32,9 @@
 
     <h2>Your choices</h2>
     <p>
-      You can update your profile at any time in settings. To delete your account and data, contact support from your dashboard and we will
-      remove it within 30 days.
+      You can update your profile at any time in settings. You can delete your account and data yourself at any time on our
+      <RouterLink to="/delete-account">delete account page</RouterLink> or in the mobile app (More, Settings, Delete my account). Deletion is
+      immediate.
     </p>
 
     <h2>Cookies</h2>

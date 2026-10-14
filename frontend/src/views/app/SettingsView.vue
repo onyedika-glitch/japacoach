@@ -58,6 +58,12 @@
     </form>
 
     <ReviewPrompt standalone class="mt-6" />
+
+    <div class="card p-5 sm:p-6 mt-6">
+      <h2 class="section-title">Delete account</h2>
+      <p class="text-sm text-muted mt-1">Permanently remove your account and all your practice data.</p>
+      <RouterLink to="/delete-account" class="btn btn-secondary btn-sm mt-4 !text-bad">Delete my account</RouterLink>
+    </div>
   </div>
 </template>
 
