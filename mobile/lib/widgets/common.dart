@@ -236,12 +236,15 @@ class Pill extends StatelessWidget {
   final Color color;
   final Color background;
 
+  // The Row keeps the pill its natural width even inside full-width parents like ListView.
   @override
-  Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-        decoration: BoxDecoration(color: background, borderRadius: BorderRadius.circular(20)),
-        child: Text(text, style: TextStyle(color: color, fontSize: 12, fontWeight: FontWeight.w700)),
-      );
+  Widget build(BuildContext context) => Row(mainAxisSize: MainAxisSize.min, children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+          decoration: BoxDecoration(color: background, borderRadius: BorderRadius.circular(20)),
+          child: Text(text, style: TextStyle(color: color, fontSize: 12, fontWeight: FontWeight.w700)),
+        ),
+      ]);
 }
 
 void showSnack(BuildContext context, String message) {
