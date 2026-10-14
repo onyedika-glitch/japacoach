@@ -14,14 +14,6 @@
           <component :is="item.icon" class="w-5 h-5" />
           {{ item.label }}
         </RouterLink>
-        <RouterLink
-          v-if="auth.isAdmin"
-          to="/admin"
-          class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-medium text-muted hover:bg-gray-50 hover:text-ink"
-          active-class="!bg-brand-50 !text-brand-dark"
-        >
-          <Shield class="w-5 h-5" /> Admin
-        </RouterLink>
       </nav>
       <PlanBox />
       <div class="mt-4 flex items-center gap-3 px-2">
@@ -107,7 +99,6 @@ import {
   Mic,
   PenLine,
   Settings,
-  Shield,
   X,
 } from 'lucide-vue-next'
 import Logo from '@/components/Logo.vue'
@@ -131,7 +122,6 @@ const extraNav = computed(() => [
   { to: '/billing', label: 'Billing', icon: CreditCard },
   { to: '/referrals', label: 'Refer friends', icon: Gift },
   { to: '/settings', label: 'Settings', icon: Settings },
-  ...(auth.isAdmin ? [{ to: '/admin', label: 'Admin', icon: Shield }] : []),
 ])
 const bottomNav = nav.slice(0, 5)
 
