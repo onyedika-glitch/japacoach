@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../config.dart';
 import '../../state/auth.dart';
+import '../../state/billing.dart';
 import '../../theme.dart';
 import '../../widgets/common.dart';
 import '../../widgets/format.dart';
@@ -44,6 +45,16 @@ class MoreScreen extends StatelessWidget {
             ]),
           ),
         const SizedBox(height: 16),
+        if (context.read<BillingState>().supported) ...[
+          _Group(children: [
+            _Item(
+              icon: Icons.workspace_premium_rounded,
+              label: user?.isPremium ?? false ? 'Your plan' : 'Upgrade your plan',
+              onTap: () => context.push('/plans'),
+            ),
+          ]),
+          const SizedBox(height: 16),
+        ],
         _Group(children: [
           _Item(icon: Icons.assignment_rounded, label: 'Full mock exam', onTap: () => context.push('/mock')),
           _Item(icon: Icons.calendar_month_rounded, label: 'Study plan', onTap: () => context.push('/study-plan')),
