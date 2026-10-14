@@ -52,6 +52,12 @@ return [
         'token' => env('SPEECH_SERVICE_TOKEN'),
     ],
 
+    'google_play' => [
+        'package_name' => env('GOOGLE_PLAY_PACKAGE_NAME', 'com.japacoach.app'),
+        // Base64 of the service account JSON key with access to the app in Play Console.
+        'service_account' => env('GOOGLE_PLAY_SERVICE_ACCOUNT'),
+    ],
+
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),

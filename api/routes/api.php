@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BillingController;
 use App\Http\Controllers\Api\DashboardController;
+use App\Http\Controllers\Api\GooglePlayController;
 use App\Http\Controllers\Api\MobileAuthController;
 use App\Http\Controllers\Api\MockExamController;
 use App\Http\Controllers\Api\PracticeController;
@@ -73,6 +74,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('/billing/checkout', [BillingController::class, 'checkout'])->middleware('throttle:ai')->name('billing.checkout');
     Route::get('/billing/payments', [BillingController::class, 'payments'])->name('billing.payments');
+    Route::post('/billing/google-play/verify', [GooglePlayController::class, 'verify'])->middleware('throttle:ai')->name('billing.google-play.verify');
+    Route::get('/billing/google-play/account', [GooglePlayController::class, 'account'])->name('billing.google-play.account');
     Route::get('/referrals', ReferralController::class)->name('referrals');
     Route::get('/me/review', [ReviewController::class, 'show'])->name('me.review.show');
     Route::put('/me/review', [ReviewController::class, 'upsert'])->middleware('throttle:ai')->name('me.review.update');
