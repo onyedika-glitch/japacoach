@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BillingController;
 use App\Http\Controllers\Api\DashboardController;
+use App\Http\Controllers\Api\MobileAuthController;
 use App\Http\Controllers\Api\MockExamController;
 use App\Http\Controllers\Api\PracticeController;
 use App\Http\Controllers\Api\ProfileController;
@@ -19,6 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('throttle:auth')->group(function () {
     Route::post('/auth/register', [AuthController::class, 'register'])->name('auth.register');
     Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+
+    // Mobile app: bearer tokens instead of cookie sessions.
+    Route::post('/mobile/register', [MobileAuthController::class, 'register'])->name('mobile.register');
+    Route::post('/mobile/login', [MobileAuthController::class, 'login'])->name('mobile.login');
+    Route::post('/mobile/google', [MobileAuthController::class, 'google'])->name('mobile.google');
 });
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
@@ -27,8 +33,10 @@ Route::post('/webhooks/bachs', [PaymentController::class, 'webhook'])->name('web
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
+    Route::post('/mobile/logout', [MobileAuthController::class, 'logout'])->name('mobile.logout');
     Route::get('/me', [ProfileController::class, 'show'])->name('me.show');
     Route::patch('/me', [ProfileController::class, 'update'])->name('me.update');
+    Route::delete('/me', [ProfileController::class, 'destroy'])->name('me.destroy');
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
     Route::prefix('speaking')->name('speaking.')->group(function () {

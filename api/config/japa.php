@@ -5,6 +5,11 @@ return [
     // Where users are sent back to after Google sign-in and Bachs checkout.
     'frontend_url' => env('FRONTEND_URL', env('APP_URL')),
 
+    'mobile' => [
+        // Extra Google OAuth client IDs whose ID tokens the mobile app may send (the web client ID is always accepted).
+        'google_client_ids' => array_values(array_filter(explode(',', (string) env('GOOGLE_MOBILE_CLIENT_IDS', '')))),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Plans
