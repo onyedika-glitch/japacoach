@@ -8,7 +8,7 @@
       <li><strong>Account details:</strong> your name, email address and, if you sign in with Google, your profile picture.</li>
       <li><strong>Study profile:</strong> test type, target band and test date, which you choose to give us.</li>
       <li><strong>Your practice work:</strong> speaking recordings, transcripts, essays and answers, plus the scores and feedback we generate.</li>
-      <li><strong>Payments:</strong> the plan you bought, the amount and the payment reference. Card details are handled by Bachs, never by us.</li>
+      <li><strong>Payments:</strong> the plan you bought, the amount and the payment reference. Card details are handled by Bachs on the website and by Google Play in the Android app, never by us.</li>
     </ul>
 
     <h2>How we use it</h2>
@@ -28,6 +28,12 @@
     <p>
       <strong>Audio recordings are deleted automatically after 30 days.</strong> Transcripts, essays, scores and feedback stay in your history
       until you delete your account. Payment records are kept as long as the law requires.
+    </p>
+
+    <h2>Age</h2>
+    <p>
+      Japa Coach is for adults aged 18 and over. We do not knowingly collect data from anyone under 18. If you believe a person under 18 has
+      created an account, contact us and we will delete it.
     </p>
 
     <h2>Your choices</h2>

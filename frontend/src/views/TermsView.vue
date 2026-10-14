@@ -18,6 +18,9 @@
 
     <h2>3. Your account</h2>
     <p>
+      <strong>You must be 18 or older to use Japa Coach.</strong> By creating an account you confirm that you are at least 18.
+    </p>
+    <p>
       You must give accurate information and keep your password safe. One account is for one person, so please don't share it. We may suspend
       accounts that abuse the service, for example by automating requests or reselling access.
     </p>
@@ -25,7 +28,8 @@
     <h2>4. Payments</h2>
     <p>
       Paid plans give you access for a fixed number of days from the moment your payment is confirmed. Payments are processed by our payment
-      partner, Bachs. We do not store your card details. Plans do not renew automatically. If you were charged but your plan was not activated,
+      partner, Bachs. Plans bought in the Android app are processed by Google Play under Google Play's terms, and Google Play handles their
+      refunds. We do not store your card details. Plans do not renew automatically. If you were charged but your plan was not activated,
       contact us and we will fix it or refund you.
     </p>
 
