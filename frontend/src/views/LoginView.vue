@@ -9,7 +9,7 @@
       </div>
       <div>
         <label class="label" for="password">Password</label>
-        <input id="password" v-model="password" type="password" class="input" autocomplete="current-password" required />
+        <PasswordInput id="password" v-model="password" autocomplete="current-password" required />
       </div>
       <label class="flex items-center gap-2 text-sm text-muted">
         <input v-model="remember" type="checkbox" class="accent-brand w-4 h-4" /> Keep me signed in
@@ -29,6 +29,7 @@ import { useRoute, useRouter } from 'vue-router'
 import AuthCard from '@/components/auth/AuthCard.vue'
 import GoogleButton from '@/components/auth/GoogleButton.vue'
 import Divider from '@/components/auth/Divider.vue'
+import PasswordInput from '@/components/auth/PasswordInput.vue'
 import { useAuthStore } from '@/stores/auth'
 import { errorMessage } from '@/lib/api'
 
