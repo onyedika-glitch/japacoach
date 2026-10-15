@@ -17,12 +17,12 @@
       </div>
       <div>
         <label class="label" for="password">Password</label>
-        <input id="password" v-model="password" type="password" class="input" autocomplete="new-password" minlength="8" required />
+        <PasswordInput id="password" v-model="password" autocomplete="new-password" minlength="8" required />
         <p class="text-xs text-muted mt-1">At least 8 characters.</p>
       </div>
       <div>
         <label class="label" for="password2">Confirm password</label>
-        <input id="password2" v-model="password2" type="password" class="input" autocomplete="new-password" required />
+        <PasswordInput id="password2" v-model="password2" autocomplete="new-password" required />
       </div>
       <p v-if="error" class="text-sm text-bad">{{ error }}</p>
       <button class="btn btn-primary w-full" :disabled="busy">{{ busy ? 'Creating account…' : 'Create free account' }}</button>
@@ -44,6 +44,7 @@ import { Gift } from 'lucide-vue-next'
 import AuthCard from '@/components/auth/AuthCard.vue'
 import GoogleButton from '@/components/auth/GoogleButton.vue'
 import Divider from '@/components/auth/Divider.vue'
+import PasswordInput from '@/components/auth/PasswordInput.vue'
 import { useAuthStore } from '@/stores/auth'
 import { errorMessage } from '@/lib/api'
 
