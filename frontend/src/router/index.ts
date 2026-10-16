@@ -9,6 +9,7 @@ declare module 'vue-router' {
     requiresAuth?: boolean
     guestOnly?: boolean
     requiresAdmin?: boolean
+    requiresTutor?: boolean
     title?: string
   }
 }
@@ -48,6 +49,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/billing', name: 'billing', component: () => import('@/views/app/BillingView.vue'), meta: app({ title: 'Billing' }) },
   { path: '/referrals', name: 'referrals', component: () => import('@/views/app/ReferralsView.vue'), meta: app({ title: 'Refer friends' }) },
   { path: '/settings', name: 'settings', component: () => import('@/views/app/SettingsView.vue'), meta: app({ title: 'Settings' }) },
+  { path: '/tutor', name: 'tutor', component: () => import('@/views/app/TutorView.vue'), meta: app({ title: 'My students', requiresTutor: true }) },
   { path: '/admin', name: 'admin', component: () => import('@/views/app/AdminView.vue'), meta: app({ title: 'Admin', requiresAdmin: true }) },
 
   { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('@/views/NotFoundView.vue'), meta: { layout: 'public', title: 'Not found', noindex: true } },
@@ -74,6 +76,9 @@ router.beforeEach(async (to) => {
     return { name: 'dashboard' }
   }
   if (to.meta.requiresAdmin && !auth.isAdmin) {
+    return { name: 'dashboard' }
+  }
+  if (to.meta.requiresTutor && !auth.user?.is_tutor) {
     return { name: 'dashboard' }
   }
   return true

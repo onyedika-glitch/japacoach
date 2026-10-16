@@ -135,6 +135,131 @@
       <Pager :meta="paymentsMeta" @page="loadPayments" />
     </section>
 
+    <!-- CENTRES & CODES -->
+    <section v-else-if="tab === 'centres'" class="mt-6 space-y-6">
+      <div class="grid lg:grid-cols-2 gap-6 items-start">
+        <form class="card p-5 space-y-3" @submit.prevent="createCentre">
+          <h2 class="section-title">New centre</h2>
+          <p class="text-sm text-muted">The tutor must already have a Japa Coach account. They get a "My students" page and a class code.</p>
+          <div>
+            <label class="label">Centre name</label>
+            <input v-model="centreForm.name" class="input h-10" placeholder="e.g. Tractrain Lagos" required />
+          </div>
+          <div>
+            <label class="label">Tutor's account email</label>
+            <input v-model="centreForm.owner_email" type="email" class="input h-10" required />
+          </div>
+          <button class="btn btn-primary btn-sm h-10" :disabled="centreBusy">{{ centreBusy ? 'Creating…' : 'Create centre' }}</button>
+          <p v-if="centreMessage" class="text-sm text-good">{{ centreMessage }}</p>
+        </form>
+
+        <form class="card p-5 space-y-3" @submit.prevent="generateCodes">
+          <h2 class="section-title">Generate voucher codes</h2>
+          <p class="text-sm text-muted">Each code gives one student the plan's days. Codes linked to a centre also join the student to that class.</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="label">Plan</label>
+              <select v-model="voucherForm.plan" class="input h-10">
+                <option v-for="p in planIds.filter((p) => p !== 'free')" :key="p" :value="p">{{ planLabel(p) }}</option>
+              </select>
+            </div>
+            <div>
+              <label class="label">How many</label>
+              <input v-model.number="voucherForm.quantity" type="number" min="1" max="500" class="input h-10" required />
+            </div>
+          </div>
+          <div>
+            <label class="label">Centre (optional)</label>
+            <select v-model="voucherForm.centre_id" class="input h-10">
+              <option :value="null">No centre</option>
+              <option v-for="c in adminCentres" :key="c.id" :value="c.id">{{ c.name }}</option>
+            </select>
+          </div>
+          <div>
+            <label class="label">Batch name (optional)</label>
+            <input v-model="voucherForm.batch" class="input h-10" placeholder="e.g. tractrain-oct-cohort" />
+          </div>
+          <button class="btn btn-primary btn-sm h-10" :disabled="voucherBusy">{{ voucherBusy ? 'Generating…' : 'Generate codes' }}</button>
+          <div v-if="newCodes.length" class="rounded-xl bg-brand-50 p-3">
+            <div class="text-sm font-semibold">{{ newCodes.length }} codes in batch "{{ newBatch }}"</div>
+            <textarea class="input mt-2 h-32 font-mono text-xs" readonly :value="newCodes.join('\n')" />
+            <div class="mt-2 flex gap-2">
+              <button type="button" class="btn btn-secondary btn-sm" @click="copyCodes">Copy</button>
+              <button type="button" class="btn btn-ghost btn-sm" @click="downloadNewCodes">Download CSV</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="card overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="text-left text-muted">
+            <tr>
+              <th class="p-3 font-medium">Centre</th>
+              <th class="p-3 font-medium">Tutor</th>
+              <th class="p-3 font-medium">Class code</th>
+              <th class="p-3 font-medium">Students</th>
+              <th class="p-3 font-medium">Codes used</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr v-for="c in adminCentres" :key="c.id">
+              <td class="p-3 font-medium">{{ c.name }}</td>
+              <td class="p-3">{{ c.owner?.name }}<div class="text-xs text-muted">{{ c.owner?.email }}</div></td>
+              <td class="p-3 font-mono">{{ c.join_code }}</td>
+              <td class="p-3">{{ c.students_count }}</td>
+              <td class="p-3">{{ c.vouchers_redeemed_count }} / {{ c.vouchers_count }}</td>
+            </tr>
+            <tr v-if="!adminCentres.length"><td colspan="5" class="p-6 text-center text-muted">No centres yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div class="flex flex-wrap gap-2 items-center">
+          <h2 class="section-title mr-auto">Voucher codes</h2>
+          <select v-model="voucherFilter.batch" class="input h-10 w-56" @change="loadVouchers(1)">
+            <option value="">All batches</option>
+            <option v-for="b in voucherBatches" :key="b" :value="b">{{ b }}</option>
+          </select>
+          <select v-model="voucherFilter.status" class="input h-10 w-36" @change="loadVouchers(1)">
+            <option value="">All</option>
+            <option value="unused">Unused</option>
+            <option value="redeemed">Used</option>
+          </select>
+        </div>
+        <div class="mt-3 card overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="text-left text-muted">
+              <tr>
+                <th class="p-3 font-medium">Code</th>
+                <th class="p-3 font-medium">Plan</th>
+                <th class="p-3 font-medium">Centre</th>
+                <th class="p-3 font-medium">Batch</th>
+                <th class="p-3 font-medium">Used by</th>
+                <th class="p-3 font-medium"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr v-for="v in adminVouchers" :key="v.id">
+                <td class="p-3 font-mono">{{ v.code }}</td>
+                <td class="p-3">{{ planLabel(v.plan) }}</td>
+                <td class="p-3">{{ v.centre ?? 'None' }}</td>
+                <td class="p-3 text-xs text-muted">{{ v.batch }}</td>
+                <td class="p-3">
+                  <template v-if="v.redeemed_by">{{ v.redeemed_by.name }}<div class="text-xs text-muted">{{ dateTime(v.redeemed_at) }}</div></template>
+                  <span v-else class="text-muted">Unused</span>
+                </td>
+                <td class="p-3"><button v-if="!v.redeemed_by" class="btn btn-ghost btn-sm" @click="deleteVoucher(v)">Delete</button></td>
+              </tr>
+              <tr v-if="!adminVouchers.length"><td colspan="6" class="p-6 text-center text-muted">No codes.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <Pager :meta="vouchersMeta" @page="loadVouchers" />
+      </div>
+    </section>
+
     <!-- REVIEWS -->
     <section v-else-if="tab === 'reviews'" class="mt-6">
       <div class="flex gap-2">
@@ -244,8 +369,9 @@ import Alert from '@/components/ui/Alert.vue'
 import { api, errorMessage } from '@/lib/api'
 import { date, dateTime, moduleLabels, money, planLabel } from '@/lib/format'
 import type { Review } from '@/lib/types'
+import { downloadCsv } from '@/lib/csv'
 
-type Tab = 'stats' | 'users' | 'payments' | 'reviews' | 'content'
+type Tab = 'stats' | 'users' | 'payments' | 'centres' | 'reviews' | 'content'
 interface Meta {
   current_page: number
   last_page: number
@@ -295,6 +421,25 @@ interface AdminReview extends Review {
   user: { id: number; name: string; email: string } | null
   updated_at: string
 }
+interface AdminCentre {
+  id: number
+  name: string
+  join_code: string
+  owner: { id: number; name: string; email: string } | null
+  students_count: number
+  vouchers_count: number
+  vouchers_redeemed_count: number
+}
+interface AdminVoucher {
+  id: number
+  code: string
+  plan: string
+  days: number
+  batch: string
+  centre: string | null
+  redeemed_by: { name: string; email: string } | null
+  redeemed_at: string | null
+}
 interface AdminContent {
   speaking_questions: { id: number; part: number; topic: string; prompt: string; is_published: boolean; has_audio: boolean }[]
   writing_tasks: { id: number; task_number: number; test_type: string; title: string; is_published: boolean }[]
@@ -305,6 +450,7 @@ const tabs: { key: Tab; label: string }[] = [
   { key: 'stats', label: 'Overview' },
   { key: 'users', label: 'Users' },
   { key: 'payments', label: 'Payments' },
+  { key: 'centres', label: 'Centres & codes' },
   { key: 'reviews', label: 'Reviews' },
   { key: 'content', label: 'Content' },
 ]
@@ -323,6 +469,19 @@ const paymentStatus = ref('')
 const adminPayments = ref<AdminPayment[]>([])
 const paymentsMeta = ref<Meta | null>(null)
 const paymentsLoading = ref(false)
+
+const adminCentres = ref<AdminCentre[]>([])
+const centreForm = reactive({ name: '', owner_email: '' })
+const centreBusy = ref(false)
+const centreMessage = ref('')
+const voucherForm = reactive({ plan: 'monthly', quantity: 10, centre_id: null as number | null, batch: '' })
+const voucherBusy = ref(false)
+const newCodes = ref<string[]>([])
+const newBatch = ref('')
+const adminVouchers = ref<AdminVoucher[]>([])
+const voucherBatches = ref<string[]>([])
+const vouchersMeta = ref<Meta | null>(null)
+const voucherFilter = reactive({ batch: '', status: '' })
 
 const reviewStatus = ref('pending')
 const adminReviews = ref<AdminReview[]>([])
@@ -368,6 +527,61 @@ async function loadPayments(page = 1) {
     paymentsMeta.value = data.meta
   })
   paymentsLoading.value = false
+}
+
+const loadCentres = () =>
+  guard(async () => {
+    adminCentres.value = (await api.get<{ data: AdminCentre[] }>('/api/admin/centres')).data.data
+  })
+
+async function loadVouchers(page = 1) {
+  await guard(async () => {
+    const { data } = await api.get<{ data: AdminVoucher[]; batches: string[]; meta: Meta }>('/api/admin/vouchers', {
+      params: { batch: voucherFilter.batch || undefined, status: voucherFilter.status || undefined, page },
+    })
+    adminVouchers.value = data.data
+    voucherBatches.value = data.batches
+    vouchersMeta.value = data.meta
+  })
+}
+
+async function createCentre() {
+  centreBusy.value = true
+  centreMessage.value = ''
+  await guard(async () => {
+    const { data } = await api.post<{ message: string }>('/api/admin/centres', centreForm)
+    centreMessage.value = data.message
+    centreForm.name = ''
+    centreForm.owner_email = ''
+    await loadCentres()
+  })
+  centreBusy.value = false
+}
+
+async function generateCodes() {
+  voucherBusy.value = true
+  await guard(async () => {
+    const { data } = await api.post<{ batch: string; codes: string[] }>('/api/admin/vouchers', { ...voucherForm, batch: voucherForm.batch || null })
+    newCodes.value = data.codes
+    newBatch.value = data.batch
+    await Promise.all([loadCentres(), loadVouchers(1)])
+  })
+  voucherBusy.value = false
+}
+
+const copyCodes = () => navigator.clipboard.writeText(newCodes.value.join('\n'))
+
+function downloadNewCodes() {
+  const centre = adminCentres.value.find((c) => c.id === voucherForm.centre_id)?.name ?? ''
+  downloadCsv(`${newBatch.value}.csv`, ['Code', 'Plan', 'Centre'], newCodes.value.map((c) => [c, planLabel(voucherForm.plan), centre]))
+}
+
+async function deleteVoucher(v: AdminVoucher) {
+  if (!window.confirm(`Delete code ${v.code}? It will stop working.`)) return
+  await guard(async () => {
+    await api.delete(`/api/admin/vouchers/${v.id}`)
+    await loadVouchers(vouchersMeta.value?.current_page ?? 1)
+  })
 }
 
 async function loadReviews(page = 1) {
@@ -433,6 +647,7 @@ watch(
     if (t === 'stats') loadStats()
     if (t === 'users' && !users.value.length) loadUsers()
     if (t === 'payments' && !adminPayments.value.length) loadPayments()
+    if (t === 'centres') Promise.all([loadCentres(), loadVouchers(1)])
     if (t === 'reviews') loadReviews()
     if (t === 'content') loadContent()
   },

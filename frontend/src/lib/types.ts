@@ -9,6 +9,7 @@ export interface User {
   email: string
   avatar_url: string | null
   is_admin: boolean
+  is_tutor: boolean
   test_type: TestType
   target_band: number | null
   test_date: string | null

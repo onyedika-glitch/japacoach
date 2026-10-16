@@ -14,6 +14,14 @@
           <component :is="item.icon" class="w-5 h-5" />
           {{ item.label }}
         </RouterLink>
+        <RouterLink
+          v-if="auth.user?.is_tutor"
+          to="/tutor"
+          class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-medium text-muted hover:bg-gray-50 hover:text-ink"
+          active-class="!bg-brand-50 !text-brand-dark"
+        >
+          <Users class="w-5 h-5" /> My students
+        </RouterLink>
       </nav>
       <PlanBox />
       <div class="mt-4 flex items-center gap-3 px-2">
@@ -99,6 +107,7 @@ import {
   Mic,
   PenLine,
   Settings,
+  Users,
   X,
 } from 'lucide-vue-next'
 import Logo from '@/components/Logo.vue'
@@ -119,6 +128,7 @@ const nav = [
   { to: '/study-plan', label: 'Study plan', icon: CalendarCheck },
 ]
 const extraNav = computed(() => [
+  ...(auth.user?.is_tutor ? [{ to: '/tutor', label: 'My students', icon: Users }] : []),
   { to: '/billing', label: 'Billing', icon: CreditCard },
   { to: '/referrals', label: 'Refer friends', icon: Gift },
   { to: '/settings', label: 'Settings', icon: Settings },

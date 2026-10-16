@@ -26,6 +26,8 @@
       </div>
     </div>
 
+    <RedeemVoucher />
+
     <Products />
 
     <h2 class="section-title">Payment history</h2>
@@ -61,6 +63,7 @@ import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { Crown } from 'lucide-vue-next'
 import Products from '@/components/Products.vue'
+import RedeemVoucher from '@/components/RedeemVoucher.vue'
 import Spinner from '@/components/ui/Spinner.vue'
 import Alert from '@/components/ui/Alert.vue'
 import { api } from '@/lib/api'
