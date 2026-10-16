@@ -22,6 +22,7 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'avatar_url' => $this->avatar_url,
             'is_admin' => $this->is_admin,
+            'is_tutor' => $this->ownedCentres()->exists(),
             'test_type' => $this->test_type,
             'target_band' => $this->target_band,
             'test_date' => $this->test_date?->toDateString(),
