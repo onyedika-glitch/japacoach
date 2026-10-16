@@ -7,6 +7,7 @@ import 'screens/auth/welcome_screen.dart';
 import 'screens/home/dashboard_screen.dart';
 import 'screens/mock/mock_exam_screen.dart';
 import 'screens/mock/mock_list_screen.dart';
+import 'screens/more/class_screen.dart';
 import 'screens/more/more_screen.dart';
 import 'screens/more/plans_screen.dart';
 import 'screens/more/referrals_screen.dart';
@@ -66,6 +67,7 @@ GoRouter buildRouter(AuthState auth) {
       GoRoute(path: '/referrals', builder: (_, _) => const ReferralsScreen()),
       GoRoute(path: '/settings', builder: (_, _) => const SettingsScreen()),
       GoRoute(path: '/plans', builder: (_, _) => const PlansScreen()),
+      GoRoute(path: '/class', builder: (_, _) => const ClassScreen()),
     ],
   );
 }

@@ -58,6 +58,7 @@ class MoreScreen extends StatelessWidget {
         _Group(children: [
           _Item(icon: Icons.assignment_rounded, label: 'Full mock exam', onTap: () => context.push('/mock')),
           _Item(icon: Icons.calendar_month_rounded, label: 'Study plan', onTap: () => context.push('/study-plan')),
+          _Item(icon: Icons.school_rounded, label: 'Your class (tutor code)', onTap: () => context.push('/class')),
           _Item(icon: Icons.card_giftcard_rounded, label: 'Refer friends', onTap: () => context.push('/referrals')),
         ]),
         const SizedBox(height: 16),
