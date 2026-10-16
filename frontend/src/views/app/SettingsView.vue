@@ -57,6 +57,8 @@
       <button class="btn btn-primary w-full sm:w-auto" :disabled="saving">{{ saving ? 'Saving…' : 'Save changes' }}</button>
     </form>
 
+    <ClassMembership />
+
     <ReviewPrompt standalone class="mt-6" />
 
     <div class="card p-5 sm:p-6 mt-6">
@@ -70,6 +72,7 @@
 <script setup lang="ts">
 import { reactive, ref, watchEffect } from 'vue'
 import ReviewPrompt from '@/components/ReviewPrompt.vue'
+import ClassMembership from '@/components/ClassMembership.vue'
 import Alert from '@/components/ui/Alert.vue'
 import { errorMessage } from '@/lib/api'
 import type { TestType } from '@/lib/types'
