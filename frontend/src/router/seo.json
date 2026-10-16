@@ -1,0 +1,20 @@
+{
+  "/": {
+    "description": "Practise IELTS Speaking, Writing, Reading and Listening with an AI examiner. Get an estimated band score and specific fixes in minutes. Built for Nigerians preparing to relocate."
+  },
+  "/pricing": {
+    "title": "Pricing",
+    "description": "Japa Coach plans from ₦1,500 a week. Start free with a speaking test, then unlock full mock tests, writing evaluations and unlimited reading and listening practice."
+  },
+  "/terms": { "title": "Terms", "description": "The terms for using Japa Coach, the AI IELTS practice platform." },
+  "/privacy": { "title": "Privacy", "description": "How Japa Coach collects, uses and protects your data, including speaking recordings." },
+  "/delete-account": {
+    "title": "Delete your account",
+    "description": "How to delete your Japa Coach account and data, on the website or in the mobile app."
+  },
+  "/login": { "title": "Log in", "description": "Log in to Japa Coach to continue your IELTS practice." },
+  "/signup": {
+    "title": "Sign up",
+    "description": "Create a free Japa Coach account and take your first AI-marked IELTS speaking test. No card needed."
+  }
+}

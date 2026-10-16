@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
+// Public page titles/descriptions, shared with scripts/prerender.mjs so each page's HTML has the right head.
+import seo from './seo.json'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -15,13 +17,13 @@ const app = (meta: Record<string, unknown> = {}) => ({ layout: 'app' as const, r
 const focus = (meta: Record<string, unknown> = {}) => ({ layout: 'focus' as const, requiresAuth: true, ...meta })
 
 const routes: RouteRecordRaw[] = [
-  { path: '/', name: 'home', component: () => import('@/views/HomeView.vue'), meta: { layout: 'public', description: 'Practise IELTS Speaking, Writing, Reading and Listening with an AI examiner. Get an estimated band score and specific fixes in minutes. Built for Nigerians preparing to relocate.' } },
-  { path: '/pricing', name: 'pricing', component: () => import('@/views/PricingView.vue'), meta: { layout: 'public', title: 'Pricing', description: 'Japa Coach plans from ₦1,500 a week. Start free with a speaking test, then unlock full mock tests, writing evaluations and unlimited reading and listening practice.' } },
-  { path: '/terms', name: 'terms', component: () => import('@/views/TermsView.vue'), meta: { layout: 'public', title: 'Terms', description: 'The terms for using Japa Coach, the AI IELTS practice platform.' } },
-  { path: '/privacy', name: 'privacy', component: () => import('@/views/PrivacyView.vue'), meta: { layout: 'public', title: 'Privacy', description: 'How Japa Coach collects, uses and protects your data, including speaking recordings.' } },
-  { path: '/delete-account', name: 'delete-account', component: () => import('@/views/DeleteAccountView.vue'), meta: { layout: 'public', title: 'Delete your account', description: 'How to delete your Japa Coach account and data, on the website or in the mobile app.' } },
-  { path: '/login', name: 'login', component: () => import('@/views/LoginView.vue'), meta: { layout: 'public', guestOnly: true, title: 'Log in', description: 'Log in to Japa Coach to continue your IELTS practice.' } },
-  { path: '/signup', name: 'signup', component: () => import('@/views/SignupView.vue'), meta: { layout: 'public', guestOnly: true, title: 'Sign up', description: 'Create a free Japa Coach account and take your first AI-marked IELTS speaking test. No card needed.' } },
+  { path: '/', name: 'home', component: () => import('@/views/HomeView.vue'), meta: { layout: 'public', ...seo['/'] } },
+  { path: '/pricing', name: 'pricing', component: () => import('@/views/PricingView.vue'), meta: { layout: 'public', ...seo['/pricing'] } },
+  { path: '/terms', name: 'terms', component: () => import('@/views/TermsView.vue'), meta: { layout: 'public', ...seo['/terms'] } },
+  { path: '/privacy', name: 'privacy', component: () => import('@/views/PrivacyView.vue'), meta: { layout: 'public', ...seo['/privacy'] } },
+  { path: '/delete-account', name: 'delete-account', component: () => import('@/views/DeleteAccountView.vue'), meta: { layout: 'public', ...seo['/delete-account'] } },
+  { path: '/login', name: 'login', component: () => import('@/views/LoginView.vue'), meta: { layout: 'public', guestOnly: true, ...seo['/login'] } },
+  { path: '/signup', name: 'signup', component: () => import('@/views/SignupView.vue'), meta: { layout: 'public', guestOnly: true, ...seo['/signup'] } },
 
   { path: '/dashboard', name: 'dashboard', component: () => import('@/views/app/DashboardView.vue'), meta: app({ title: 'Dashboard' }) },
 
@@ -77,7 +79,7 @@ router.beforeEach(async (to) => {
   return true
 })
 
-const DEFAULT_TITLE = 'Japa Coach: AI IELTS practice for Nigerians'
+const DEFAULT_TITLE = 'Japa Coach: AI IELTS practice for Nigerians' // keep in sync with index.html and scripts/prerender.mjs
 const DEFAULT_DESCRIPTION =
   'Practise IELTS Speaking, Writing, Reading and Listening with an AI examiner. Get an estimated band score and specific fixes in minutes.'
 
