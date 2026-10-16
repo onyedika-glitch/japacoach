@@ -80,8 +80,11 @@ class AuthState extends ChangeNotifier {
     try {
       account = await google.authenticate();
     } on GoogleSignInException catch (e) {
-      if (e.code == GoogleSignInExceptionCode.canceled) return false;
-      throw ApiException('Google sign-in failed. Please try again or use your email.');
+      // Android reports a misconfigured app (e.g. an unregistered signing key) as "canceled" too,
+      // so always explain instead of failing silently.
+      throw ApiException(e.code == GoogleSignInExceptionCode.canceled
+          ? "Google sign-in didn't complete. Try again, or log in with your email and password."
+          : 'Google sign-in failed. Please try again or use your email.');
     }
     final idToken = account.authentication.idToken;
     if (idToken == null) throw ApiException('Google sign-in failed. Please try again or use your email.');
