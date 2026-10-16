@@ -7,6 +7,7 @@ use App\Http\Resources\PaymentResource;
 use App\Jobs\GenerateContent;
 use App\Jobs\RenderSectionAudio;
 use App\Jobs\RenderSpeakingQuestionAudio;
+use App\Models\Centre;
 use App\Models\Payment;
 use App\Models\PracticeAttempt;
 use App\Models\PracticeSection;
@@ -15,12 +16,15 @@ use App\Models\Review;
 use App\Models\SpeakingAttempt;
 use App\Models\SpeakingQuestion;
 use App\Models\User;
+use App\Models\Voucher;
 use App\Models\WritingAttempt;
 use App\Models\WritingTask;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 
 class AdminController extends Controller
 {
@@ -156,6 +160,112 @@ class AdminController extends Controller
         ])->save();
 
         return response()->json(['message' => 'Review updated.']);
+    }
+
+    public function centres(): JsonResponse
+    {
+        $centres = Centre::with('owner:id,name,email')
+            ->withCount(['students', 'vouchers', 'vouchers as vouchers_redeemed_count' => fn ($q) => $q->whereNotNull('redeemed_at')])
+            ->orderBy('name')
+            ->get();
+
+        return response()->json(['data' => $centres->map(fn (Centre $c): array => [
+            'id' => $c->id,
+            'name' => $c->name,
+            'join_code' => $c->join_code,
+            'owner' => $c->owner?->only(['id', 'name', 'email']),
+            'students_count' => $c->students_count,
+            'vouchers_count' => $c->vouchers_count,
+            'vouchers_redeemed_count' => $c->vouchers_redeemed_count,
+            'created_at' => $c->created_at?->toIso8601String(),
+        ])]);
+    }
+
+    public function storeCentre(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:120'],
+            'owner_email' => ['required', 'email'],
+        ]);
+
+        $owner = User::where('email', strtolower($validated['owner_email']))->first();
+        if (! $owner) {
+            throw ValidationException::withMessages(['owner_email' => 'No account uses that email. Ask the tutor to sign up first.']);
+        }
+
+        $centre = Centre::create(['name' => $validated['name'], 'owner_id' => $owner->id]);
+
+        return response()->json(['message' => "Centre created. Join code: {$centre->join_code}", 'centre' => ['id' => $centre->id, 'join_code' => $centre->join_code]], 201);
+    }
+
+    public function vouchers(Request $request): JsonResponse
+    {
+        $request->validate([
+            'centre_id' => ['nullable', 'integer'],
+            'batch' => ['nullable', 'string', 'max:80'],
+            'status' => ['nullable', Rule::in(['unused', 'redeemed'])],
+        ]);
+
+        $vouchers = Voucher::with(['centre:id,name', 'redeemer:id,name,email'])
+            ->when($request->filled('centre_id'), fn ($q) => $q->where('centre_id', $request->integer('centre_id')))
+            ->when($request->filled('batch'), fn ($q) => $q->where('batch', $request->query('batch')))
+            ->when($request->query('status') === 'unused', fn ($q) => $q->whereNull('redeemed_at'))
+            ->when($request->query('status') === 'redeemed', fn ($q) => $q->whereNotNull('redeemed_at'))
+            ->latest('id')
+            ->paginate(100);
+
+        return response()->json([
+            'data' => collect($vouchers->items())->map(fn (Voucher $v): array => [
+                'id' => $v->id,
+                'code' => $v->code,
+                'plan' => $v->plan,
+                'days' => $v->days,
+                'batch' => $v->batch,
+                'centre' => $v->centre?->name,
+                'redeemed_by' => $v->redeemer?->only(['name', 'email']),
+                'redeemed_at' => $v->redeemed_at?->toIso8601String(),
+                'created_at' => $v->created_at?->toIso8601String(),
+            ]),
+            'batches' => Voucher::query()->select('batch')->distinct()->orderBy('batch')->pluck('batch'),
+            'meta' => ['current_page' => $vouchers->currentPage(), 'last_page' => $vouchers->lastPage(), 'total' => $vouchers->total()],
+        ]);
+    }
+
+    public function generateVouchers(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'plan' => ['required', Rule::in(array_keys(config('japa.plans')))],
+            'quantity' => ['required', 'integer', 'min:1', 'max:500'],
+            'centre_id' => ['nullable', 'integer', 'exists:centres,id'],
+            'batch' => ['nullable', 'string', 'max:80'],
+        ]);
+
+        $centre = isset($validated['centre_id']) ? Centre::find($validated['centre_id']) : null;
+        $batch = filled($validated['batch'] ?? null)
+            ? $validated['batch']
+            : Str::slug(($centre?->name ?? 'general').'-'.$validated['plan'].'-'.now()->format('Y-m-d-Hi'));
+
+        $codes = collect(range(1, $validated['quantity']))->map(fn () => Voucher::create([
+            'code' => Voucher::generateCode(),
+            'plan' => $validated['plan'],
+            'days' => (int) config("japa.plans.{$validated['plan']}.days"),
+            'centre_id' => $centre?->id,
+            'batch' => $batch,
+            'created_by' => $request->user()->id,
+        ])->code);
+
+        return response()->json(['message' => "{$codes->count()} codes created.", 'batch' => $batch, 'codes' => $codes], 201);
+    }
+
+    public function destroyVoucher(Voucher $voucher): JsonResponse
+    {
+        if ($voucher->isRedeemed()) {
+            return response()->json(['message' => 'Redeemed codes cannot be deleted.'], 422);
+        }
+
+        $voucher->delete();
+
+        return response()->json(['message' => 'Code deleted.']);
     }
 
     public function content(): JsonResponse

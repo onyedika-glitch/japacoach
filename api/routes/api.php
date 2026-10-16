@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BillingController;
+use App\Http\Controllers\Api\CentreController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\GooglePlayController;
 use App\Http\Controllers\Api\MobileAuthController;
@@ -13,6 +14,8 @@ use App\Http\Controllers\Api\ReferralController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\SpeakingAttemptController;
 use App\Http\Controllers\Api\StudyPlanController;
+use App\Http\Controllers\Api\TutorController;
+use App\Http\Controllers\Api\VoucherController;
 use App\Http\Controllers\Api\WritingController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Middleware\EnsureUserIsAdmin;
@@ -77,6 +80,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/billing/google-play/verify', [GooglePlayController::class, 'verify'])->middleware('throttle:ai')->name('billing.google-play.verify');
     Route::get('/billing/google-play/account', [GooglePlayController::class, 'account'])->name('billing.google-play.account');
     Route::get('/referrals', ReferralController::class)->name('referrals');
+    Route::get('/me/centres', [CentreController::class, 'index'])->name('centres.index');
+    Route::post('/centres/join', [CentreController::class, 'join'])->middleware('throttle:ai')->name('centres.join');
+    Route::delete('/centres/{centre}/leave', [CentreController::class, 'leave'])->name('centres.leave');
+    Route::post('/vouchers/redeem', [VoucherController::class, 'redeem'])->middleware('throttle:ai')->name('vouchers.redeem');
+    Route::get('/tutor', TutorController::class)->name('tutor');
     Route::get('/me/review', [ReviewController::class, 'show'])->name('me.review.show');
     Route::put('/me/review', [ReviewController::class, 'upsert'])->middleware('throttle:ai')->name('me.review.update');
 
@@ -85,6 +93,11 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/users', [AdminController::class, 'users'])->name('users.index');
         Route::patch('/users/{user}', [AdminController::class, 'updateUser'])->name('users.update');
         Route::get('/payments', [AdminController::class, 'payments'])->name('payments.index');
+        Route::get('/centres', [AdminController::class, 'centres'])->name('centres.index');
+        Route::post('/centres', [AdminController::class, 'storeCentre'])->name('centres.store');
+        Route::get('/vouchers', [AdminController::class, 'vouchers'])->name('vouchers.index');
+        Route::post('/vouchers', [AdminController::class, 'generateVouchers'])->name('vouchers.store');
+        Route::delete('/vouchers/{voucher}', [AdminController::class, 'destroyVoucher'])->name('vouchers.destroy');
         Route::get('/reviews', [AdminController::class, 'reviews'])->name('reviews.index');
         Route::patch('/reviews/{review}', [AdminController::class, 'updateReview'])->name('reviews.update');
         Route::get('/content', [AdminController::class, 'content'])->name('content.index');

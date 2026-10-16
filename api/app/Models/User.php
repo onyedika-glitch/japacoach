@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -168,6 +169,26 @@ class User extends Authenticatable
     public function payments(): HasMany
     {
         return $this->hasMany(Payment::class);
+    }
+
+    /**
+     * Centres (classes) this user has joined as a student.
+     *
+     * @return BelongsToMany<Centre, $this>
+     */
+    public function centres(): BelongsToMany
+    {
+        return $this->belongsToMany(Centre::class)->withTimestamps();
+    }
+
+    /**
+     * Centres this user runs as a tutor.
+     *
+     * @return HasMany<Centre, $this>
+     */
+    public function ownedCentres(): HasMany
+    {
+        return $this->hasMany(Centre::class, 'owner_id');
     }
 
     /**
