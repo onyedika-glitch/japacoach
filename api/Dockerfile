@@ -1,4 +1,4 @@
-FROM php:8.4-fpm-alpine
+FROM php:8.4.27-fpm-alpine
 
 RUN apk add --no-cache postgresql-dev libzip-dev icu-dev \
     && docker-php-ext-install pdo_pgsql pcntl opcache zip intl \
