@@ -8,6 +8,8 @@ import '../../theme.dart';
 import '../../widgets/async_loader.dart';
 import '../../widgets/common.dart';
 import '../../widgets/format.dart';
+import '../../widgets/test_type_toggle.dart';
+import '../../state/auth.dart';
 
 /// Starts a reading or listening test and opens it. Shared with the mock exam screen.
 Future<void> startPracticeTest(BuildContext context, String module, int testId, {int? mockId}) async {
@@ -92,10 +94,16 @@ class _TestListState extends State<_TestList> with AutomaticKeepAliveClientMixin
       builder: (context, tests, reload) => RefreshIndicator(
         onRefresh: reload,
         child: ListView(padding: pagePadding(context), children: [
+          if (!listening) ...[
+            const Text('Which IELTS are you taking?', style: TextStyle(fontWeight: FontWeight.w600)),
+            const SizedBox(height: 6),
+            TestTypeToggle(onChanged: () => setState(() => _key = UniqueKey())),
+            const SizedBox(height: 14),
+          ],
           Text(
             listening
                 ? 'Four recorded sections, 40 questions. Use headphones and answer while you listen.'
-                : 'Three passages, 40 questions, 60 minutes. Answers save automatically.',
+                : 'Three ${context.select<AuthState, bool>((a) => a.user?.testType == 'general') ? 'General Training' : 'Academic'} passages, 40 questions, 60 minutes. Answers save automatically.',
             style: const TextStyle(color: AppColors.muted, height: 1.4),
           ),
           const SizedBox(height: 14),

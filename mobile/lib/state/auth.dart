@@ -60,12 +60,13 @@ class AuthState extends ChangeNotifier {
     await _signedIn(data);
   }
 
-  Future<void> register({required String name, required String email, required String password, String? referralCode}) async {
+  Future<void> register({required String name, required String email, required String password, String testType = 'academic', String? referralCode}) async {
     final data = await api.post('/api/mobile/register', data: {
       'name': name.trim(),
       'email': email.trim(),
       'password': password,
       'password_confirmation': password,
+      'test_type': testType,
       if (referralCode != null && referralCode.trim().isNotEmpty) 'referral_code': referralCode.trim(),
       'device_name': _device,
     });

@@ -57,14 +57,18 @@ PROMPT, 0.8);
     }
 
     /**
-     * Generate a balanced batch of writing tasks.
+     * Generate writing tasks: a balanced batch, or only General Training Task 1 letters.
      */
-    public function writing(int $count = 4): int
+    public function writing(int $count = 4, string $testType = 'academic'): int
     {
         $existing = WritingTask::pluck('title')->implode('; ');
 
+        $mix = $testType === 'general'
+            ? 'all General Training Task 1 letters (test_type "general", visual null): a mix of formal, semi-formal and informal letters about everyday situations such as complaints, requests, apologies, job enquiries, invitations and thanks, each with three bullet points to cover and "Begin your letter as follows: Dear ..."'
+            : 'roughly a third Academic Task 1 (with chart data), a sixth General Training Task 1 letters and half Task 2 essays (test_type "both")';
+
         $result = $this->ai->json(self::SYSTEM, <<<PROMPT
-Create {$count} NEW IELTS writing tasks: roughly a third Academic Task 1 (with chart data), a sixth General Training Task 1 letters and half Task 2 essays (test_type "both"). Avoid these existing titles: {$existing}.
+Create {$count} NEW IELTS writing tasks: {$mix}. Avoid these existing titles: {$existing}.
 JSON: {"tasks": [{"task_number": 1|2, "test_type": "academic"|"general"|"both", "title": "short title", "prompt": "full task instructions as in the real test, ending with the word requirement", "visual": null or chart}]}
 Chart (Academic Task 1 only): {"type": "bar"|"line"|"pie", "title": "...", "unit": "...", "labels": [...], "datasets": [{"label": "...", "data": [numbers, same length as labels]}]} (pie has one dataset) or {"type": "table", "title": "...", "columns": [...], "rows": [[...]]}.
 PROMPT, 0.8, 6000);

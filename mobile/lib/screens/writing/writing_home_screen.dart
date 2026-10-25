@@ -8,6 +8,8 @@ import '../../theme.dart';
 import '../../widgets/async_loader.dart';
 import '../../widgets/common.dart';
 import '../../widgets/format.dart';
+import '../../widgets/test_type_toggle.dart';
+import '../../state/auth.dart';
 
 class WritingHomeScreen extends StatefulWidget {
   const WritingHomeScreen({super.key});
@@ -23,6 +25,7 @@ class _WritingHomeScreenState extends State<WritingHomeScreen> {
   @override
   Widget build(BuildContext context) {
     final api = context.read<ApiClient>();
+    final testType = context.select<AuthState, String>((a) => a.user?.testType ?? 'academic');
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -32,6 +35,10 @@ class _WritingHomeScreenState extends State<WritingHomeScreen> {
         ),
         body: TabBarView(children: [
           ListView(padding: pagePadding(context), children: [
+            const Text('Which IELTS are you taking?', style: TextStyle(fontWeight: FontWeight.w600)),
+            const SizedBox(height: 6),
+            const TestTypeToggle(),
+            const SizedBox(height: 16),
             SegmentedButton<int>(
               segments: const [ButtonSegment(value: 1, label: Text('Task 1')), ButtonSegment(value: 2, label: Text('Task 2'))],
               selected: {_taskNumber},
@@ -39,12 +46,17 @@ class _WritingHomeScreenState extends State<WritingHomeScreen> {
             ),
             const SizedBox(height: 8),
             Text(
-              _taskNumber == 1 ? 'Describe a chart, table or letter in at least 150 words. About 20 minutes.' : 'Write an essay of at least 250 words. About 40 minutes.',
+              _taskNumber == 2
+                  ? 'Write an essay of at least 250 words. About 40 minutes. Task 2 counts double.'
+                  : testType == 'general'
+                      ? 'Write a letter of at least 150 words. About 20 minutes.'
+                      : 'Describe a chart, table or diagram in at least 150 words. About 20 minutes.',
               style: const TextStyle(color: AppColors.muted),
             ),
             const SizedBox(height: 12),
             AsyncLoader<List<WritingTask>>(
-              key: ValueKey(_taskNumber),
+              // Reloads when the task number or the Academic/General choice changes (the server filters by it).
+              key: ValueKey('$_taskNumber-$testType'),
               load: () async {
                 final data = await api.get('/api/writing/tasks', query: {'task_number': _taskNumber});
                 return (data['data'] as List? ?? []).map((e) => WritingTask.fromJson(Map<String, dynamic>.from(e as Map))).toList();

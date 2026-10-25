@@ -24,6 +24,7 @@ class _SignupScreenState extends State<SignupScreen> {
   bool _busy = false;
   bool _hide = true;
   bool _showReferral = false;
+  String _testType = 'academic';
   String? _error;
 
   Future<void> _submit() async {
@@ -33,7 +34,13 @@ class _SignupScreenState extends State<SignupScreen> {
       _error = null;
     });
     try {
-      await context.read<AuthState>().register(name: _name.text, email: _email.text, password: _password.text, referralCode: _referral.text);
+      await context.read<AuthState>().register(
+        name: _name.text,
+        email: _email.text,
+        password: _password.text,
+        testType: _testType,
+        referralCode: _referral.text,
+      );
     } on ApiException catch (e) {
       setState(() => _error = e.message);
     } finally {
@@ -73,6 +80,39 @@ class _SignupScreenState extends State<SignupScreen> {
                   decoration: const InputDecoration(labelText: 'Email'),
                   validator: (v) => (v ?? '').contains('@') ? null : 'Enter a valid email address',
                 ),
+                const SizedBox(height: 14),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('Which IELTS are you taking?', style: TextStyle(fontWeight: FontWeight.w600, color: Colors.grey.shade800)),
+                ),
+                const SizedBox(height: 8),
+                Row(children: [
+                  for (final (value, label, hint) in const [
+                    ('academic', 'Academic', 'University, nursing, professional registration'),
+                    ('general', 'General Training', 'Work and migration (UK, Canada, Australia)'),
+                  ]) ...[
+                    if (value == 'general') const SizedBox(width: 10),
+                    Expanded(
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(14),
+                        onTap: () => setState(() => _testType = value),
+                        child: Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: _testType == value ? AppColors.brand50 : Colors.white,
+                            borderRadius: BorderRadius.circular(14),
+                            border: Border.all(color: _testType == value ? AppColors.brand : AppColors.border, width: _testType == value ? 2 : 1),
+                          ),
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                            Text(label, style: const TextStyle(fontWeight: FontWeight.w700)),
+                            const SizedBox(height: 2),
+                            Text(hint, style: const TextStyle(color: AppColors.muted, fontSize: 12)),
+                          ]),
+                        ),
+                      ),
+                    ),
+                  ],
+                ]),
                 const SizedBox(height: 14),
                 TextFormField(
                   controller: _password,

@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { api, ensureCsrf } from '@/lib/api'
-import type { User } from '@/lib/types'
+import type { TestType, User } from '@/lib/types'
 
 export const useAuthStore = defineStore('auth', () => {
   const user = ref<User | null>(null)
@@ -38,6 +38,7 @@ export const useAuthStore = defineStore('auth', () => {
     email: string
     password: string
     password_confirmation: string
+    test_type?: TestType
     referral_code?: string
   }) {
     await ensureCsrf()

@@ -28,7 +28,7 @@ class GenerateContent implements ShouldQueue
     {
         match ($this->type) {
             'speaking' => $generator->speaking(),
-            'writing' => $generator->writing(),
+            'writing' => $generator->writing(4, $this->testType),
             'reading' => $generator->reading($this->testType),
             'listening' => $generator->listening()->sections->each(
                 fn ($section) => RenderSectionAudio::dispatch($section->id)

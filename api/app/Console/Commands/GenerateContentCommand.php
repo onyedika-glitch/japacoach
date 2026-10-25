@@ -7,7 +7,7 @@ use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
-#[Signature('content:generate {type : speaking|writing|reading|listening} {--count=1} {--test-type=academic : academic|general (reading only)} {--sync : Run now instead of queueing}')]
+#[Signature('content:generate {type : speaking|writing|reading|listening} {--count=1} {--test-type=academic : academic|general (reading tests; for writing, general makes letters only)} {--sync : Run now instead of queueing}')]
 #[Description('Generate new practice content with DeepSeek')]
 class GenerateContentCommand extends Command
 {

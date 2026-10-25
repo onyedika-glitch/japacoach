@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
 
@@ -20,12 +21,14 @@ class AuthController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'confirmed', Password::min(8)],
             'referral_code' => ['nullable', 'string', 'max:16'],
+            'test_type' => ['nullable', Rule::in(['academic', 'general'])],
         ]);
 
         $user = new User([
             'name' => $validated['name'],
             'email' => strtolower($validated['email']),
             'password' => $validated['password'],
+            'test_type' => $validated['test_type'] ?? 'academic',
         ]);
         self::applyReferral($user, $validated['referral_code'] ?? null);
         $user->save();

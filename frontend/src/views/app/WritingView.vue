@@ -1,11 +1,8 @@
 <template>
   <div>
     <h1 class="page-title">Writing</h1>
-    <p class="text-muted mt-1">
-      Timed tasks marked on the four writing criteria.
-      <span v-if="auth.user">Showing <strong>{{ auth.user.test_type === 'general' ? 'General Training' : 'Academic' }}</strong> tasks,
-        <RouterLink to="/settings" class="text-brand-dark font-semibold">change</RouterLink>.</span>
-    </p>
+    <p class="text-muted mt-1">Timed tasks marked on the four writing criteria. Choose the IELTS you're taking:</p>
+    <TestTypeSwitch class="mt-3" @changed="loadTasks" />
 
     <div class="mt-6 inline-flex rounded-xl bg-gray-100 p-1">
       <button
@@ -61,6 +58,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
+import TestTypeSwitch from '@/components/TestTypeSwitch.vue'
 import Spinner from '@/components/ui/Spinner.vue'
 import Alert from '@/components/ui/Alert.vue'
 import BandBadge from '@/components/ui/BandBadge.vue'

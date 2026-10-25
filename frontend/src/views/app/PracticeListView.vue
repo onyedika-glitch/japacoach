@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1 class="page-title">{{ isReading ? 'Reading' : 'Listening' }}</h1>
-    <p class="text-muted mt-1">
+    <TestTypeSwitch v-if="isReading" class="mt-3" @changed="loadTests" />
+    <p class="text-muted mt-2">
       <template v-if="isReading">
         3 passages, {{ auth.user?.test_type === 'general' ? 'General Training' : 'Academic' }} format, 60 minutes. Auto-marked with explanations.
       </template>
@@ -44,6 +45,7 @@ import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { Headphones, Lightbulb } from 'lucide-vue-next'
 import Spinner from '@/components/ui/Spinner.vue'
+import TestTypeSwitch from '@/components/TestTypeSwitch.vue'
 import Alert from '@/components/ui/Alert.vue'
 import BandBadge from '@/components/ui/BandBadge.vue'
 import { api, errorMessage, isLimitError } from '@/lib/api'
@@ -67,7 +69,9 @@ const filtered = computed(() => {
   return tests.value.filter((t) => t.test_type === 'both' || t.test_type === type)
 })
 
-onMounted(async () => {
+async function loadTests() {
+  loading.value = true
+  error.value = ''
   try {
     const { data } = await api.get<{ data: PracticeTestSummary[] }>(`/api/practice/${props.module}/tests`)
     tests.value = data.data
@@ -76,7 +80,9 @@ onMounted(async () => {
   } finally {
     loading.value = false
   }
-})
+}
+
+onMounted(loadTests)
 
 async function start(testId: number) {
   starting.value = testId

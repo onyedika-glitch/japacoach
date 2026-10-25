@@ -25,6 +25,19 @@ class MobileAuthTest extends TestCase
         $this->withToken($token)->getJson('/api/me')->assertOk()->assertJsonPath('user.name', 'Ada Obi');
     }
 
+    public function test_register_saves_the_chosen_test_type(): void
+    {
+        $this->postJson('/api/mobile/register', [
+            'name' => 'Bola', 'email' => 'bola@example.com', 'password' => 'password123', 'password_confirmation' => 'password123',
+            'test_type' => 'general',
+        ])->assertCreated()->assertJsonPath('user.test_type', 'general');
+
+        $this->postJson('/api/mobile/register', [
+            'name' => 'Ada', 'email' => 'ada2@example.com', 'password' => 'password123', 'password_confirmation' => 'password123',
+            'test_type' => 'medical',
+        ])->assertJsonValidationErrors('test_type');
+    }
+
     public function test_login_rejects_wrong_password_and_accepts_right_one(): void
     {
         User::factory()->create(['email' => 'tunde@example.com', 'password' => 'secret-pass']);

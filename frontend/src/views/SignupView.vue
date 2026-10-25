@@ -16,6 +16,21 @@
         <input id="email" v-model="email" type="email" class="input" autocomplete="email" required />
       </div>
       <div>
+        <span class="label">Which IELTS are you taking?</span>
+        <div class="grid grid-cols-2 gap-2">
+          <label
+            v-for="t in testTypes"
+            :key="t.value"
+            class="rounded-xl border p-3 cursor-pointer transition"
+            :class="testType === t.value ? 'border-brand bg-brand-50' : 'border-gray-200'"
+          >
+            <input v-model="testType" type="radio" :value="t.value" class="sr-only" />
+            <span class="font-semibold text-sm block">{{ t.label }}</span>
+            <span class="text-xs text-muted">{{ t.hint }}</span>
+          </label>
+        </div>
+      </div>
+      <div>
         <label class="label" for="password">Password</label>
         <PasswordInput id="password" v-model="password" autocomplete="new-password" minlength="8" required />
         <p class="text-xs text-muted mt-1">At least 8 characters.</p>
@@ -47,6 +62,7 @@ import Divider from '@/components/auth/Divider.vue'
 import PasswordInput from '@/components/auth/PasswordInput.vue'
 import { useAuthStore } from '@/stores/auth'
 import { errorMessage } from '@/lib/api'
+import type { TestType } from '@/lib/types'
 
 const auth = useAuthStore()
 const route = useRoute()
@@ -74,6 +90,11 @@ const name = ref('')
 const email = ref('')
 const password = ref('')
 const password2 = ref('')
+const testType = ref<TestType>('academic')
+const testTypes: { value: TestType; label: string; hint: string }[] = [
+  { value: 'academic', label: 'Academic', hint: 'University, nursing, professional registration' },
+  { value: 'general', label: 'General Training', hint: 'Work, migration (UK, Canada, Australia)' },
+]
 const busy = ref(false)
 const error = ref('')
 
@@ -90,6 +111,7 @@ async function submit() {
       email: email.value,
       password: password.value,
       password_confirmation: password2.value,
+      test_type: testType.value,
       ...(referral.value ? { referral_code: referral.value } : {}),
     })
     try {

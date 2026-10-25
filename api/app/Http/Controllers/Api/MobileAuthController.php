@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
 use Throwable;
@@ -27,6 +28,7 @@ class MobileAuthController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'confirmed', Password::min(8)],
             'referral_code' => ['nullable', 'string', 'max:16'],
+            'test_type' => ['nullable', Rule::in(['academic', 'general'])],
             'device_name' => ['nullable', 'string', 'max:100'],
         ]);
 
@@ -34,6 +36,7 @@ class MobileAuthController extends Controller
             'name' => $validated['name'],
             'email' => strtolower($validated['email']),
             'password' => $validated['password'],
+            'test_type' => $validated['test_type'] ?? 'academic',
         ]);
         AuthController::applyReferral($user, $validated['referral_code'] ?? null);
         $user->save();
