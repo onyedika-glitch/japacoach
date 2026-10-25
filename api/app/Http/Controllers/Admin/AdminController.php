@@ -19,6 +19,8 @@ use App\Models\User;
 use App\Models\Voucher;
 use App\Models\WritingAttempt;
 use App\Models\WritingTask;
+use App\Services\Push\PushMessage;
+use App\Services\Push\PushNotifier;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
@@ -266,6 +268,25 @@ class AdminController extends Controller
         $voucher->delete();
 
         return response()->json(['message' => 'Code deleted.']);
+    }
+
+    /**
+     * Send a test push to the admin's own phones, to check the Firebase setup end to end.
+     */
+    public function testPush(Request $request, PushNotifier $push): JsonResponse
+    {
+        if (! $push->enabled()) {
+            return response()->json(['message' => 'Push is not configured on the server yet (FCM_SERVICE_ACCOUNT).'], 422);
+        }
+
+        $devices = $request->user()->deviceTokens()->count();
+        if ($devices === 0) {
+            return response()->json(['message' => 'No phone registered. Sign in to the Japa Coach app with this account and allow notifications first.'], 422);
+        }
+
+        $sent = $push->send($request->user(), new PushMessage('Test notification', 'Push notifications are working. 🎉', '/home'));
+
+        return response()->json(['message' => "Sent to {$sent} of {$devices} phone(s)."]);
     }
 
     public function content(): JsonResponse

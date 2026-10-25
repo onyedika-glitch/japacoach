@@ -104,6 +104,10 @@ class MobileAuthController extends Controller
 
     public function logout(Request $request): JsonResponse
     {
+        // Stop pushes to this phone once nobody is signed in on it.
+        if ($request->filled('device_token')) {
+            $request->user()->deviceTokens()->where('token', (string) $request->input('device_token'))->delete();
+        }
         $request->user()->currentAccessToken()?->delete();
 
         return response()->json(['message' => 'Logged out.']);

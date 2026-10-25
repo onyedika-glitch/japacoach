@@ -28,6 +28,14 @@
         <button v-if="stats.reviews_pending" class="mt-4 w-full card p-4 text-left text-sm hover:border-brand" @click="openPendingReviews">
           <strong>{{ stats.reviews_pending }} review{{ stats.reviews_pending > 1 ? 's' : '' }}</strong> waiting for approval. Review now
         </button>
+        <div class="mt-4 card p-4 flex flex-wrap items-center gap-3">
+          <div class="flex-1 text-sm">
+            <div class="font-semibold">Push notifications</div>
+            <div class="text-muted">Sign in to the Android app with this admin account, then send yourself a test.</div>
+          </div>
+          <button class="btn btn-secondary btn-sm" :disabled="pushBusy" @click="testPush">{{ pushBusy ? 'Sending…' : 'Send test push to my phone' }}</button>
+          <p v-if="pushMessage" class="w-full text-sm" :class="pushOk ? 'text-good' : 'text-bad'">{{ pushMessage }}</p>
+        </div>
         <h2 class="section-title mt-8">Attempts in the last 7 days</h2>
         <div class="mt-3 grid grid-cols-2 lg:grid-cols-4 gap-4">
           <Stat v-for="(v, k) in stats.attempts_7d" :key="k" :label="moduleLabels[k] ?? k" :value="v" />
@@ -482,6 +490,25 @@ const adminVouchers = ref<AdminVoucher[]>([])
 const voucherBatches = ref<string[]>([])
 const vouchersMeta = ref<Meta | null>(null)
 const voucherFilter = reactive({ batch: '', status: '' })
+
+const pushBusy = ref(false)
+const pushMessage = ref('')
+const pushOk = ref(false)
+
+async function testPush() {
+  pushBusy.value = true
+  pushMessage.value = ''
+  try {
+    const { data } = await api.post<{ message: string }>('/api/admin/push/test')
+    pushOk.value = true
+    pushMessage.value = data.message
+  } catch (e) {
+    pushOk.value = false
+    pushMessage.value = errorMessage(e)
+  } finally {
+    pushBusy.value = false
+  }
+}
 
 const reviewStatus = ref('pending')
 const adminReviews = ref<AdminReview[]>([])

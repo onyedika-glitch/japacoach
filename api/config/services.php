@@ -52,6 +52,11 @@ return [
         'token' => env('SPEECH_SERVICE_TOKEN'),
     ],
 
+    'fcm' => [
+        // Base64 of the Firebase project's service account JSON key. Empty = reuse the Google Play key (see PushNotifier).
+        'service_account' => env('FCM_SERVICE_ACCOUNT'),
+    ],
+
     'google_play' => [
         'package_name' => env('GOOGLE_PLAY_PACKAGE_NAME', 'com.japacoach.app'),
         // Base64 of the service account JSON key with access to the app in Play Console.

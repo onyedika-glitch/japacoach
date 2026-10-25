@@ -3,6 +3,8 @@
 namespace App\Notifications;
 
 use App\Models\User;
+use App\Notifications\Channels\PushChannel;
+use App\Services\Push\PushMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -23,7 +25,19 @@ class ResultReady extends Notification implements ShouldQueue
      */
     public function via(User $notifiable): array
     {
-        return $notifiable->email_reminders ? ['mail'] : [];
+        // The app always tells you your result; the email follows the reminders setting.
+        return $notifiable->email_reminders ? ['mail', PushChannel::class] : [PushChannel::class];
+    }
+
+    public function toPush(User $notifiable): PushMessage
+    {
+        $band = $this->band !== null ? number_format($this->band, 1) : 'N/A';
+
+        return new PushMessage(
+            'Your '.ucfirst($this->module).' result is ready',
+            "Estimated band {$band}. Tap to see exactly what to fix.",
+            "/{$this->module}/report/{$this->attemptId}",
+        );
     }
 
     public function toMail(User $notifiable): MailMessage

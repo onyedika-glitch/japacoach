@@ -172,6 +172,16 @@ class User extends Authenticatable
     }
 
     /**
+     * Phones registered for push notifications.
+     *
+     * @return HasMany<DeviceToken, $this>
+     */
+    public function deviceTokens(): HasMany
+    {
+        return $this->hasMany(DeviceToken::class);
+    }
+
+    /**
      * Centres (classes) this user has joined as a student.
      *
      * @return BelongsToMany<Centre, $this>

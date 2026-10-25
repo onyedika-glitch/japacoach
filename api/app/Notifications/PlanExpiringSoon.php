@@ -3,6 +3,8 @@
 namespace App\Notifications;
 
 use App\Models\User;
+use App\Notifications\Channels\PushChannel;
+use App\Services\Push\PushMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -19,7 +21,18 @@ class PlanExpiringSoon extends Notification implements ShouldQueue
      */
     public function via(User $notifiable): array
     {
-        return ['mail'];
+        return ['mail', PushChannel::class];
+    }
+
+    public function toPush(User $notifiable): PushMessage
+    {
+        $when = $this->daysLeft <= 1 ? 'tomorrow' : "in {$this->daysLeft} days";
+
+        return new PushMessage(
+            "Your Japa Coach access ends {$when}",
+            'Renew to keep practising. Any days you have left are added on top.',
+            '/plans',
+        );
     }
 
     public function toMail(User $notifiable): MailMessage

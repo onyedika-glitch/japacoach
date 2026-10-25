@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BillingController;
 use App\Http\Controllers\Api\CentreController;
 use App\Http\Controllers\Api\DashboardController;
+use App\Http\Controllers\Api\DeviceController;
 use App\Http\Controllers\Api\GooglePlayController;
 use App\Http\Controllers\Api\MobileAuthController;
 use App\Http\Controllers\Api\MockExamController;
@@ -80,6 +81,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/billing/google-play/verify', [GooglePlayController::class, 'verify'])->middleware('throttle:ai')->name('billing.google-play.verify');
     Route::get('/billing/google-play/account', [GooglePlayController::class, 'account'])->name('billing.google-play.account');
     Route::get('/referrals', ReferralController::class)->name('referrals');
+    Route::post('/me/devices', [DeviceController::class, 'store'])->name('devices.store');
+    Route::delete('/me/devices', [DeviceController::class, 'destroy'])->name('devices.destroy');
     Route::get('/me/centres', [CentreController::class, 'index'])->name('centres.index');
     Route::post('/centres/join', [CentreController::class, 'join'])->middleware('throttle:ai')->name('centres.join');
     Route::delete('/centres/{centre}/leave', [CentreController::class, 'leave'])->name('centres.leave');
@@ -93,6 +96,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/users', [AdminController::class, 'users'])->name('users.index');
         Route::patch('/users/{user}', [AdminController::class, 'updateUser'])->name('users.update');
         Route::get('/payments', [AdminController::class, 'payments'])->name('payments.index');
+        Route::post('/push/test', [AdminController::class, 'testPush'])->name('push.test');
         Route::get('/centres', [AdminController::class, 'centres'])->name('centres.index');
         Route::post('/centres', [AdminController::class, 'storeCentre'])->name('centres.store');
         Route::get('/vouchers', [AdminController::class, 'vouchers'])->name('vouchers.index');
