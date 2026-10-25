@@ -27,7 +27,7 @@
           :class="i === sectionIndex ? 'bg-ink text-white border-ink' : 'bg-white border-gray-200 text-muted'"
           @click="goSection(i)"
         >
-          {{ isReading ? 'Passage' : 'Part' }} {{ i + 1 }}
+          {{ tabLabel(s.title, i) }}
           <span class="ml-1 text-xs opacity-70">{{ answeredIn(s) }}/{{ s.questions.length }}</span>
         </button>
       </div>
@@ -166,6 +166,12 @@ const audioTime = ref(0)
 const audioDuration = ref(0)
 const playedOnce = reactive<Record<number, boolean>>({})
 const practiceMode = ref(!mockId)
+
+/** General Training texts are titled "Section 1 · Text A: ..."; show that, otherwise "Passage 2" / "Part 3". */
+function tabLabel(title: string, index: number): string {
+  const match = /^Section \d+(?: · Text [A-Z])?/.exec(title)
+  return match ? match[0] : `${isReading.value ? 'Passage' : 'Part'} ${index + 1}`
+}
 
 const sections = computed(() => [...(attempt.value?.test.sections ?? [])].sort((a, b) => a.position - b.position))
 const section = computed<PracticeSection | undefined>(() => sections.value[sectionIndex.value])

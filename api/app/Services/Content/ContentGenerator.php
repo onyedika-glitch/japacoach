@@ -81,22 +81,76 @@ PROMPT, 0.8, 6000);
      */
     public function reading(string $testType = 'academic'): PracticeTest
     {
+        if ($testType === 'general') {
+            return $this->generalReading();
+        }
+
         $sections = [];
-        $styles = $testType === 'general'
-            ? ['a set of short everyday notices or advertisements', 'a workplace document such as a staff guide or job information', 'a longer general-interest magazine article']
-            : ['a scientific or natural-world article', 'a history, society or technology article', 'an argumentative academic article presenting the writer\'s views'];
+        $styles = ['a scientific or natural-world article', 'a history, society or technology article', 'an argumentative academic article presenting the writer\'s views'];
 
         foreach ($styles as $index => $style) {
-            $sections[] = $this->ai->json(self::SYSTEM, 'Write IELTS '.($testType === 'general' ? 'General Training' : 'Academic').' Reading section '.($index + 1).": {$style}, 650-850 words, with 13 questions mixing at least two question types, in passage order.\n"
+            $sections[] = $this->ai->json(self::SYSTEM, 'Write IELTS Academic Reading section '.($index + 1).": {$style}, 650-850 words, with 13 questions mixing at least two question types, in passage order.\n"
                 .self::QUESTION_RULES
                 ."\nJSON: {\"title\": \"passage title\", \"instructions\": \"instructions for the candidate\", \"body\": \"passage text with paragraphs separated by \\n\\n\", \"questions\": [question objects]}", 0.8, 7000);
         }
 
-        $title = ($sections[0]['title'] ?? 'Reading test').': '.ucfirst($testType).' Reading';
+        $title = ($sections[0]['title'] ?? 'Reading test').': Academic Reading';
 
         return $this->importer->importPracticeTest('reading', [
             'title' => $title,
-            'test_type' => $testType,
+            'test_type' => 'academic',
+            'duration_minutes' => 60,
+            'sections' => $sections,
+        ]);
+    }
+
+    /**
+     * General Training Reading in the real exam layout: Section 1 and Section 2 have two short texts each,
+     * every short text with ONE question type; Section 3 is one long text with three question types.
+     * Each text is stored as its own section titled "Section 1 · Text A: ..." so the test screens can label it.
+     */
+    private function generalReading(): PracticeTest
+    {
+        $shortTypes = ['tfng', 'matching', 'gap', 'mcq'];
+        shuffle($shortTypes);
+        $typeNames = [
+            'tfng' => 'True/False/Not Given statements',
+            'matching' => 'matching (e.g. which advertisement, person or option each statement refers to, with options A-F)',
+            'gap' => 'sentence or note completion using words from the text',
+            'mcq' => 'multiple choice with options A-D',
+        ];
+
+        $parts = [
+            ['Section 1 · Text A', 'a short everyday text such as a notice, advertisement, timetable or a set of short product or service descriptions', '150-300', 7, [$shortTypes[0]]],
+            ['Section 1 · Text B', 'a different short everyday text such as a set of short adverts, a leaflet or public information', '150-300', 7, [$shortTypes[1]]],
+            ['Section 2 · Text A', 'a workplace text such as a job advertisement, staff policy, workplace procedures or employment conditions', '250-400', 7, [$shortTypes[2]]],
+            ['Section 2 · Text B', 'a different workplace text such as staff training information, workplace safety guidance or a company handbook extract', '250-400', 6, [$shortTypes[3]]],
+            ['Section 3', 'one long general-interest text such as a magazine or newspaper feature on a social, cultural or scientific topic', '700-900', 13, ['matching', 'mcq', 'gap']],
+        ];
+
+        $sections = [];
+        $start = 1;
+        foreach ($parts as [$label, $style, $words, $count, $types]) {
+            $end = $start + $count - 1;
+            $typesText = count($types) === 1
+                ? 'Use ONLY this question type for all of them: '.$typeNames[$types[0]].'.'
+                : 'Use exactly these three question types, each as a consecutive block: '.implode('; ', array_map(fn ($t) => $typeNames[$t], $types)).'.';
+
+            $section = $this->ai->json(self::SYSTEM, "Write the IELTS General Training Reading text for {$label}: {$style}, {$words} words, with exactly {$count} questions numbered {$start}-{$end}, in text order. {$typesText}\n"
+                .self::QUESTION_RULES
+                ."\nThe instructions must name the question numbers ({$start}-{$end}) and say how to answer, as in the real test."
+                ."\nJSON: {\"title\": \"short title of the text\", \"instructions\": \"instructions for the candidate\", \"body\": \"text with paragraphs separated by \\n\\n\", \"questions\": [question objects]}", 0.8, $count > 7 ? 7000 : 4000);
+
+            $section['title'] = $label.': '.trim((string) ($section['title'] ?? 'Reading text'));
+            $sections[] = $section;
+            $start = $end + 1;
+        }
+
+        $title = trim(explode(':', $sections[4]['title'], 2)[1] ?? 'General Training Reading').': General Training Reading';
+
+        return $this->importer->importPracticeTest('reading', [
+            'title' => $title,
+            'test_type' => 'general',
             'duration_minutes' => 60,
             'sections' => $sections,
         ]);

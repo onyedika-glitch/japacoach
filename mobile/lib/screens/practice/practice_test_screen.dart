@@ -132,6 +132,10 @@ class _PracticeTestScreenState extends State<PracticeTestScreen> {
     });
   }
 
+  /// General Training texts are titled "Section 1 · Text A: ..."; show that, otherwise "Passage 2" / "Part 3".
+  static String _tabLabel(String title, int index, bool isReading) =>
+      RegExp(r'^Section \d+(?: · Text [A-Z])?').firstMatch(title)?.group(0) ?? '${isReading ? 'Passage' : 'Part'} ${index + 1}';
+
   @override
   Widget build(BuildContext context) {
     final a = _attempt;
@@ -173,7 +177,7 @@ class _PracticeTestScreenState extends State<PracticeTestScreen> {
                   Padding(
                     padding: const EdgeInsets.only(right: 8),
                     child: ChoiceChip(
-                      label: Text('${isReading ? 'Passage' : 'Part'} ${i + 1} · ${sec.questions.where((q) => (_answers['${q.id}'] ?? '').isNotEmpty).length}/${sec.questions.length}'),
+                      label: Text('${_tabLabel(sec.title, i, isReading)} · ${sec.questions.where((q) => (_answers['${q.id}'] ?? '').isNotEmpty).length}/${sec.questions.length}'),
                       selected: i == _section,
                       showCheckmark: false,
                       selectedColor: AppColors.brand100,
