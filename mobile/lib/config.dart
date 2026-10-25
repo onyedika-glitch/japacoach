@@ -9,6 +9,15 @@ class AppConfig {
     defaultValue: '671451700757-ekv0pamep93sdablqohkqada5385mis2.apps.googleusercontent.com',
   );
 
+  // Firebase (push notifications), from Firebase console → Project settings → Your apps (Android).
+  // Passed at build time by scripts/shorebird.sh from release.env. Push is off until they are set.
+  static const firebaseApiKey = String.fromEnvironment('FIREBASE_API_KEY');
+  static const firebaseAppId = String.fromEnvironment('FIREBASE_APP_ID');
+  static const firebaseProjectId = String.fromEnvironment('FIREBASE_PROJECT_ID');
+  static const firebaseSenderId = String.fromEnvironment('FIREBASE_SENDER_ID');
+
+  static bool get pushEnabled => firebaseApiKey.isNotEmpty && firebaseAppId.isNotEmpty && firebaseProjectId.isNotEmpty;
+
   static const websiteUrl = 'https://japacoach.com';
   static const supportEmail = 'hello@japacoach.com';
 

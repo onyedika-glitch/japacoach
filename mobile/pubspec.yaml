@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.4+5
+version: 1.0.5+6
 
 environment:
   sdk: ^3.12.2
@@ -49,6 +49,9 @@ dependencies:
   path_provider: ^2.1.6
   wakelock_plus: ^1.8.1
   in_app_purchase: ^3.3.1
+  firebase_core: ^5.1.0
+  firebase_messaging: ^17.0.1
+  flutter_native_splash: ^2.4.8
 
 dev_dependencies:
   flutter_test:
@@ -61,11 +64,6 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
   flutter_launcher_icons: ^0.14.4
-
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
 
   # The following line ensures that the Material Icons font is
@@ -75,6 +73,7 @@ flutter:
 
   assets:
     - assets/icon.png
+    - shorebird.yaml
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -114,3 +113,16 @@ flutter_launcher_icons:
   adaptive_icon_background: "#01B8C6"
   adaptive_icon_foreground: assets/icon-foreground.png
   remove_alpha_ios: true
+
+# Native splash screen: run `dart run flutter_native_splash:create` after changing.
+flutter_native_splash:
+  color: "#01B8C6"
+  image: assets/splash-logo.png
+  branding: assets/splash-branding.png
+  branding_bottom_padding: 32
+  android_12:
+    color: "#01B8C6"
+    image: assets/splash-logo-android12.png
+    branding: assets/splash-branding.png
+  ios: true
+  web: false

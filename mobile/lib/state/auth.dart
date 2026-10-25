@@ -21,6 +21,9 @@ class AuthState extends ChangeNotifier {
   User? user;
   bool _googleReady = false;
 
+  /// Runs before the session is ended (e.g. to stop push notifications to this phone).
+  Future<void> Function()? beforeLogout;
+
   bool get googleEnabled => AppConfig.googleServerClientId.isNotEmpty;
 
   /// Restore a saved session on app start.
@@ -104,6 +107,7 @@ class AuthState extends ChangeNotifier {
   }
 
   Future<void> logout() async {
+    await beforeLogout?.call();
     try {
       await api.post('/api/mobile/logout');
     } catch (_) {
