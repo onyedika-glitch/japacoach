@@ -14,6 +14,7 @@ class AuthState extends ChangeNotifier {
   }
 
   static const _tokenKey = 'japa_token';
+  static const _onboardedKey = 'japa_onboarded';
   static const _storage = FlutterSecureStorage();
 
   final ApiClient api;
@@ -21,21 +22,34 @@ class AuthState extends ChangeNotifier {
   User? user;
   bool _googleReady = false;
 
+  /// Whether this phone has been through the intro screens (shown once, before the homepage).
+  bool onboarded = true;
+
   /// Runs before the session is ended (e.g. to stop push notifications to this phone).
   Future<void> Function()? beforeLogout;
 
   bool get googleEnabled => AppConfig.googleServerClientId.isNotEmpty;
 
-  /// Restore a saved session on app start.
+  /// How long the splash screen stays up at least, so it reads as a splash rather than a flicker.
+  static const _minSplash = Duration(milliseconds: 1200);
+
+  /// Restore a saved session on app start; the splash screen shows until this finishes.
   Future<void> boot() async {
+    final shown = Future<void>.delayed(_minSplash);
+    await _restore();
+    await shown;
+    notifyListeners();
+  }
+
+  Future<void> _restore() async {
     try {
       api.token = await _storage.read(key: _tokenKey);
+      onboarded = api.token != null || await _storage.read(key: _onboardedKey) != null;
     } catch (_) {
       api.token = null;
     }
     if (api.token == null) {
       status = AuthStatus.signedOut;
-      notifyListeners();
       return;
     }
     try {
@@ -46,7 +60,16 @@ class AuthState extends ChangeNotifier {
       status = e.status == 401 ? AuthStatus.signedOut : AuthStatus.signedIn;
       if (e.status == 401) await _clear(notify: false);
     }
+  }
+
+  Future<void> finishOnboarding() async {
+    onboarded = true;
     notifyListeners();
+    try {
+      await _storage.write(key: _onboardedKey, value: '1');
+    } catch (_) {
+      // Worst case the intro shows again next launch.
+    }
   }
 
   Future<void> refreshUser() async {

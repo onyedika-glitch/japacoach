@@ -14,7 +14,7 @@ import 'widgets/limit_dialog.dart';
 
 void main() {
   final binding = WidgetsFlutterBinding.ensureInitialized();
-  // Keep the native splash up until we know whether someone is signed in (no flash of a blank screen).
+  // Keep the native splash up until the app's own splash screen (same look, with the logo) is drawn.
   FlutterNativeSplash.preserve(widgetsBinding: binding);
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   final api = ApiClient();
@@ -44,8 +44,9 @@ class _JapaCoachAppState extends State<JapaCoachApp> {
   @override
   void initState() {
     super.initState();
-    widget.auth.addListener(_removeSplashWhenReady);
-    _removeSplashWhenReady();
+    // Android 12+ often shows the system splash without our icon (opened from the Play Store, a
+    // notification, or on some phone brands), so hand over to the Flutter splash on the first frame.
+    WidgetsBinding.instance.addPostFrameCallback((_) => FlutterNativeSplash.remove());
 
     widget.push.onOpen = (route) => _router.push(route);
     widget.push.onForeground = (title, body, route) {
@@ -74,12 +75,6 @@ class _JapaCoachAppState extends State<JapaCoachApp> {
           ..showSnackBar(SnackBar(content: Text(b.message!), behavior: SnackBarBehavior.floating));
       }
     });
-  }
-
-  void _removeSplashWhenReady() {
-    if (widget.auth.status == AuthStatus.loading) return;
-    widget.auth.removeListener(_removeSplashWhenReady);
-    FlutterNativeSplash.remove();
   }
 
   @override

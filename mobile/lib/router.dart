@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
 import 'screens/auth/login_screen.dart';
+import 'screens/auth/onboarding_screen.dart';
 import 'screens/auth/signup_screen.dart';
 import 'screens/auth/welcome_screen.dart';
 import 'screens/home/dashboard_screen.dart';
@@ -24,6 +26,7 @@ import 'screens/writing/writing_home_screen.dart';
 import 'screens/writing/writing_report_screen.dart';
 import 'screens/writing/writing_task_screen.dart';
 import 'state/auth.dart';
+import 'theme.dart';
 
 int _id(GoRouterState s, [String name = 'id']) => int.parse(s.pathParameters[name]!);
 int? _mock(GoRouterState s) => int.tryParse(s.uri.queryParameters['mock'] ?? '');
@@ -36,12 +39,14 @@ GoRouter buildRouter(AuthState auth) {
       final loc = state.matchedLocation;
       final isAuthPage = loc == '/welcome' || loc == '/login' || loc == '/signup';
       if (auth.status == AuthStatus.loading) return loc == '/splash' ? null : '/splash';
+      if (auth.status == AuthStatus.signedOut && !auth.onboarded) return loc == '/onboarding' ? null : '/onboarding';
       if (auth.status == AuthStatus.signedOut) return isAuthPage ? null : '/welcome';
-      if (isAuthPage || loc == '/splash') return '/home';
+      if (isAuthPage || loc == '/splash' || loc == '/onboarding') return '/home';
       return null;
     },
     routes: [
       GoRoute(path: '/splash', builder: (_, _) => const _Splash()),
+      GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
       GoRoute(path: '/welcome', builder: (_, _) => const WelcomeScreen()),
       GoRoute(path: '/login', builder: (_, _) => const LoginScreen()),
       GoRoute(path: '/signup', builder: (_, _) => const SignupScreen()),
@@ -72,9 +77,25 @@ GoRouter buildRouter(AuthState auth) {
   );
 }
 
+/// Shown while the app starts. Matches the native splash (assets/splash-*.png, see pubspec.yaml)
+/// so the hand-over is seamless, and adds the logo where Android 12+ leaves it out.
 class _Splash extends StatelessWidget {
   const _Splash();
 
   @override
-  Widget build(BuildContext context) => const Scaffold(body: Center(child: CircularProgressIndicator()));
+  Widget build(BuildContext context) => AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent),
+        child: Scaffold(
+          backgroundColor: AppColors.brand,
+          body: Stack(children: [
+            Center(child: Image.asset('assets/splash-logo.png', width: 128, height: 128)),
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 32 + MediaQuery.paddingOf(context).bottom,
+              child: Center(child: Image.asset('assets/splash-branding.png', width: 150)),
+            ),
+          ]),
+        ),
+      );
 }
