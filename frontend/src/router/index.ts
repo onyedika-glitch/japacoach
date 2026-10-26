@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
-// Public page titles/descriptions, shared with scripts/prerender.mjs so each page's HTML has the right head.
-import seo from './seo.json'
+// Public page titles, descriptions and AI summaries, shared with scripts/prerender.mjs and the API's markdown versions.
+import seo from '@content/seo.json'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -125,6 +125,26 @@ router.afterEach((to) => {
   setMeta('name', 'twitter:title', title)
   setMeta('name', 'twitter:description', description)
   setCanonical(url)
+
+  // AI agents: a short factual summary, and where the markdown version of a public page lives.
+  const page = (seo as Record<string, { description: string; aiSummary?: string; markdown?: boolean }>)[to.path]
+  setMeta('name', 'ai-summary', page?.aiSummary ?? description)
+  setMarkdownAlternate(page?.markdown ? `${window.location.origin}${to.path === '/' ? '/index' : to.path}.md` : null)
 })
+
+function setMarkdownAlternate(href: string | null) {
+  let link = document.head.querySelector<HTMLLinkElement>('link[rel="alternate"][type="text/markdown"]')
+  if (!href) {
+    link?.remove()
+    return
+  }
+  if (!link) {
+    link = document.createElement('link')
+    link.rel = 'alternate'
+    link.type = 'text/markdown'
+    document.head.appendChild(link)
+  }
+  link.href = href
+}
 
 export default router

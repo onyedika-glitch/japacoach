@@ -1,19 +1,14 @@
 <template>
   <article class="max-w-2xl mx-auto px-4 sm:px-6 py-14">
-    <h1 class="page-title">Delete your Japa Coach account</h1>
-    <p class="text-muted mt-2">This applies to the website and the Japa Coach mobile app.</p>
+    <h1 class="page-title">{{ content.title }}</h1>
+    <p class="text-muted mt-2">{{ content.intro }}</p>
 
     <div class="card p-5 sm:p-6 mt-6">
       <h2 class="section-title">What gets deleted</h2>
       <ul class="mt-3 space-y-2 text-[15px] list-disc pl-5">
-        <li>Your account, profile and login details</li>
-        <li>Your speaking recordings, transcripts, essays, answers, scores and reports</li>
-        <li>Your study plan and your review</li>
+        <li v-for="item in content.deleted" :key="item">{{ item }}</li>
       </ul>
-      <p class="mt-3 text-sm text-muted">
-        Payment records (plan, amount, date and reference) are kept, without your name or email, as long as the law requires. Days left on a paid
-        plan are lost. Deletion is immediate and cannot be undone.
-      </p>
+      <p class="mt-3 text-sm text-muted">{{ content.note }}</p>
     </div>
 
     <Alert v-if="deleted" tone="success" class="mt-6">Your account has been deleted. Thank you for practising with Japa Coach.</Alert>
@@ -33,8 +28,7 @@
     <div v-else class="card p-5 sm:p-6 mt-6">
       <h2 class="section-title">How to delete it</h2>
       <ol class="mt-3 space-y-2 text-[15px] list-decimal pl-5">
-        <li>Log in below (or in the app, go to More, then Settings, then Delete my account).</li>
-        <li>Type DELETE to confirm.</li>
+        <li v-for="step in content.steps" :key="step">{{ step }}</li>
       </ol>
       <RouterLink :to="{ name: 'login', query: { redirect: '/delete-account' } }" class="btn btn-primary mt-5">Log in to delete my account</RouterLink>
       <p class="mt-4 text-sm text-muted">
@@ -47,6 +41,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import content from '@content/delete-account.json'
 import Alert from '@/components/ui/Alert.vue'
 import { errorMessage } from '@/lib/api'
 import { useAuthStore } from '@/stores/auth'

@@ -13,6 +13,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      // Page copy shared with the Laravel API (markdown versions of pages, llms.txt).
+      '@content': fileURLToPath(new URL('../api/resources/content', import.meta.url)),
     },
   },
   server: {

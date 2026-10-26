@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Background of the adaptive launcher icon (mipmap-anydpi-v26/ic_launcher.xml). -->
+    <color name="ic_launcher_background">#01B8C6</color>
     <!-- Accent colour Android uses for the notification icon. -->
     <color name="notification_color">#01B8C6</color>
 </resources>

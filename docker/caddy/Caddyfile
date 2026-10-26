@@ -9,6 +9,8 @@
 		X-Content-Type-Options nosniff
 		Referrer-Policy strict-origin-when-cross-origin
 		Permissions-Policy "microphone=(self), camera=()"
+		# For AI agents: where the site guide and usage policy are (not set on markdown responses, which carry their canonical Link).
+		?Link "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </llms-full.txt>; rel=\"describedby\"; type=\"text/plain\", </ai.txt>; rel=\"describedby\"; type=\"text/plain\""
 	}
 
 	# Generated audio (listening tests, examiner questions) from Laravel's public disk.
@@ -18,7 +20,26 @@
 		file_server
 	}
 
-	@laravel path /api/* /sanctum/* /auth/google* /payment/* /up /sitemap.xml /robots.txt
+	# Markdown versions of public pages for AI agents (MarkdownController): /<page>.md, and the public pages
+	# themselves when the request asks for text/markdown and not text/html. Everyone else gets the Vue app.
+	@markdown {
+		path_regexp ^/[A-Za-z0-9/_-]+\.md$
+	}
+	@wantsMarkdown {
+		path / /pricing /terms /privacy /delete-account
+		header_regexp Accept (?i)text/markdown
+		not header_regexp Accept (?i)text/html
+	}
+	handle @markdown {
+		root * /var/www/api/public
+		php_fastcgi app:9000
+	}
+	handle @wantsMarkdown {
+		root * /var/www/api/public
+		php_fastcgi app:9000
+	}
+
+	@laravel path /api/* /sanctum/* /auth/google* /payment/* /up /sitemap.xml /robots.txt /llms.txt /llms-full.txt /ai.txt
 	handle @laravel {
 		root * /var/www/api/public
 		php_fastcgi app:9000 {

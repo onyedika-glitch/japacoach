@@ -20,37 +20,10 @@
 
 <script setup lang="ts">
 import { ChevronDown } from 'lucide-vue-next'
+import home from '@content/home.json'
 
-const faqs = [
-  {
-    q: 'Is the band score official?',
-    a: 'No. It is an estimate based on the public IELTS band descriptors. Only an official IELTS test gives you an official result. Our estimates are designed to show you where you stand and exactly what to fix.',
-  },
-  {
-    q: 'Are you connected to IELTS, the British Council or IDP?',
-    a: 'No. Japa Coach is an independent practice tool. We are not affiliated with IELTS, the British Council, IDP or Cambridge.',
-  },
-  {
-    q: 'Do I need a laptop?',
-    a: 'No. Everything works in your phone browser, including the speaking test. You just need to allow microphone access.',
-  },
-  {
-    q: 'Academic or General Training?',
-    a: 'Both. Choose your test type in settings and we will show you the right Writing Task 1 and Reading papers. Speaking and Listening are the same for both.',
-  },
-  {
-    q: 'How long does marking take?',
-    a: 'Writing and reading results come back within a minute or two. A full speaking mock can take a few minutes because every answer is transcribed and analysed. We will show your report as soon as it is ready.',
-  },
-  {
-    q: 'How do I pay? Will you debit my card every month?',
-    a: 'You pay once for a fixed number of days of access through our payment partner, Bachs. There are no automatic renewals, and we will remind you before your access ends.',
-  },
-  {
-    q: 'What happens to my recordings?',
-    a: 'Your audio is used only to mark your answers. Recordings are deleted automatically after 30 days; your scores and transcripts stay in your history.',
-  },
-]
+// Questions live in api/resources/content/home.json (shared with the markdown version of this page).
+const faqs = home.faq.items
 </script>
 
 <style scoped>

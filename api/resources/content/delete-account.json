@@ -1,0 +1,15 @@
+{
+  "title": "Delete your Japa Coach account",
+  "intro": "This applies to the website and the Japa Coach mobile app.",
+  "deleted": [
+    "Your account, profile and login details",
+    "Your speaking recordings, transcripts, essays, answers, scores and reports",
+    "Your study plan and your review"
+  ],
+  "note": "Payment records (plan, amount, date and reference) are kept, without your name or email, as long as the law requires. Days left on a paid plan are lost. Deletion is immediate and cannot be undone.",
+  "steps": [
+    "Log in below (or in the app, go to More, then Settings, then Delete my account).",
+    "Type DELETE to confirm."
+  ],
+  "fallback": "Can't log in? Email hello@japacoach.com from your account's email address and we will delete it within 30 days."
+}

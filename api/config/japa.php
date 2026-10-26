@@ -140,16 +140,18 @@ return [
     |
     */
 
+    // Who we are, for llms.txt, ai.txt and markdown pages. Keep in sync with the Organization JSON-LD in frontend/index.html.
+    'site' => [
+        'name' => 'Japa Coach',
+        'description' => 'Japa Coach is an AI IELTS practice platform built in Nigeria for people preparing to study, work or settle abroad. Candidates answer speaking questions out loud, write timed essays and take full reading and listening tests, then get an estimated band and specific corrections in minutes.',
+        'facts' => 'Covers all four IELTS modules for Academic and General Training, plus full mock exams and a study plan. Free to start; paid one-off passes from ₦1,500 a week with no automatic renewal. Web app at japacoach.com and an Android app. Independent: not affiliated with IELTS, the British Council, IDP or Cambridge. Band scores are estimates.',
+        'contact_email' => 'hello@japacoach.com',
+        'logo' => '/favicon.svg',
+    ],
+
     'seo' => [
-        'pages' => [
-            ['path' => '/', 'priority' => '1.0', 'changefreq' => 'weekly', 'updated' => '2026-10-13'],
-            ['path' => '/pricing', 'priority' => '0.9', 'changefreq' => 'monthly', 'updated' => '2026-10-13'],
-            ['path' => '/signup', 'priority' => '0.8', 'changefreq' => 'monthly', 'updated' => '2026-10-13'],
-            ['path' => '/login', 'priority' => '0.4', 'changefreq' => 'yearly', 'updated' => '2026-10-13'],
-            ['path' => '/terms', 'priority' => '0.3', 'changefreq' => 'yearly', 'updated' => '2026-10-13'],
-            ['path' => '/privacy', 'priority' => '0.3', 'changefreq' => 'yearly', 'updated' => '2026-10-13'],
-            ['path' => '/delete-account', 'priority' => '0.2', 'changefreq' => 'yearly', 'updated' => '2026-10-14'],
-        ],
+        // Public pages (titles, descriptions, sitemap data, markdown on/off) live in resources/content/seo.json,
+        // shared with the Vue app. Robots.txt, llms.txt and ai.txt are generated from the same data.
 
         // Areas behind login: blocked in robots.txt so crawl budget goes to public pages.
         'disallow' => [

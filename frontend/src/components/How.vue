@@ -21,23 +21,10 @@
 </template>
 
 <script setup lang="ts">
+import home from '@content/home.json'
 import { Mic, Gauge, TrendingUp } from 'lucide-vue-next'
 
-const steps = [
-  {
-    icon: Mic,
-    title: 'Speak or write',
-    text: 'Answer real-format questions on your phone: a speaking test with an examiner voice, a timed essay, or a reading or listening paper.',
-  },
-  {
-    icon: Gauge,
-    title: 'Get your estimated band',
-    text: 'See a band for every criterion, your mistakes highlighted, and stronger versions of your own answers.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Fix and improve',
-    text: 'Practise the weak areas your study plan picks for you, then retake. Watch your band climb toward your target.',
-  },
-]
+// Text lives in api/resources/content/home.json (shared with the markdown version of this page).
+const icons = [Mic, Gauge, TrendingUp]
+const steps = home.how.steps.map((step, i) => ({ ...step, icon: icons[i] }))
 </script>

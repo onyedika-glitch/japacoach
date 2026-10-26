@@ -21,18 +21,21 @@
 </template>
 
 <script setup lang="ts">
+import home from '@content/home.json'
 import { BookOpen, CalendarCheck, ClipboardList, Headphones, LineChart, Mic, PenLine } from 'lucide-vue-next'
 
 const brand = 'bg-brand-50 text-brand-dark'
 const accent = 'bg-accent/15 text-accent'
 
-const services = [
-  { icon: Mic, tint: brand, title: 'Speaking', text: 'Full 3-part mock with an AI examiner voice, cue cards with prep time, and quick daily drills.' },
-  { icon: PenLine, tint: brand, title: 'Writing', text: 'Task 1 (charts, tables, letters) and Task 2 essays with a timer, word count, corrections and a model answer.' },
-  { icon: BookOpen, tint: brand, title: 'Reading', text: 'Academic and General passages with every common question type, auto-marked with explanations.' },
-  { icon: Headphones, tint: brand, title: 'Listening', text: 'Four sections in British and American voices, auto-marked, with transcripts after you finish.' },
-  { icon: ClipboardList, tint: accent, title: 'Full mock exam', text: 'Listening → Reading → Writing → Speaking, with an overall band. The closest thing to test day.' },
-  { icon: CalendarCheck, tint: accent, title: 'Study plan', text: 'A week-by-week plan built from your test date, target band and weakest skills.' },
-  { icon: LineChart, tint: accent, title: 'Progress tracking', text: 'Bands over time for every module, streaks and your recent attempts in one dashboard.' },
+// Text lives in api/resources/content/home.json (shared with the markdown version of this page).
+const look = [
+  { icon: Mic, tint: brand },
+  { icon: PenLine, tint: brand },
+  { icon: BookOpen, tint: brand },
+  { icon: Headphones, tint: brand },
+  { icon: ClipboardList, tint: accent },
+  { icon: CalendarCheck, tint: accent },
+  { icon: LineChart, tint: accent },
 ]
+const services = home.modules.items.map((s, i) => ({ ...s, ...look[i] }))
 </script>

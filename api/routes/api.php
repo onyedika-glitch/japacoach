@@ -18,6 +18,7 @@ use App\Http\Controllers\Api\StudyPlanController;
 use App\Http\Controllers\Api\TutorController;
 use App\Http\Controllers\Api\VoucherController;
 use App\Http\Controllers\Api\WritingController;
+use App\Http\Controllers\MarkdownController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,11 @@ Route::middleware('throttle:auth')->group(function () {
 });
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+
+// Markdown versions of public pages for AI agents (Caddy also routes /<page>.md and Accept: text/markdown here).
+Route::get('/md/_catalog', [MarkdownController::class, 'catalog'])->name('md.catalog');
+Route::options('/md/{path?}', [MarkdownController::class, 'options'])->where('path', '.*')->name('md.options');
+Route::get('/md/{path?}', [MarkdownController::class, 'show'])->where('path', '.*')->name('md.show');
 Route::get('/billing/plans', [BillingController::class, 'plans'])->name('billing.plans');
 Route::post('/webhooks/bachs', [PaymentController::class, 'webhook'])->name('webhooks.bachs');
 

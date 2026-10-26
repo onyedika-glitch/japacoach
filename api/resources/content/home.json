@@ -1,0 +1,125 @@
+{
+  "hero": {
+    "title": "Hit your IELTS band before your test date.",
+    "subtitle": "Practise Speaking, Writing, Reading & Listening with an AI examiner. Get an estimated band score and specific fixes in minutes. Built for Nigerians preparing to relocate.",
+    "note": "No card needed · Works on your phone"
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "Three steps. Every day.",
+    "steps": [
+      {
+        "title": "Speak or write",
+        "text": "Answer real-format questions on your phone: a speaking test with an examiner voice, a timed essay, or a reading or listening paper."
+      },
+      {
+        "title": "Get your estimated band",
+        "text": "See a band for every criterion, your mistakes highlighted, and stronger versions of your own answers."
+      },
+      {
+        "title": "Fix and improve",
+        "text": "Practise the weak areas your study plan picks for you, then retake. Watch your band climb toward your target."
+      }
+    ]
+  },
+  "scoring": {
+    "eyebrow": "How you're scored",
+    "title": "Marked on the same four criteria as real examiners",
+    "intro": "Your answers are transcribed, measured for pace and pauses, then marked against the public IELTS band descriptors. You get a band for each criterion, plus the exact sentences to fix.",
+    "cards": [
+      {
+        "title": "Fluency & Coherence",
+        "text": "Do you speak at a natural pace, without long pauses, and link your ideas clearly?"
+      },
+      {
+        "title": "Lexical Resource",
+        "text": "Range and accuracy of vocabulary, including idioms and less common words."
+      },
+      {
+        "title": "Grammatical Range & Accuracy",
+        "text": "A mix of simple and complex sentences, with as few errors as possible."
+      },
+      {
+        "title": "Pronunciation",
+        "text": "How clearly you can be understood: word stress, sounds and intonation."
+      },
+      {
+        "title": "Instant feedback",
+        "text": "See your mistakes, better versions of your answers, and words to use instead, minutes after you finish (not days)."
+      }
+    ]
+  },
+  "modules": {
+    "eyebrow": "Everything in one place",
+    "title": "All four modules, plus a coach",
+    "intro": "Academic and General Training. Practise one skill at a time, or sit a full mock exam.",
+    "items": [
+      {
+        "title": "Speaking",
+        "text": "Full 3-part mock with an AI examiner voice, cue cards with prep time, and quick daily drills."
+      },
+      {
+        "title": "Writing",
+        "text": "Task 1 (charts, tables, letters) and Task 2 essays with a timer, word count, corrections and a model answer."
+      },
+      {
+        "title": "Reading",
+        "text": "Academic and General passages with every common question type, auto-marked with explanations."
+      },
+      {
+        "title": "Listening",
+        "text": "Four sections in British and American voices, auto-marked, with transcripts after you finish."
+      },
+      {
+        "title": "Full mock exam",
+        "text": "Listening → Reading → Writing → Speaking, with an overall band. The closest thing to test day."
+      },
+      {
+        "title": "Study plan",
+        "text": "A week-by-week plan built from your test date, target band and weakest skills."
+      },
+      {
+        "title": "Progress tracking",
+        "text": "Bands over time for every module, streaks and your recent attempts in one dashboard."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions people ask",
+    "items": [
+      {
+        "q": "Is the band score official?",
+        "a": "No. It is an estimate based on the public IELTS band descriptors. Only an official IELTS test gives you an official result. Our estimates are designed to show you where you stand and exactly what to fix."
+      },
+      {
+        "q": "Are you connected to IELTS, the British Council or IDP?",
+        "a": "No. Japa Coach is an independent practice tool. We are not affiliated with IELTS, the British Council, IDP or Cambridge."
+      },
+      {
+        "q": "Do I need a laptop?",
+        "a": "No. Everything works in your phone browser, including the speaking test. You just need to allow microphone access."
+      },
+      {
+        "q": "Academic or General Training?",
+        "a": "Both. Choose your test type in settings and we will show you the right Writing Task 1 and Reading papers. Speaking and Listening are the same for both."
+      },
+      {
+        "q": "How long does marking take?",
+        "a": "Writing and reading results come back within a minute or two. A full speaking mock can take a few minutes because every answer is transcribed and analysed. We will show your report as soon as it is ready."
+      },
+      {
+        "q": "How do I pay? Will you debit my card every month?",
+        "a": "You pay once for a fixed number of days of access through our payment partner, Bachs. There are no automatic renewals, and we will remind you before your access ends."
+      },
+      {
+        "q": "What happens to my recordings?",
+        "a": "Your audio is used only to mark your answers. Recordings are deleted automatically after 30 days; your scores and transcripts stay in your history."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Your test date is coming. Start today.",
+    "text": "Take a free speaking test and see your estimated band in minutes."
+  }
+}

@@ -35,6 +35,7 @@
 </template>
 
 <script setup lang="ts">
+import home from '@content/home.json'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { AudioLines, BookA, SpellCheck, Waves, Zap } from 'lucide-vue-next'
@@ -42,13 +43,9 @@ import { AudioLines, BookA, SpellCheck, Waves, Zap } from 'lucide-vue-next'
 const orbit = ref<SVGElement | null>(null)
 let tween: gsap.core.Tween | null = null
 
-const cards = [
-  { icon: Waves, title: 'Fluency & Coherence', text: 'Do you speak at a natural pace, without long pauses, and link your ideas clearly?' },
-  { icon: BookA, title: 'Lexical Resource', text: 'Range and accuracy of vocabulary, including idioms and less common words.' },
-  { icon: SpellCheck, title: 'Grammatical Range & Accuracy', text: 'A mix of simple and complex sentences, with as few errors as possible.' },
-  { icon: AudioLines, title: 'Pronunciation', text: 'How clearly you can be understood: word stress, sounds and intonation.' },
-  { icon: Zap, title: 'Instant feedback', text: 'See your mistakes, better versions of your answers, and words to use instead, minutes after you finish (not days).' },
-]
+// Text lives in api/resources/content/home.json (shared with the markdown version of this page).
+const icons = [Waves, BookA, SpellCheck, AudioLines, Zap]
+const cards = home.scoring.cards.map((card, i) => ({ ...card, icon: icons[i] }))
 
 onMounted(() => {
   if (orbit.value && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

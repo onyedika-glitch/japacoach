@@ -1,0 +1,61 @@
+{
+  "/": {
+    "description": "Practise IELTS Speaking, Writing, Reading and Listening with an AI examiner. Get an estimated band score and specific fixes in minutes. Built for Nigerians preparing to relocate.",
+    "aiSummary": "Japa Coach is an AI IELTS practice platform for Nigerians: candidates answer speaking questions out loud, write timed essays and take full reading and listening tests, then get an estimated band and specific corrections in minutes. Academic and General Training, free to start, paid passes from ₦1,500 a week.",
+    "markdown": true,
+    "updated": "2026-10-26",
+    "priority": "1.0",
+    "changefreq": "weekly"
+  },
+  "/pricing": {
+    "title": "Pricing",
+    "description": "Japa Coach plans from ₦1,500 a week. Start free with a speaking test, then unlock full mock tests, writing evaluations and unlimited reading and listening practice.",
+    "aiSummary": "Japa Coach pricing in Nigerian naira: a free plan with monthly limits, and one-off Weekly, Monthly and 90-day Exam Sprint passes with no automatic renewal.",
+    "markdown": true,
+    "updated": "2026-10-26",
+    "priority": "0.9",
+    "changefreq": "monthly"
+  },
+  "/signup": {
+    "title": "Sign up",
+    "description": "Create a free Japa Coach account and take your first AI-marked IELTS speaking test. No card needed.",
+    "markdown": false,
+    "skipReason": "sign-up form only, no content",
+    "updated": "2026-10-13",
+    "priority": "0.8",
+    "changefreq": "monthly"
+  },
+  "/login": {
+    "title": "Log in",
+    "description": "Log in to Japa Coach to continue your IELTS practice.",
+    "markdown": false,
+    "skipReason": "login form only, no content",
+    "updated": "2026-10-13",
+    "priority": "0.4",
+    "changefreq": "yearly"
+  },
+  "/terms": {
+    "title": "Terms",
+    "description": "The terms for using Japa Coach, the AI IELTS practice platform.",
+    "markdown": true,
+    "updated": "2026-10-22",
+    "priority": "0.3",
+    "changefreq": "yearly"
+  },
+  "/privacy": {
+    "title": "Privacy",
+    "description": "How Japa Coach collects, uses and protects your data, including speaking recordings.",
+    "markdown": true,
+    "updated": "2026-10-22",
+    "priority": "0.3",
+    "changefreq": "yearly"
+  },
+  "/delete-account": {
+    "title": "Delete your account",
+    "description": "How to delete your Japa Coach account and data, on the website or in the mobile app.",
+    "markdown": true,
+    "updated": "2026-10-14",
+    "priority": "0.2",
+    "changefreq": "yearly"
+  }
+}

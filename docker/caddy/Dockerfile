@@ -3,6 +3,8 @@ WORKDIR /build
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci
 COPY frontend/ .
+# Page copy shared with the API (imported as @content, see vite.config.ts)
+COPY api/resources/content /api/resources/content
 RUN npm run build
 
 FROM caddy:2-alpine

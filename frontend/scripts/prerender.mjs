@@ -9,7 +9,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const BASE = 'https://japacoach.com'
 const DEFAULT_TITLE = 'Japa Coach: AI IELTS practice for Nigerians'
 
-const pages = JSON.parse(readFileSync(join(root, 'src/router/seo.json'), 'utf8'))
+// Page list shared with the router and the API's markdown versions.
+const pages = JSON.parse(readFileSync(join(root, '../api/resources/content/seo.json'), 'utf8'))
 const template = readFileSync(join(root, 'dist/index.html'), 'utf8')
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -35,6 +36,10 @@ for (const [path, page] of Object.entries(pages)) {
   html = swap(html, /(<meta property="og:description" content=")[^"]*(")/, description, 'og:description')
   html = swap(html, /(<meta name="twitter:title" content=")[^"]*(")/, title, 'twitter:title')
   html = swap(html, /(<meta name="twitter:description" content=")[^"]*(")/, description, 'twitter:description')
+  html = swap(html, /(<meta name="ai-summary" content=")[^"]*(")/, esc(page.aiSummary ?? page.description), 'ai-summary')
+  html = page.markdown
+    ? swap(html, /(<link rel="alternate" type="text\/markdown" href=")[^"]*(")/, `${url}.md`, 'markdown alternate')
+    : html.replace(/\s*<link rel="alternate" type="text\/markdown"[^>]*>/, '')
 
   const out = join(root, 'dist', path.slice(1), 'index.html')
   mkdirSync(dirname(out), { recursive: true })
