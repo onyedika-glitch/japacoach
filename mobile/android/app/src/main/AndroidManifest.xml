@@ -3,10 +3,15 @@
     <!-- Speaking tests record the user's answers. -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+    <!-- No backup or phone-to-phone copy of app data: the login is encrypted with a key that never
+         leaves the phone, so restored data can't be read (see res/xml/data_extraction_rules.xml). -->
     <application
         android:label="Japa Coach"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules">
         <!-- Push notifications (Firebase Cloud Messaging) -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"

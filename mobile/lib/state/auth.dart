@@ -22,8 +22,8 @@ class AuthState extends ChangeNotifier {
   User? user;
   bool _googleReady = false;
 
-  /// Whether this phone has been through the intro screens (shown once, before the homepage).
-  bool onboarded = true;
+  /// Whether this phone has been through the intro screens (shown once per install, signed in or not).
+  bool onboarded = false;
 
   /// Runs before the session is ended (e.g. to stop push notifications to this phone).
   Future<void> Function()? beforeLogout;
@@ -44,9 +44,13 @@ class AuthState extends ChangeNotifier {
   Future<void> _restore() async {
     try {
       api.token = await _storage.read(key: _tokenKey);
-      onboarded = api.token != null || await _storage.read(key: _onboardedKey) != null;
     } catch (_) {
       api.token = null;
+    }
+    try {
+      onboarded = await _storage.read(key: _onboardedKey) != null;
+    } catch (_) {
+      onboarded = false;
     }
     if (api.token == null) {
       status = AuthStatus.signedOut;

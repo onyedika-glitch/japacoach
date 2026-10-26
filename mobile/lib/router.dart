@@ -39,7 +39,7 @@ GoRouter buildRouter(AuthState auth) {
       final loc = state.matchedLocation;
       final isAuthPage = loc == '/welcome' || loc == '/login' || loc == '/signup';
       if (auth.status == AuthStatus.loading) return loc == '/splash' ? null : '/splash';
-      if (auth.status == AuthStatus.signedOut && !auth.onboarded) return loc == '/onboarding' ? null : '/onboarding';
+      if (!auth.onboarded) return loc == '/onboarding' ? null : '/onboarding';
       if (auth.status == AuthStatus.signedOut) return isAuthPage ? null : '/welcome';
       if (isAuthPage || loc == '/splash' || loc == '/onboarding') return '/home';
       return null;
@@ -84,7 +84,7 @@ class _Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent),
+        value: SystemUiOverlayStyle.light,
         child: Scaffold(
           backgroundColor: AppColors.brand,
           body: Stack(children: [

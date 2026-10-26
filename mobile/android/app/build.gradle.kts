@@ -58,3 +58,8 @@ kotlin {
 flutter {
     source = "../.."
 }
+
+dependencies {
+    // enableEdgeToEdge() in MainActivity (Android 15+ draws apps edge-to-edge; Play checks for it).
+    implementation("androidx.activity:activity:1.13.0")
+}
