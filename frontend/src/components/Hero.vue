@@ -32,6 +32,10 @@
           <RouterLink to="/pricing" class="btn btn-secondary h-14 px-7 text-lg">See pricing</RouterLink>
         </div>
         <p class="mt-4 text-sm text-muted">No card needed · Works on your phone</p>
+        <div class="mt-5 flex flex-col items-center gap-1">
+          <span class="text-sm font-medium text-ink">Or get the Android app</span>
+          <PlayBadge />
+        </div>
       </div>
 
       <!-- Sample report preview -->
@@ -65,6 +69,7 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { Mic } from 'lucide-vue-next'
+import PlayBadge from '@/components/PlayBadge.vue'
 
 const shape = ref<SVGElement | null>(null)
 const shape2 = ref<SVGElement | null>(null)

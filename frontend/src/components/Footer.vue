@@ -6,6 +6,7 @@
         <p class="text-sm max-w-sm">
           AI IELTS practice for Speaking, Writing, Reading and Listening. Built in Nigeria for Nigerians preparing to study, work or settle abroad.
         </p>
+        <div class="-ml-2"><PlayBadge size="sm" /></div>
       </div>
       <div>
         <h4 class="text-white font-semibold mb-3">Product</h4>
@@ -35,5 +36,7 @@
 </template>
 
 <script setup lang="ts">
+import PlayBadge from '@/components/PlayBadge.vue'
+
 const year = new Date().getFullYear()
 </script>

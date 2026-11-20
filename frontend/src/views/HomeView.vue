@@ -12,6 +12,7 @@
         <h2 class="font-figtree text-3xl sm:text-4xl font-bold">Your test date is coming. Start today.</h2>
         <p class="mt-4 text-gray-300 text-lg">Take a free speaking test and see your estimated band in minutes.</p>
         <RouterLink to="/signup" class="btn btn-primary h-14 px-8 text-lg mt-8">Take a free speaking test</RouterLink>
+        <div class="mt-6 flex justify-center"><PlayBadge /></div>
       </div>
     </section>
   </div>
@@ -25,4 +26,5 @@ import Services from '@/components/Services.vue'
 import Products from '@/components/Products.vue'
 import Faq from '@/components/Faq.vue'
 import Testimonials from '@/components/Testimonials.vue'
+import PlayBadge from '@/components/PlayBadge.vue'
 </script>
